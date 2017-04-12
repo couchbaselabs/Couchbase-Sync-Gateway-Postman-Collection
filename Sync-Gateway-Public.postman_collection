@@ -1,0 +1,651 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Sync Gateway Public",
+		"_postman_id": "d9b73a83-13d7-ebc3-bd09-9d9e8afbaaae",
+		"description": "Documentation for the Sync Gateway Public REST API. This page is generated from the Sync Gateway Public Swagger spec, the exact same information is also available at [developer.couchbase.com/mobile/swagger/sync-gateway-public](http://developer.couchbase.com/mobile/swagger/sync-gateway-public/).\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{db}",
+			"description": "Folder for {db}",
+			"item": [
+				{
+					"name": "Get attachment",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/{{doc}}/{{attachment}}?rev={{rev}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request retrieves a file attachment associated with the document. The raw data of the associated attachment is returned (just as if you were accessing a static file). The Content-Type response header is the same content type set when the document attachment was added to the database.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Add or update document attachment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"if  (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody)",
+									"    postman.setEnvironmentVariable(\"doc\", jsonData[\"id\"]);",
+									"    postman.setEnvironmentVariable(\"rev\", jsonData[\"rev\"]);",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{publicurl}}/{{db}}/{{doc}}/{{attachment}}?rev={{rev}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"key1\":\"value1\"}"
+						},
+						"description": "This request adds or updates the supplied request content as an attachment to the specified document. The attachment name must be a URL-encoded string (the file name). You must also supply either the rev query parameter or the If-Match HTTP header for validation, and the Content-Type headers (to set the attachment content type).\n\n  When uploading an attachment using an existing attachment name, the corresponding stored content of the database will be updated. Because you must supply the revision information to add an attachment to the document, this serves as validation to update the existing attachment.\n\n  Uploading an attachment updates the corresponding document revision. Revisions are tracked for the parent document, not individual attachments.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Bulk docs",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_bulk_docs",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"docs\": [\n    {\n      \"id\": \"{{doc}}\"\n    }\n  ]\n}"
+						},
+						"description": "This request enables you to add, update, or delete multiple documents to a database in a single request. To add new documents, you can either specify the ID (`_id`) or let the software create an ID. To update existing documents, you must provide the document ID, revision identifier (`_rev`), and new document values. To delete existing documents you must provide the document ID, revision identifier, and the deletion flag (`_deleted`).\n\nThe JSON returned by the `_bulk_docs` operation consists of an array of JSON structures, one for each document in the original submission. The returned JSON structure should be examined to ensure that all of the documents submitted in the original request were successfully added to the database.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Bulk get",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_bulk_get?revs=false&attachments=false",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"docs\": [\n    {\n      \"id\": \"{{doc}}\"\n    }\n  ]\n}"
+						},
+						"description": "This request returns any number of documents, as individual bodies in a MIME multipart response.\nEach enclosed body contains one requested document. The bodies appear in the same order as in the request, but can also be identified by their X-Doc-ID and X-Rev-ID headers.\nA body for a document with no attachments will have content type application/json and contain the document itself.\nA body for a document that has attachments will be written as a nested multipart/related body. Its first part will be the document's JSON, and the subsequent parts will be the attachments (each identified by a Content-Disposition header giving its attachment name.)\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Get local doc",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_local/{{local_doc}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request retrieves a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by Couchbase Lite's replicator, as a place to store replication checkpoint data.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Create or update a local document",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_local/{{local_doc}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"key\": \"random_value\",\n  \"username\":\"{{name}}\"\n}"
+						},
+						"description": "This request creates or updates a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by the client's replicator, as a place to store replication checkpoint data.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a local document",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_local/{{local_doc}}?rev={{rev}}&batch={{batch}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request deletes a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by Couchbase Lite's replicator, as a place to store replication checkpoint data.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Changes",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_changes?limit={{limit}}&style=main_only&active_only=false&include_docs=false&filter={{filter}}&channels={{channelid}}&doc_ids=[{{doc}}]&feed=normal&since={{since}}&heartbeat=0&timeout=300000",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This request retrieves a sorted list of changes made to documents in the database, in time order of application. Each document appears at most once, ordered by its most recent change, regardless of how many times it's been changed.\nThis request can be used to listen for update and modifications to the database for post processing or synchronization. A continuously connected changes feed is a reasonable approach for generating a real-time log for most applications.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Changes",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_changes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"limit\": 0,\n  \"style\": \"main_only\",\n  \"active_only\": false,\n  \"include_docs\": false,\n  \"filter\": \"{{filter}}\",\n  \"channels\": \"{{channelid}}\",\n  \"doc_ids\": [\n    \"{{doc}}\"\n  ],\n  \"feed\": \"normal\",\n  \"since\": 0,\n  \"heartbeat\": 0,\n  \"timeout\": 300000\n}"
+						},
+						"description": "Same as the GET /_changes request except the parameters are in the JSON body.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Get document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody)",
+									"postman.setEnvironmentVariable(\"docid\", jsonData[\"_id\"]);",
+									"postman.setEnvironmentVariable(\"rev\", jsonData[\"_rev\"]);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{publicurl}}/{{db}}/{{doc}}?attachments=false&atts_since={{atts_since}}&open_revs={{open_revs}}&revs=false&show_exp=false",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This request retrieves a document from a database."
+					},
+					"response": []
+				},
+				{
+					"name": "Create or update document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"if  (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody)",
+									"    postman.setEnvironmentVariable(\"doc\", jsonData[\"id\"]);",
+									"    postman.setEnvironmentVariable(\"rev\", jsonData[\"rev\"]);",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{publicurl}}/{{db}}/{{doc}}?new_edits=true&rev={{rev}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"key\": \"value\",\n  \"type\":\"foobar\",\n  \"username\":\"{{name}}\",\n  \"channels\":[\"{{channelid}}\"]\n}"
+						},
+						"description": "This request creates a new document or creates a new revision of an existing document. It enables you to specify the identifier for a new document rather than letting the software create an identifier. If you want to create a new document and let the software create an identifier, use the POST /db request.\nIf the document specified by doc does not exist, a new document is created and assigned the identifier specified in doc. If the document already exists, the document is updated with the JSON document in the message body and given a new revision.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete document",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/{{doc}}?rev={{rev}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request deletes a document from the database. When a document is deleted, the revision number is updated so the database can track the deletion in synchronized copies.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Query a view",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_design/{{ddoc}}/_view/{{view}}?conflicts={{conflicts}}&descending={{descending}}&endkey={{endkey}}&end_key={{end_key}}&endkey_docid={{endkey_docid}}&end_key_doc_id={{end_key_doc_id}}&include_docs={{include_docs}}&inclusive_end={{inclusive_end}}&group={{group}}&group_level={{group_level}}&key={{key}}&limit={{limit}}&skip={{skip}}&stale={{stale}}&startkey={{startkey}}&start_key={{start_key}}&startkey_docid={{startkey_docid}}&update_seq={{update_seq}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Query a view on a design document. This endpoint is only accessible if you have enabled views in the Sync Gateway configuration file (see [this guide](/documentation/mobile/current/develop/guides/sync-gateway/views/index.html) for more information on this topic).\n"
+					},
+					"response": []
+				},
+				{
+					"name": "All docs",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_all_docs?access=true&channels={{channels}}&include_docs=false&revs=false&update_seq=false&limit={{limit}}&keys={{keys}}&startkey={{startkey}}&endkey={{endkey}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This request returns a built-in view of all the documents in the database.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "All docs",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_all_docs?access=false&channels=false&include_docs=false&revs=false&update_seq=false",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"keys\": [\n    \"{{doc}}\"\n  ]\n}"
+						},
+						"description": "This request retrieves specified documents from the database.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "OpenID Connect Authentication.",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_oidc?offline={{offline}}&provider={{provider}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Called by clients to initiate the OIDC Authorization Code flow. \n"
+					},
+					"response": []
+				},
+				{
+					"name": "OpenID Connect Authentication callback.",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_oidc_callback?code={{code}}&provider={{provider}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Sync Gateway callback URL that clients are redirected to by the OpenID Connect provider. \n"
+					},
+					"response": []
+				},
+				{
+					"name": "OpenID Connect Authentication.",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_oidc_challenge?offline={{offline}}&provider={{provider}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Called by clients to initiate the OIDC Authorization Code flow. \n"
+					},
+					"response": []
+				},
+				{
+					"name": "OpenID Connect refresh.",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_oidc_refresh?refresh_token={{refresh_token}}&provider={{provider}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Used to obtain a new OpenID Connect ID token based on the provided refresh token.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Database info",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This request retrieves information about the database.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Create document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody)",
+									"postman.setEnvironmentVariable(\"doc\", jsonData[\"id\"]);",
+									"postman.setEnvironmentVariable(\"rev\", jsonData[\"rev\"]);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{publicurl}}/{{db}}/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"key\":\"value\",\"channels\":[\"{{channelid}}\"]}"
+						},
+						"description": "This request creates a new document in the specified database. You can either specify the document ID by including the _id in the request message body (the value must be a string), or let the software generate an ID.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a user session",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"if  (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody)",
+									"    postman.setEnvironmentVariable(\"sessionId\", jsonData[\"session_id\"]);",
+									"",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_session",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{name}}\",\n  \"ttl\": 86400\n}"
+						},
+						"description": "If the credentials provided in the request body are valid, the session is created with an idle session timeout of 24 hours. An idle session timeout in the context of Sync Gateway is defined as the following: if 10% or more of the current expiration time has elapsed when a subsequent request with that session id is processed, the session's expiry time is automatically updated to 24 hours from that time.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a user session",
+					"request": {
+						"url": "{{publicurl}}/{{db}}/_session",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "cookie",
+								"value": "{{cookie}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request deletes the session that currently authenticates the requests.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Create document copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody)",
+									"postman.setEnvironmentVariable(\"docid\", jsonData[\"id\"]);",
+									"postman.setEnvironmentVariable(\"rev\", jsonData[\"rev\"]);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{adminurl}}/{{db}}/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"boo\":\"bar\",\"channels\":[\"{{channelid}}\"]}"
+						},
+						"description": "This request creates a new document in the specified database. You can either specify the document ID by including the _id in the request message body (the value must be a string), or let the software generate an ID.\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server",
+			"request": {
+				"url": "{{publicurl}}/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Returns meta-information about the server.\n"
+			},
+			"response": []
+		}
+	]
+}
