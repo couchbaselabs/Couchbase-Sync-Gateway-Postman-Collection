@@ -1,0 +1,1570 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Sync Gateway-Admin",
+		"_postman_id": "459b6d86-d245-535e-bff5-86699635feed",
+		"description": "Documentation for the Sync Gateway Admin REST API. This page is generated from the Sync Gateway Admin Swagger spec, the exact same information is also available at [developer.couchbase.com/mobile/swagger/sync-gateway-admin](http://developer.couchbase.com/mobile/swagger/sync-gateway-admin/).\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "_config",
+			"description": "Folder for _config",
+			"item": [
+				{
+					"name": "Server configuration",
+					"request": {
+						"url": "{{adminurl}}/_config",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Returns the Sync Gateway configuration of the running instance. This is a good method to check if a \nparticular key was set correctly on the config file.\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "_expvar",
+			"description": "Folder for _expvar",
+			"item": [
+				{
+					"name": "Debugging/monitoring at runtime",
+					"request": {
+						"url": "{{adminurl}}/_expvar",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Number of runtime variables that you can view for debugging or performance monitoring purposes."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "_logging",
+			"description": "Folder for _logging",
+			"item": [
+				{
+					"name": "Logging tags",
+					"request": {
+						"url": "{{adminurl}}/_logging",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Get logging tags of running instance.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Specify logging tags",
+					"request": {
+						"url": "{{adminurl}}/_logging",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "The request body."
+						},
+						"description": "Log keys specify functional areas. Enabling logging for a log key provides additional diagnostic information for that area.\n\nFollowing are descriptions of the log keys that you can specify as a comma-separated list in the Log property. In some cases, a log key has two forms, one with a plus sign (+) suffix and one without, for example CRUD+ and CRUD. The log key with the plus sign logs more verbosely. For example for CRUD+, the log contains all of the messages for CRUD and additional ones for CRUD+.\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "_replicate",
+			"description": "Folder for _replicate",
+			"item": [
+				{
+					"name": "Starts or cancels a database replication operation",
+					"request": {
+						"url": "{{adminurl}}/_replicate",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"create_target\": true,\n  \"source\": \"{{localdb}}\",\n  \"target\": \"{{remotedb}}\",\n  \"continuous\": true,\n  \"query_params\": {},\n  \"replication_id\": \"string\",\n  \"cancel\": true\n}"
+						},
+						"description": "This request starts or cancels a database replication operation.\n\nYou can cancel continuous replications by adding the cancel field to the JSON request object and setting the value to true. Note that the structure of the request must be identical to the original for the cancellation request to be honoured. For example, if you requested continuous replication, the cancellation request must also contain the continuous field.\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "{db}",
+			"description": "Folder for {db}",
+			"item": [
+				{
+					"name": "Bulk docs",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_bulk_docs",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "The request body"
+						},
+						"description": "This request enables you to add, update, or delete multiple documents to a database in a single request. To add new documents, you can either specify the ID (`_id`) or let the software create an ID. To update existing documents, you must provide the document ID, revision identifier (`_rev`), and new document values. To delete existing documents you must provide the document ID, revision identifier, and the deletion flag (`_deleted`).\n\nThe JSON returned by the `_bulk_docs` operation consists of an array of JSON structures, one for each document in the original submission. The returned JSON structure should be examined to ensure that all of the documents submitted in the original request were successfully added to the database.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Bulk get",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_bulk_get?revs=false&attachments=false",
+						"method": "POST",
+						"header": [
+							{
+								"key": "//Accept",
+								"value": "application/json",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"docs\": [\n    {\n      \"id\": \"{{doc}}\"\n    }\n  ]\n}"
+						},
+						"description": "This request returns any number of documents, as individual bodies in a MIME multipart response.\nEach enclosed body contains one requested document. The bodies appear in the same order as in the request, but can also be identified by their X-Doc-ID and X-Rev-ID headers.\nA body for a document with no attachments will have content type application/json and contain the document itself.\nA body for a document that has attachments will be written as a nested multipart/related body. Its first part will be the document's JSON, and the subsequent parts will be the attachments (each identified by a Content-Disposition header giving its attachment name.)\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Get local doc",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_local/{{local_doc}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request retrieves a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by Couchbase Lite's replicator, as a place to store replication checkpoint data.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Create or update a local document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody)",
+									"postman.setEnvironmentVariable(\"localdocid\", jsonData[\"id\"]);",
+									"postman.setEnvironmentVariable(\"localrev\", jsonData[\"rev\"]);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_local/{{local_doc}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"foo\":\"bar\",\"foo2\":\"bar1\"}"
+						},
+						"description": "This request creates or updates a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by the client's replicator, as a place to store replication checkpoint data.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a local document",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_local/{{local_doc}}?rev={{rev}}&batch={{batch}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request deletes a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by Couchbase Lite's replicator, as a place to store replication checkpoint data.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Changes",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_changes?limit={{limit}}&style=main_only&active_only=false&include_docs=false&filter={{filter}}&channels={{channels}}&doc_ids={{doc_ids}}&feed=normal&since={{since}}&heartbeat=0&timeout=300000",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request retrieves a sorted list of changes made to documents in the database, in time order of application. Each document appears at most once, ordered by its most recent change, regardless of how many times it's been changed.\nThis request can be used to listen for update and modifications to the database for post processing or synchronization. A continuously connected changes feed is a reasonable approach for generating a real-time log for most applications.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Changes",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_changes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "The request body"
+						},
+						"description": "Same as the GET /_changes request except the parameters are in the JSON body.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Get document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"if (responseCode.code === 200) {",
+									"    ",
+									"var jsonData = JSON.parse(responseBody)",
+									"postman.setEnvironmentVariable(\"docid\", jsonData[\"_id\"]);",
+									"postman.setEnvironmentVariable(\"rev\", jsonData[\"_rev\"]);",
+									"",
+									"}",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{adminurl}}/{{db}}/{{doc}}?attachments=false&atts_since={{atts_since}}&open_revs={{open_revs}}&revs=false&show_exp=false",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This request retrieves a document from a database."
+					},
+					"response": []
+				},
+				{
+					"name": "Create or update document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody)",
+									"postman.setEnvironmentVariable(\"docid\", jsonData[\"id\"]);",
+									"postman.setEnvironmentVariable(\"rev\", jsonData[\"rev\"]);"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{adminurl}}/{{db}}/{{doc}}?new_edits=true&rev={{rev}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"foo1\":\"bar1\",\"type\":\"foobar\"}"
+						},
+						"description": "This request creates a new document or creates a new revision of an existing document. It enables you to specify the identifier for a new document rather than letting the software create an identifier. If you want to create a new document and let the software create an identifier, use the POST /db request.\nIf the document specified by doc does not exist, a new document is created and assigned the identifier specified in doc. If the document already exists, the document is updated with the JSON document in the message body and given a new revision.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete document",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/{{doc}}?rev={{rev}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This request deletes a document from the database. When a document is deleted, the revision number is updated so the database can track the deletion in synchronized copies.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Query a view",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_design/{{ddoc}}/_view/{{view}}?conflicts={{conflicts}}&descending={{descending}}&endkey={{endkey}}&end_key={{end_key}}&endkey_docid={{endkey_docid}}&end_key_doc_id={{end_key_doc_id}}&include_docs={{include_docs}}&inclusive_end={{inclusive_end}}&group={{group}}&group_level={{group_level}}&key={{key}}&limit={{limit}}&skip={{skip}}&stale={{stale}}&startkey={{startkey}}&start_key={{start_key}}&startkey_docid={{startkey_docid}}&update_seq={{update_seq}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Query a view on a design document. This endpoint is only accessible if you have enabled views in the Sync Gateway configuration file (see [this guide](/documentation/mobile/current/develop/guides/sync-gateway/views/index.html) for more information on this topic).\n"
+					},
+					"response": []
+				},
+				{
+					"name": "All docs",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_all_docs?access=false&channels=false&include_docs=false&revs=false&update_seq=false&limit={{limit}}&keys={{keys}}&startkey={{startkey}}&endkey={{endkey}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request returns a built-in view of all the documents in the database.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "All docs",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_all_docs?access=false&channels=false&include_docs=false&revs=false&update_seq=false",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request retrieves specified documents from the database.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "OpenID Connect Authentication.",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_oidc?offline={{offline}}&provider={{provider}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Called by clients to initiate the OIDC Authorization Code flow. \n"
+					},
+					"response": []
+				},
+				{
+					"name": "OpenID Connect Authentication callback.",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_oidc_callback?code={{code}}&provider={{provider}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Sync Gateway callback URL that clients are redirected to by the OpenID Connect provider. \n"
+					},
+					"response": []
+				},
+				{
+					"name": "OpenID Connect Authentication.",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_oidc_challenge?offline={{offline}}&provider={{provider}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Called by clients to initiate the OIDC Authorization Code flow. \n"
+					},
+					"response": []
+				},
+				{
+					"name": "OpenID Connect refresh.",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_oidc_refresh?refresh_token={{refresh_token}}&provider={{provider}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Used to obtain a new OpenID Connect ID token based on the provided refresh token.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Database info",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request retrieves information about the database.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Create database",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"server\": \"walrus:\",\n      \"bucket\": \"default\",\n      \"users\": { \"GUEST\": { \"disabled\": true, \"admin_channels\": [\"*\"] } }\n      }"
+						},
+						"description": "This request creates a database.\nYou can optionally pass the database config as the JSON body. For example:\n\n  {\n    \"server\":\"http://localhost:8091\",\n    \"bucket\": \"todo_app\",\n    \"users\": {\n      \"john\": {\"password\": \"pass\", \"admin_channels\": [\"*\"]}\n    }\n  }\n\nNote that if you pass the entire config file it won't work, it must be the database portion only (the database name is specified in the URL path). If the parameters passed are invalid it will create a walrus-backed database with all values set to default.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Create document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"if  (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody)",
+									"    postman.setEnvironmentVariable(\"docid\", jsonData[\"id\"]);",
+									"postman.setEnvironmentVariable(\"rev\", jsonData[\"rev\"]);",
+									"",
+									"}",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{adminurl}}/{{db}}/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"foo\":\"bar\"}"
+						},
+						"description": "This request creates a new document in the specified database. You can either specify the document ID by including the _id in the request message body (the value must be a string), or let the software generate an ID.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete database",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Delete database"
+					},
+					"response": []
+				},
+				{
+					"name": "Compact the database",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_compact",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request deletes obsolete backup revisions. When a new revision is created, the body of the previous non-conflicting revision is temporarily stored in a separate document. These backup documents are set to expire after 5 minutes. Calling the _compact endpoint will remove these backup documents immediately. For tombstone management operations, refer to the revs_limit configuration and the /{db}/_purge endpoint.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Database configuration",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_config",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Returns the Sync Gateway configuration of the database specified in the URL. This is a good method to check if a particular key was set correctly on the config file.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Update database configuration",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_config",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "The message body is a JSON document with the same set of properties described in the Database configuration section of the configuration file documentation."
+						},
+						"description": "This request updates the configuration for the database specified in the URL."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Views of a design document",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_design/{{ddoc}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Query a design document.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Query Views on a design document",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_design/{{ddoc}}/_view/{{view}}?include_docs={{include_docs}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Query a design document.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Update views of a design document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"if  (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody)",
+									"    postman.setEnvironmentVariable(\"ddocrev\", jsonData[\"rev\"]);",
+									"",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_design/{{ddoc}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"_rev\":\"{{rev}}\",\"views\": {\"{{view}}\": {\"map\": \"function(doc, meta) {if (doc.type == \\\"foobar\\\") {emit(doc.id, null);}}\"}}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create views of a design document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"if  (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody)",
+									"    postman.setEnvironmentVariable(\"ddocrev\", jsonData[\"rev\"]);",
+									"",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_design/{{ddoc}}/_view/{{view}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"_rev\":\"{{rev}}\",\"views\": {\"{{viewname}}\": {\"map\": \"function(doc, meta) {if (doc.type == \\\"foobar\\\") {emit(doc.name, null);}}\"}}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete design document",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_design/{{ddoc}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Delete a design document.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "This request takes the specified database offline.",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_offline",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Taking a database offline:\n\n- Cleanly closes all active _changes feeds for this database.\n- Rejects all access to the database through the Public REST API (503 Service Unavailable).\n- Rejects most Admin API requests (503 Service Unavailable). Sync Gateway processes a small set of Admin API \nrequests.\n- Does not take the backing Couchbase Server bucket offline. The bucket remains available and Sync Gateway \nkeeps its connection to the bucket.\n\nFor more information about taking a database offline and bringing it back online, see Taking databases offline and bringing them online.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Bring a database online.",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_online",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"delay\": 0\n}"
+						},
+						"description": "This request brings the specified database online, either immediately or after a specified delay.\n\nBringing a database online:\n\n- Closes the datbases connection to the backing Couchbase Server bucket.\n- Reloads the databse configuration, and connects to the backing Cocuhbase Server bucket.\n- Re-establishes access to the database from the Public REST API.\n- Accepts all Admin API reqieste.\n\nFor more information about taking a database offline and bringing it back online, see Taking databases \noffline and bringing them online.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Purge document",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_purge",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"a_doc_id\": [\n    \"{{docid}}\"\n  ]\n}"
+						},
+						"description": "The purge command provides a way to remove a document from the bucket itself. The operation removes all the revisions (active and tombstones) for the specified document(s). A common usage of this endpoint is to remove tombstone documents that are no longer needed, thus recovering storage space and reducing data replicated to clients. Other clients are not notified when a revision has been purged; so in order to purge a revision from the system it must be done from all databases (on Couchbase Lite and Sync Gateway).\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Document with metadata",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_raw/{{doc}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Returns the document with the metadata."
+					},
+					"response": []
+				},
+				{
+					"name": "Reprocess all documents by the database in the sync function.",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_resync",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request causes all documents to be reprocessed by the database sync function. The _resync operation should be called if the sync function for a databse has been modified in such a way that the channel or access mappings for any existing document would change as a result.\n\nWhen the sync function is invoked by _resync, the requireUser() and requireRole() calls will always return 'true'.\n\nA _resync operation on a database that is not in the offline state will be rejected (503 Service Unavailable).\n\nA _resync operation will block until all documents in the database have been processed.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Get roles",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_role",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request returns all the roles in the specified database."
+					},
+					"response": []
+				},
+				{
+					"name": "Get role",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_role/{{role}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Request a specific role by name."
+					},
+					"response": []
+				},
+				{
+					"name": "Creates or updates a role",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_role/{{role}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{role}}\",\n  \"admin_channels\": [\n    \"{{channelid}}\"\n  ]\n}"
+						},
+						"description": "This request creates or updates a role in the specified database."
+					},
+					"response": []
+				},
+				{
+					"name": "Deletes the role",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_role/{{name}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request deletes the role with the specified name in the specified database."
+					},
+					"response": []
+				},
+				{
+					"name": "Creates a new session",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"if  (responseCode.code === 200) {",
+									"    var jsonData = JSON.parse(responseBody)",
+									"    postman.setEnvironmentVariable(\"sessionId\", jsonData[\"session_id\"]);",
+									"",
+									"}"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"postman.setEnvironmentVariable(\"variable_key\", \"variable_value\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_session",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{name}}\",\n  \"ttl\": 86400\n}"
+						},
+						"description": "If the credentials provided in the request body are valid, the session is created with an idle session timeout of 24 hours. An idle session timeout in the context of Sync Gateway is defined as the following: if 10% or more of the current expiration time has elapsed when a subsequent request with that session id is processed, the session's expiry time is automatically updated to 24 hours from that time.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieves information about a session",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_session/{{sessionid}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request retrieves information about a session.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletes a single session",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_session/{{sessionid}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request deletes a single session.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletes all user sessions",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_user/{{name}}/_session",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request delete the session for the specified user."
+					},
+					"response": []
+				},
+				{
+					"name": "Deletes a specific user session",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_user/{{name}}/_session/{{sessionid}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request delete the specified session for the specified user."
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieves all users",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_user/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request returns all the users in the specified database."
+					},
+					"response": []
+				},
+				{
+					"name": "Creates a new user",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"postman.setEnvironmentVariable(\"channelid\", \"_{{name}}\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_user/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{name}}\",\n  \"password\": \"{{password}}\",\n  \"admin_channels\": [\n    \"{{channelid}}\"\n  ],\n  \"email\": \"{{email}}\",\n  \"disabled\": true\n}"
+						},
+						"description": "This request creates a new user in the specified database."
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieves a specific user",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_user/{{name}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request returns information about the specified user."
+					},
+					"response": []
+				},
+				{
+					"name": "Creates or updates a user",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_user/{{name}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{name}}\",\n  \"password\": \"{{password}}\",\n  \"admin_channels\": [\n    \"{{channelid}}\"\n  ],\n  \"admin_roles\":[\n  \t\"owner\"\n  \t],\n  \"email\": \"{{email}}\",\n  \"disabled\": false\n}"
+						},
+						"description": "This request creates or updates a user in the specified database."
+					},
+					"response": []
+				},
+				{
+					"name": "Deletes a user",
+					"request": {
+						"url": "{{adminurl}}/{{db}}/_user/{{name}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request deletes the user with the specified name in the specified database."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "{{db}}",
+			"description": "Folder for {{db}}",
+			"item": [
+				{
+					"name": "Get attachment",
+					"request": {
+						"url": {
+							"raw": "https://localhost:4985/:db/:doc/:attachment?rev={{rev}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"localhost"
+							],
+							"port": "4985",
+							"path": [
+								":db",
+								":doc",
+								":attachment"
+							],
+							"query": [
+								{
+									"key": "rev",
+									"value": "{{rev}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "\"db\"",
+									"id": "db"
+								},
+								{
+									"value": "",
+									"id": "doc"
+								},
+								{
+									"value": "",
+									"id": "attachment"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This request retrieves a file attachment associated with the document. The raw data of the associated attachment is returned (just as if you were accessing a static file). The Content-Type response header is the same content type set when the document attachment was added to the database.\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server",
+			"request": {
+				"url": "{{adminurl}}/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Returns meta-information about the server.\n"
+			},
+			"response": []
+		}
+	]
+}
