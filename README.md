@@ -1,4 +1,4 @@
-# SyncGateway-Postman-Collection
+# Couchbase Mobile Sync Gateway Postman Collection
 These are the Postman Collections and environment variable definition files for REST Interface to Couchbase Mobile Sync Gateway (Couchbase Mobile 1.4).
 
 - Sync-Gateway-Admin.postman_collection 
