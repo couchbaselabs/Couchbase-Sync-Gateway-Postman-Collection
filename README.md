@@ -13,8 +13,8 @@ This is the Portman collection corresponding to the Public interface of the Sync
 
 This is the Environment Definitions file that defines the variables used by the Admin and Public collections
 
-[Postman](https://www.getpostman.com/) is a Chrome Developer tool that can be downloaded for free from the [Chrome browser web store](https://chrome.google.com/webstore/search/postman)
+You can download [Postman](https://www.getpostman.com/) for free. There is a Pro version as well if you want to added functionality.
 
-Read more on how you can get started with this collection in this [blog post](http://blog.couchbase.com/querying-couchba…way-with-postman/).
+Read more on how you can get started with this collection in this [blog post](https://blog.couchbase.com/querying-couchbase-sync-gateway-with-postman/).
 
 ![Alt text](http://blog.couchbase.com/wp-content/uploads/2017/04/postman_featured-e1492094985530.png "Using Postman to Query The Sync Gateway Web Interface")
