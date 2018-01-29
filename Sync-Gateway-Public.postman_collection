@@ -1,35 +1,1231 @@
 {
-	"variables": [],
 	"info": {
-		"name": "Sync Gateway Public",
-		"_postman_id": "d9b73a83-13d7-ebc3-bd09-9d9e8afbaaae",
+		"name": "Sync Gateway Public (github)",
+		"_postman_id": "de226a79-0d5c-d655-0715-45c4313a11f8",
 		"description": "Documentation for the Sync Gateway Public REST API. This page is generated from the Sync Gateway Public Swagger spec, the exact same information is also available at [developer.couchbase.com/mobile/swagger/sync-gateway-public](http://developer.couchbase.com/mobile/swagger/sync-gateway-public/).\n",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "{db}",
+			"name": "replicate",
 			"description": "Folder for {db}",
 			"item": [
 				{
-					"name": "Get attachment",
+					"name": "Changes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc346b3e-4fa5-43d7-aa1f-04017e776e36",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
 					"request": {
-						"url": "{{publicurl}}/{{db}}/{{doc}}/{{attachment}}?rev={{rev}}",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": "This request retrieves a file attachment associated with the document. The raw data of the associated attachment is returned (just as if you were accessing a static file). The Content-Type response header is the same content type set when the document attachment was added to the database.\n"
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_changes?limit={{limit}}&style=main_only&active_only=false&include_docs=false&filter={{filter}}&channels={{channelid}}&doc_ids=[{{doc}}]&feed=normal&since={{since}}&heartbeat=0&timeout=300000",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_changes"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "{{limit}}",
+									"equals": true
+								},
+								{
+									"key": "style",
+									"value": "main_only",
+									"equals": true
+								},
+								{
+									"key": "active_only",
+									"value": "false",
+									"equals": true
+								},
+								{
+									"key": "include_docs",
+									"value": "false",
+									"equals": true
+								},
+								{
+									"key": "filter",
+									"value": "{{filter}}",
+									"equals": true
+								},
+								{
+									"key": "channels",
+									"value": "{{channelid}}",
+									"equals": true
+								},
+								{
+									"key": "doc_ids",
+									"value": "[{{doc}}]",
+									"equals": true
+								},
+								{
+									"key": "feed",
+									"value": "normal",
+									"equals": true
+								},
+								{
+									"key": "since",
+									"value": "{{since}}",
+									"equals": true
+								},
+								{
+									"key": "heartbeat",
+									"value": "0",
+									"equals": true
+								},
+								{
+									"key": "timeout",
+									"value": "300000",
+									"equals": true
+								}
+							]
+						},
+						"description": "This request retrieves a sorted list of changes made to documents in the database, in time order of application. Each document appears at most once, ordered by its most recent change, regardless of how many times it's been changed.\nThis request can be used to listen for update and modifications to the database for post processing or synchronization. A continuously connected changes feed is a reasonable approach for generating a real-time log for most applications.\n"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "0ff8183e-5aef-49a8-9dcd-3ab098f86745",
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_changes?limit={{limit}}&style=main_only&active_only=false&include_docs=false&filter={{filter}}&channels={{channelid}}&doc_ids=[{{doc}}]&feed=normal&since={{since}}&heartbeat=0&timeout=300000",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_changes"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "{{limit}}",
+											"equals": true
+										},
+										{
+											"key": "style",
+											"value": "main_only",
+											"equals": true
+										},
+										{
+											"key": "active_only",
+											"value": "false",
+											"equals": true
+										},
+										{
+											"key": "include_docs",
+											"value": "false",
+											"equals": true
+										},
+										{
+											"key": "filter",
+											"value": "{{filter}}",
+											"equals": true
+										},
+										{
+											"key": "channels",
+											"value": "{{channelid}}",
+											"equals": true
+										},
+										{
+											"key": "doc_ids",
+											"value": "[{{doc}}]",
+											"equals": true
+										},
+										{
+											"key": "feed",
+											"value": "normal",
+											"equals": true
+										},
+										{
+											"key": "since",
+											"value": "{{since}}",
+											"equals": true
+										},
+										{
+											"key": "heartbeat",
+											"value": "0",
+											"equals": true
+										},
+										{
+											"key": "timeout",
+											"value": "300000",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private, max-age=0, no-cache, no-store",
+									"name": "Cache-Control",
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"key": "Content-Length",
+									"value": "796",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Jan 2018 02:43:54 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 44,
+							"body": "{\"results\":[\r\n{\"seq\":\"2:1\",\"id\":\"_user/tester\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":2,\"id\":\"_user/admin\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":3,\"id\":\"_user/demo\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":9,\"id\":\"0b5b3564521d370dffa7d03996327a36\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":10,\"id\":\"1ea3728e4571967ba5841619ebcb7f98\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":11,\"id\":\"385aa0e987308114dcf1c9a85cadf5ca\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":12,\"id\":\"5a0ac4bbba6ae04abccd389e64a42281\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":13,\"id\":\"b48054057dc5b167e6ed6c4cc5e4b520\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":19,\"id\":\"db3627e655768550cc024933def3f265\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":20,\"id\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":21,\"id\":\"ee83120452394e09af05169b43c0a493\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":22,\"id\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":23,\"id\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":24,\"id\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":26,\"id\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"changes\":[{\"rev\":\"2-651a607cfc50800c9a4caff4e23a1a9a\"}]}\n,{\"seq\":29,\"id\":\"05bfcc578d2746d574a7b3565d37a765\",\"changes\":[{\"rev\":\"3-7fc6b14d68aaad1a6842c238cbd253d8\"}]}\n,{\"seq\":33,\"id\":\"70990ab0d9a3bb0fec069d284363efe1\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":34,\"id\":\"77f1ed7f21763bde7809e13584512a3b\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":35,\"id\":\"8e724c26b2db621e7fefd1b1069dc2a5\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":38,\"id\":\"_user/demouser\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":43,\"id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"changes\":[{\"rev\":\"2-6762ea8dd160bf55508fe50f275dc962\"}]}\n,{\"seq\":49,\"id\":\"4d36bf78d0c8c58b571346526e021b92\",\"changes\":[{\"rev\":\"1-2d1992f26066e9392f00abe72ba029a5\"}]}\n,{\"seq\":50,\"id\":\"61eb51de87862e146b647da19b150726\",\"changes\":[{\"rev\":\"1-2d1992f26066e9392f00abe72ba029a5\"}]}\n,{\"seq\":51,\"id\":\"74e457186e61ed8a7bc532b02b82ee3e\",\"changes\":[{\"rev\":\"1-3485f73b3b56c1a4a03a0e6f78eebd9d\"}]}\n,{\"seq\":52,\"id\":\"testdoc\",\"deleted\":true,\"changes\":[{\"rev\":\"17-c02f8137c81a141696f78ac549675315\"}]}\n],\n\"last_seq\":\"52\"}\n"
+						}
+					]
+				},
+				{
+					"name": "Changes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d50c7c3d-294a-498d-9ffa-464fcdd7db6b",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"limit\": 0,\n  \"style\": \"main_only\",\n  \"active_only\": false,\n  \"include_docs\": false,\n  \"filter\": \"{{filter}}\",\n  \"channels\": \"{{channelid}}\",\n  \"doc_ids\": [\n    \"{{docid}}\"\n  ],\n  \"feed\": \"normal\",\n  \"since\": 0,\n  \"heartbeat\": 0,\n  \"timeout\": 300000\n}"
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_changes",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_changes"
+							]
+						},
+						"description": "Same as the GET /_changes request except the parameters are in the JSON body.\n"
+					},
+					"response": [
+						{
+							"id": "88468ae1-c2e4-42a9-b9b4-79991f869eec",
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"limit\": 0,\n  \"style\": \"main_only\",\n  \"active_only\": false,\n  \"include_docs\": false,\n  \"filter\": \"{{filter}}\",\n  \"channels\": \"{{channelid}}\",\n  \"doc_ids\": [\n    \"{{docid}}\"\n  ],\n  \"feed\": \"normal\",\n  \"since\": 0,\n  \"heartbeat\": 0,\n  \"timeout\": 300000\n}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_changes",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_changes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private, max-age=0, no-cache, no-store",
+									"name": "Cache-Control",
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"key": "Content-Length",
+									"value": "796",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Jan 2018 02:44:53 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 30,
+							"body": "{\"results\":[\r\n{\"seq\":\"2:1\",\"id\":\"_user/tester\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":2,\"id\":\"_user/admin\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":3,\"id\":\"_user/demo\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":9,\"id\":\"0b5b3564521d370dffa7d03996327a36\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":10,\"id\":\"1ea3728e4571967ba5841619ebcb7f98\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":11,\"id\":\"385aa0e987308114dcf1c9a85cadf5ca\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":12,\"id\":\"5a0ac4bbba6ae04abccd389e64a42281\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":13,\"id\":\"b48054057dc5b167e6ed6c4cc5e4b520\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":19,\"id\":\"db3627e655768550cc024933def3f265\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":20,\"id\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":21,\"id\":\"ee83120452394e09af05169b43c0a493\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":22,\"id\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":23,\"id\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":24,\"id\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":26,\"id\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"changes\":[{\"rev\":\"2-651a607cfc50800c9a4caff4e23a1a9a\"}]}\n,{\"seq\":29,\"id\":\"05bfcc578d2746d574a7b3565d37a765\",\"changes\":[{\"rev\":\"3-7fc6b14d68aaad1a6842c238cbd253d8\"}]}\n,{\"seq\":33,\"id\":\"70990ab0d9a3bb0fec069d284363efe1\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":34,\"id\":\"77f1ed7f21763bde7809e13584512a3b\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":35,\"id\":\"8e724c26b2db621e7fefd1b1069dc2a5\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":38,\"id\":\"_user/demouser\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":43,\"id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"changes\":[{\"rev\":\"2-6762ea8dd160bf55508fe50f275dc962\"}]}\n,{\"seq\":49,\"id\":\"4d36bf78d0c8c58b571346526e021b92\",\"changes\":[{\"rev\":\"1-2d1992f26066e9392f00abe72ba029a5\"}]}\n,{\"seq\":50,\"id\":\"61eb51de87862e146b647da19b150726\",\"changes\":[{\"rev\":\"1-2d1992f26066e9392f00abe72ba029a5\"}]}\n,{\"seq\":51,\"id\":\"74e457186e61ed8a7bc532b02b82ee3e\",\"changes\":[{\"rev\":\"1-3485f73b3b56c1a4a03a0e6f78eebd9d\"}]}\n,{\"seq\":52,\"id\":\"testdoc\",\"deleted\":true,\"changes\":[{\"rev\":\"17-c02f8137c81a141696f78ac549675315\"}]}\n],\n\"last_seq\":\"52\"}\n"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "server",
+			"description": "",
+			"item": [
+				{
+					"name": "Server",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2205a198-f6d8-42eb-bc59-2232b50ac44f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{publicurl}}/",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								""
+							]
+						},
+						"description": "Returns meta-information about the server.\n"
+					},
+					"response": [
+						{
+							"id": "94a57982-ffff-4023-bd93-c1f94b0b519d",
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "132",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 04:05:24 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 5,
+							"body": "{\"couchdb\":\"Welcome\",\"vendor\":{\"name\":\"Couchbase Sync Gateway\",\"version\":1.5},\"version\":\"Couchbase Sync Gateway/1.5.0(594;e78dbf1)\"}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "documents",
+			"description": "",
+			"item": [
+				{
+					"name": "Create document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8ba0d46d-af6b-4c5a-9f66-f9b6733f508c",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Create Doc Success Test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"",
+									"  ",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"value\":\"{{body}}\", \"channels\":[\"{{channelid}}\"]}\n"
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								""
+							]
+						},
+						"description": "This request creates a new document in the specified database. You can either specify the document ID by including the _id in the request message body (the value must be a string), or let the software generate an ID.\n"
+					},
+					"response": [
+						{
+							"id": "54a8958d-db3e-4dea-a1c5-210440dec842",
+							"name": "401",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"key\":\"value\",\"channels\":[\"{{channelid}}\"]}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "49",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 20:25:13 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Www-Authenticate",
+									"value": "Basic realm=\"Couchbase Sync Gateway\"",
+									"name": "Www-Authenticate",
+									"description": "Indicates the authentication scheme that should be used to access the requested entity."
+								}
+							],
+							"cookie": [],
+							"responseTime": 104,
+							"body": "{\"error\":\"Unauthorized\",\"reason\":\"Invalid login\"}"
+						},
+						{
+							"id": "d7bc86d8-c0c3-4bc5-8eca-a12f75894167",
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": false
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
+										"disabled": false
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"value\":\"{{body}}\", \"channels\":[\"{{channelid}}\"]}\n"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "94",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 21:46:49 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Etag",
+									"value": "\"1-0783647b15c4435371a2d83d8f97d77f\"",
+									"name": "Etag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "Location",
+									"value": "61c24c83b8a9e57540b8f8b82a348b99",
+									"name": "Location",
+									"description": "Used in redirection, or when a new resource has been created."
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 75,
+							"body": "{\"id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"ok\":true,\"rev\":\"1-0783647b15c4435371a2d83d8f97d77f\"}"
+						}
+					]
+				},
+				{
+					"name": "Create document (PUT)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eb7f0412-bc06-4ceb-99d4-f2ba6c4e318c",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Create Doc Success Test\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    var jsonData = pm.response.json();",
+									"    var docId = jsonData[\"id\"];",
+									"    pm.expect(docId).to.eql(pm.environment.get(\"docid\"));",
+									"    var revId = jsonData[\"rev\"];",
+									"    pm.environment.set(\"rev\",revId);",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"value\":\"{{body}}\",\n  \"channels\":[\"{{channelid}}\"]\n}"
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/{{docid}}",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"{{docid}}"
+							]
+						},
+						"description": "This request creates a new document or creates a new revision of an existing document. It enables you to specify the identifier for a new document rather than letting the software create an identifier. If you want to create a new document and let the software create an identifier, use the POST /db request.\nIf the document specified by doc does not exist, a new document is created and assigned the identifier specified in doc. If the document already exists, the document is updated with the JSON document in the message body and given a new revision.\n"
+					},
+					"response": [
+						{
+							"id": "ddcf20cd-b97d-4f63-a08e-6568959de26c",
+							"name": "201",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"key\": \"value\",\n  \"type\":\"foobar\",\n  \"username\":\"{{name}}\",\n  \"channels\":[\"{{channelid}}\"]\n}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/{{doc}}?new_edits=true&rev={{rev}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{doc}}"
+									],
+									"query": [
+										{
+											"key": "new_edits",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "94",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 21:56:54 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Etag",
+									"value": "\"2-6762ea8dd160bf55508fe50f275dc962\"",
+									"name": "Etag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 37,
+							"body": "{\"id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"ok\":true,\"rev\":\"2-6762ea8dd160bf55508fe50f275dc962\"}"
+						},
+						{
+							"id": "ade9577d-7f5d-4fc1-b107-51505ac60c98",
+							"name": "409",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": false
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"key\": \"value\",\n  \"type\":\"foobar\",\n  \"username\":\"{{name}}\",\n  \"channels\":[\"{{channelid}}\"]\n}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/{{doc}}?new_edits=true&rev={{rev}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{doc}}"
+									],
+									"query": [
+										{
+											"key": "new_edits",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "58",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 21:57:10 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 6,
+							"body": "{\"error\":\"conflict\",\"reason\":\"Document revision conflict\"}"
+						}
+					]
+				},
+				{
+					"name": "update document (PUT)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eb7f0412-bc06-4ceb-99d4-f2ba6c4e318c",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Create Doc Success Test\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    var jsonData = pm.response.json();",
+									"    var docId = jsonData[\"id\"];",
+									"    pm.expect(docId).to.eql(pm.environment.get(\"docid\"));",
+									"    var revId = jsonData[\"rev\"];",
+									"    pm.environment.set(\"rev\",revId);",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"value\":\"{{updatedbody}}\",\n  \"channels\":[\"{{channelid}}\"]\n}"
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/{{docid}}?new_edits={{newedits}}&rev={{rev}}",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"{{docid}}"
+							],
+							"query": [
+								{
+									"key": "new_edits",
+									"value": "{{newedits}}",
+									"equals": true
+								},
+								{
+									"key": "rev",
+									"value": "{{rev}}",
+									"equals": true
+								}
+							]
+						},
+						"description": "This request creates a new document or creates a new revision of an existing document. It enables you to specify the identifier for a new document rather than letting the software create an identifier. If you want to create a new document and let the software create an identifier, use the POST /db request.\nIf the document specified by doc does not exist, a new document is created and assigned the identifier specified in doc. If the document already exists, the document is updated with the JSON document in the message body and given a new revision.\n"
+					},
+					"response": [
+						{
+							"id": "2d8537df-4163-46c9-9fd5-5d4f0a2bf9ee",
+							"name": "201",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"key\": \"value\",\n  \"type\":\"foobar\",\n  \"username\":\"{{name}}\",\n  \"channels\":[\"{{channelid}}\"]\n}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/{{doc}}?new_edits=true&rev={{rev}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{doc}}"
+									],
+									"query": [
+										{
+											"key": "new_edits",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "94",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 21:56:54 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Etag",
+									"value": "\"2-6762ea8dd160bf55508fe50f275dc962\"",
+									"name": "Etag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 37,
+							"body": "{\"id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"ok\":true,\"rev\":\"2-6762ea8dd160bf55508fe50f275dc962\"}"
+						},
+						{
+							"id": "d4acf384-b3ac-4cc8-aeb2-1c7817e4902b",
+							"name": "409",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": false
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"key\": \"value\",\n  \"type\":\"foobar\",\n  \"username\":\"{{name}}\",\n  \"channels\":[\"{{channelid}}\"]\n}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/{{doc}}?new_edits=true&rev={{rev}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{doc}}"
+									],
+									"query": [
+										{
+											"key": "new_edits",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "58",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 21:57:10 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 6,
+							"body": "{\"error\":\"conflict\",\"reason\":\"Document revision conflict\"}"
+						},
+						{
+							"id": "18f82e54-6a28-48b7-8a09-2880f270785a",
+							"name": "201",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\":\"{{updatedbody}}\",\n  \"channels\":[\"{{channelid}}\"]\n}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/{{docid}}?new_edits=true&rev={{rev}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{docid}}"
+									],
+									"query": [
+										{
+											"key": "new_edits",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "70",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 22:04:54 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Etag",
+									"value": "\"13-1f42890c242e24223afae914ff581a09\"",
+									"name": "Etag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 26,
+							"body": "{\"id\":\"testdoc\",\"ok\":true,\"rev\":\"13-1f42890c242e24223afae914ff581a09\"}"
+						}
+					]
 				},
 				{
 					"name": "Add or update document attachment",
@@ -37,196 +1233,279 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "855970de-1ad4-467d-82ff-f5bce4cab8a3",
 								"type": "text/javascript",
 								"exec": [
-									"if  (responseCode.code === 200) {",
-									"    var jsonData = JSON.parse(responseBody)",
-									"    postman.setEnvironmentVariable(\"doc\", jsonData[\"id\"]);",
-									"    postman.setEnvironmentVariable(\"rev\", jsonData[\"rev\"]);",
-									"}"
+									"pm.test(\"Create Doc Success Test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    var jsonData = pm.response.json();",
+									"    var docId = jsonData[\"_id\"];",
+									"    pm.expect(docId).to.eql(pm.environment.get(\"docid\"));",
+									"    var revId = jsonData[\"_rev\"];",
+									"    pm.environment.set(\"rev\",revId);",
+									"});",
+									""
 								]
 							}
 						}
 					],
 					"request": {
-						"url": "{{publicurl}}/{{db}}/{{doc}}/{{attachment}}?rev={{rev}}",
 						"method": "PUT",
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							},
 							{
 								"key": "Authorization",
-								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
-								"description": ""
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "{\"key1\":\"value1\"}"
+							"mode": "file",
+							"file": {
+								"src": ""
+							}
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/{{docid}}/{{attachment}}?rev={{rev}}",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"{{docid}}",
+								"{{attachment}}"
+							],
+							"query": [
+								{
+									"key": "rev",
+									"value": "{{rev}}",
+									"equals": true
+								}
+							]
 						},
 						"description": "This request adds or updates the supplied request content as an attachment to the specified document. The attachment name must be a URL-encoded string (the file name). You must also supply either the rev query parameter or the If-Match HTTP header for validation, and the Content-Type headers (to set the attachment content type).\n\n  When uploading an attachment using an existing attachment name, the corresponding stored content of the database will be updated. Because you must supply the revision information to add an attachment to the document, this serves as validation to update the existing attachment.\n\n  Uploading an attachment updates the corresponding document revision. Revisions are tracked for the parent document, not individual attachments.\n"
 					},
-					"response": []
-				},
-				{
-					"name": "Bulk docs",
-					"request": {
-						"url": "{{publicurl}}/{{db}}/_bulk_docs",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"docs\": [\n    {\n      \"id\": \"{{doc}}\"\n    }\n  ]\n}"
-						},
-						"description": "This request enables you to add, update, or delete multiple documents to a database in a single request. To add new documents, you can either specify the ID (`_id`) or let the software create an ID. To update existing documents, you must provide the document ID, revision identifier (`_rev`), and new document values. To delete existing documents you must provide the document ID, revision identifier, and the deletion flag (`_deleted`).\n\nThe JSON returned by the `_bulk_docs` operation consists of an array of JSON structures, one for each document in the original submission. The returned JSON structure should be examined to ensure that all of the documents submitted in the original request were successfully added to the database.\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Bulk get",
-					"request": {
-						"url": "{{publicurl}}/{{db}}/_bulk_get?revs=false&attachments=false",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
-								"description": ""
+					"response": [
+						{
+							"id": "f6eebcfd-1d5c-48ba-9adb-2f0f0d1661d5",
+							"name": "201",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {}
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/{{docid}}/{{attachment}}?rev={{rev}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{docid}}",
+										"{{attachment}}"
+									],
+									"query": [
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"equals": true
+										}
+									]
+								}
 							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"docs\": [\n    {\n      \"id\": \"{{doc}}\"\n    }\n  ]\n}"
-						},
-						"description": "This request returns any number of documents, as individual bodies in a MIME multipart response.\nEach enclosed body contains one requested document. The bodies appear in the same order as in the request, but can also be identified by their X-Doc-ID and X-Rev-ID headers.\nA body for a document with no attachments will have content type application/json and contain the document itself.\nA body for a document that has attachments will be written as a nested multipart/related body. Its first part will be the document's JSON, and the subsequent parts will be the attachments (each identified by a Content-Disposition header giving its attachment name.)\n"
-					},
-					"response": []
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "98",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 22:16:19 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Etag",
+									"value": "\"16-befb94aa99deb2ea420ef8050c15becf\"",
+									"name": "Etag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 30,
+							"body": "{\"_id\":\"testdoc\",\"_rev\":\"16-befb94aa99deb2ea420ef8050c15becf\",\"channels\":[\"_admin\"],\"value\":\"bar\"}"
+						}
+					]
 				},
 				{
-					"name": "Get local doc",
+					"name": "Get attachment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2683b2a8-ef95-4a82-b6ac-dbb577617d7b",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Create Doc Success Test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    var jsonData = pm.response.json();",
+									"    var docId = jsonData[\"_id\"];",
+									"    pm.expect(docId).to.eql(pm.environment.get(\"docid\"));",
+									"    var revId = jsonData[\"_rev\"];",
+									"    pm.expect(revId).to.eql(pm.environment.get(\"rev\"));",
+									"});",
+									""
+								]
+							}
+						}
+					],
 					"request": {
-						"url": "{{publicurl}}/{{db}}/_local/{{local_doc}}",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": "This request retrieves a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by Couchbase Lite's replicator, as a place to store replication checkpoint data.\n"
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/{{docid}}/{{attachment}}?rev={{rev}}",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"{{docid}}",
+								"{{attachment}}"
+							],
+							"query": [
+								{
+									"key": "rev",
+									"value": "{{rev}}",
+									"equals": true
+								}
+							]
+						},
+						"description": "This request retrieves a file attachment associated with the document. The raw data of the associated attachment is returned (just as if you were accessing a static file). The Content-Type response header is the same content type set when the document attachment was added to the database.\n"
 					},
-					"response": []
-				},
-				{
-					"name": "Create or update a local document",
-					"request": {
-						"url": "{{publicurl}}/{{db}}/_local/{{local_doc}}",
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"description": ""
+					"response": [
+						{
+							"id": "358fcbf5-892c-4e5d-8a94-44d5f2ab684a",
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/{{docid}}/{{attachment}}?rev={{rev}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{docid}}",
+										"{{attachment}}"
+									],
+									"query": [
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"equals": true
+										}
+									]
+								}
 							},
-							{
-								"key": "Authorization",
-								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
-								"description": ""
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"key\": \"random_value\",\n  \"username\":\"{{name}}\"\n}"
-						},
-						"description": "This request creates or updates a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by the client's replicator, as a place to store replication checkpoint data.\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a local document",
-					"request": {
-						"url": "{{publicurl}}/{{db}}/_local/{{local_doc}}?rev={{rev}}&batch={{batch}}",
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": "This request deletes a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by Couchbase Lite's replicator, as a place to store replication checkpoint data.\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Changes",
-					"request": {
-						"url": "{{publicurl}}/{{db}}/_changes?limit={{limit}}&style=main_only&active_only=false&include_docs=false&filter={{filter}}&channels={{channelid}}&doc_ids=[{{doc}}]&feed=normal&since={{since}}&heartbeat=0&timeout=300000",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {},
-						"description": "This request retrieves a sorted list of changes made to documents in the database, in time order of application. Each document appears at most once, ordered by its most recent change, regardless of how many times it's been changed.\nThis request can be used to listen for update and modifications to the database for post processing or synchronization. A continuously connected changes feed is a reasonable approach for generating a real-time log for most applications.\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Changes",
-					"request": {
-						"url": "{{publicurl}}/{{db}}/_changes",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"limit\": 0,\n  \"style\": \"main_only\",\n  \"active_only\": false,\n  \"include_docs\": false,\n  \"filter\": \"{{filter}}\",\n  \"channels\": \"{{channelid}}\",\n  \"doc_ids\": [\n    \"{{doc}}\"\n  ],\n  \"feed\": \"normal\",\n  \"since\": 0,\n  \"heartbeat\": 0,\n  \"timeout\": 300000\n}"
-						},
-						"description": "Same as the GET /_changes request except the parameters are in the JSON body.\n"
-					},
-					"response": []
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "98",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 22:25:33 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Etag",
+									"value": "\"16-befb94aa99deb2ea420ef8050c15becf\"",
+									"name": "Etag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 21,
+							"body": "{\"_id\":\"testdoc\",\"_rev\":\"16-befb94aa99deb2ea420ef8050c15becf\",\"channels\":[\"_admin\"],\"value\":\"bar\"}"
+						}
+					]
 				},
 				{
 					"name": "Get document",
@@ -234,174 +1513,2194 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "8ed981ea-3641-4c52-bf96-0b2b40a78460",
 								"type": "text/javascript",
 								"exec": [
-									"var jsonData = JSON.parse(responseBody)",
-									"postman.setEnvironmentVariable(\"docid\", jsonData[\"_id\"]);",
-									"postman.setEnvironmentVariable(\"rev\", jsonData[\"_rev\"]);"
+									"pm.test(\"Create Doc Success Test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    var jsonData = pm.response.json();",
+									"    var docId = jsonData[\"_id\"];",
+									"    pm.expect(docId).to.eql(pm.environment.get(\"docid\"));",
+									"    var revId = jsonData[\"_rev\"];",
+									"    pm.expect(revId).to.eql(pm.environment.get(\"rev\"));",
+									"});",
+									""
 								]
 							}
 						}
 					],
 					"request": {
-						"url": "{{publicurl}}/{{db}}/{{doc}}?attachments=false&atts_since={{atts_since}}&open_revs={{open_revs}}&revs=false&show_exp=false",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/{{docid}}?attachments=true&atts_since={{atts_since}}&open_revs={{open_revs}}&revs=true&show_exp=false",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"{{docid}}"
+							],
+							"query": [
+								{
+									"key": "attachments",
+									"value": "true",
+									"equals": true
+								},
+								{
+									"key": "atts_since",
+									"value": "{{atts_since}}",
+									"equals": true
+								},
+								{
+									"key": "open_revs",
+									"value": "{{open_revs}}",
+									"equals": true
+								},
+								{
+									"key": "revs",
+									"value": "true",
+									"equals": true
+								},
+								{
+									"key": "show_exp",
+									"value": "false",
+									"equals": true
+								}
+							]
+						},
 						"description": "This request retrieves a document from a database."
 					},
-					"response": []
+					"response": [
+						{
+							"id": "01e692ea-0bae-4cb6-b152-a31a57a9b6bc",
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/{{docid}}?attachments=true&atts_since={{atts_since}}&open_revs={{open_revs}}&revs=true&show_exp=false",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{docid}}"
+									],
+									"query": [
+										{
+											"key": "attachments",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "atts_since",
+											"value": "{{atts_since}}",
+											"equals": true
+										},
+										{
+											"key": "open_revs",
+											"value": "{{open_revs}}",
+											"equals": true
+										},
+										{
+											"key": "revs",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "show_exp",
+											"value": "false",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "692",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 22:21:50 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Etag",
+									"value": "\"16-befb94aa99deb2ea420ef8050c15becf\"",
+									"name": "Etag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 22,
+							"body": "{\"_id\":\"testdoc\",\"_rev\":\"16-befb94aa99deb2ea420ef8050c15becf\",\"_revisions\":{\"ids\":[\"befb94aa99deb2ea420ef8050c15becf\",\"e589389fd64c95f6522efc498f10d33e\",\"f85e3d5281484f9bd779782c4570b9ae\",\"1f42890c242e24223afae914ff581a09\",\"18c60885efa1e467147253c9a69a07c0\",\"f05cff3ebc503ae9b3486c378d0b1a5f\",\"8d20176b8e5a7bcfbc0cf19a0a9b332d\",\"10dd956b7f818d324ee79e6c39995a97\",\"c7bde27dc8f25b59eddf1687254859e4\",\"68aeb4230dea31f5496db20afa2a12fc\",\"3fd41affdfd92e2fb8e9ea6abbfe90bd\",\"373546b6ca3ec862069d1ba932507867\",\"03b2117982b33ba9476bfda1f2a8881b\",\"faa0e0235486e0b6add78cc9e0f89e08\",\"85a0310f52db4a60f506d461f4e81274\",\"179900bc134a6eac295515793bf80080\"],\"start\":16},\"channels\":[\"_admin\"],\"value\":\"bar\"}"
+						},
+						{
+							"id": "3649d31a-18fc-4098-b1fd-cd95a3075c2f",
+							"name": "404",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/{{docid}}?attachments=true&atts_since={{atts_since}}&open_revs={{open_revs}}&revs=true&show_exp=false",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{docid}}"
+									],
+									"query": [
+										{
+											"key": "attachments",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "atts_since",
+											"value": "{{atts_since}}",
+											"equals": true
+										},
+										{
+											"key": "open_revs",
+											"value": "{{open_revs}}",
+											"equals": true
+										},
+										{
+											"key": "revs",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "show_exp",
+											"value": "false",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "40",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 23:28:15 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 17,
+							"body": "{\"error\":\"not_found\",\"reason\":\"deleted\"}"
+						}
+					]
 				},
 				{
-					"name": "Create or update document",
+					"name": "All docs",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
+								"id": "c9807aa5-dd0d-471d-b53f-da531a5dc795",
 								"type": "text/javascript",
 								"exec": [
-									"if  (responseCode.code === 200) {",
-									"    var jsonData = JSON.parse(responseBody)",
-									"    postman.setEnvironmentVariable(\"doc\", jsonData[\"id\"]);",
-									"    postman.setEnvironmentVariable(\"rev\", jsonData[\"rev\"]);",
-									"}"
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
 								]
 							}
 						}
 					],
 					"request": {
-						"url": "{{publicurl}}/{{db}}/{{doc}}?new_edits=true&rev={{rev}}",
-						"method": "PUT",
+						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"description": ""
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							},
 							{
 								"key": "Authorization",
-								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"key\": \"value\",\n  \"type\":\"foobar\",\n  \"username\":\"{{name}}\",\n  \"channels\":[\"{{channelid}}\"]\n}"
-						},
-						"description": "This request creates a new document or creates a new revision of an existing document. It enables you to specify the identifier for a new document rather than letting the software create an identifier. If you want to create a new document and let the software create an identifier, use the POST /db request.\nIf the document specified by doc does not exist, a new document is created and assigned the identifier specified in doc. If the document already exists, the document is updated with the JSON document in the message body and given a new revision.\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete document",
-					"request": {
-						"url": "{{publicurl}}/{{db}}/{{doc}}?rev={{rev}}",
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"description": ""
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": "This request deletes a document from the database. When a document is deleted, the revision number is updated so the database can track the deletion in synchronized copies.\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Query a view",
-					"request": {
-						"url": "{{publicurl}}/{{db}}/_design/{{ddoc}}/_view/{{view}}?conflicts={{conflicts}}&descending={{descending}}&endkey={{endkey}}&end_key={{end_key}}&endkey_docid={{endkey_docid}}&end_key_doc_id={{end_key_doc_id}}&include_docs={{include_docs}}&inclusive_end={{inclusive_end}}&group={{group}}&group_level={{group_level}}&key={{key}}&limit={{limit}}&skip={{skip}}&stale={{stale}}&startkey={{startkey}}&start_key={{start_key}}&startkey_docid={{startkey_docid}}&update_seq={{update_seq}}",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"description": ""
-							},
-							{
-								"key": "Authorization",
-								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
-								"description": ""
-							}
-						],
-						"body": {},
-						"description": "Query a view on a design document. This endpoint is only accessible if you have enabled views in the Sync Gateway configuration file (see [this guide](/documentation/mobile/current/develop/guides/sync-gateway/views/index.html) for more information on this topic).\n"
-					},
-					"response": []
-				},
-				{
-					"name": "All docs",
-					"request": {
-						"url": "{{publicurl}}/{{db}}/_all_docs?access=true&channels={{channels}}&include_docs=false&revs=false&update_seq=false&limit={{limit}}&keys={{keys}}&startkey={{startkey}}&endkey={{endkey}}",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"description": ""
-							},
-							{
-								"key": "Authorization",
-								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
-								"description": ""
-							}
-						],
-						"body": {},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_all_docs?access=true&channels={{channels}}&include_docs=true&revs=true&update_seq=false&limit={{limit}}&keys={{keys}}&startkey={{startkey}}&endkey={{endkey}}",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_all_docs"
+							],
+							"query": [
+								{
+									"key": "access",
+									"value": "true",
+									"equals": true
+								},
+								{
+									"key": "channels",
+									"value": "{{channels}}",
+									"equals": true
+								},
+								{
+									"key": "include_docs",
+									"value": "true",
+									"equals": true
+								},
+								{
+									"key": "revs",
+									"value": "true",
+									"equals": true
+								},
+								{
+									"key": "update_seq",
+									"value": "false",
+									"equals": true
+								},
+								{
+									"key": "limit",
+									"value": "{{limit}}",
+									"equals": true
+								},
+								{
+									"key": "keys",
+									"value": "{{keys}}",
+									"equals": true
+								},
+								{
+									"key": "startkey",
+									"value": "{{startkey}}",
+									"equals": true
+								},
+								{
+									"key": "endkey",
+									"value": "{{endkey}}",
+									"equals": true
+								}
+							]
+						},
 						"description": "This request returns a built-in view of all the documents in the database.\n"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "42a86716-e5e9-438d-a2f1-2e447b4e3b17",
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_all_docs?access=true&channels={{channels}}&include_docs=true&revs=true&update_seq=false&limit={{limit}}&keys={{keys}}&startkey={{startkey}}&endkey={{endkey}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_all_docs"
+									],
+									"query": [
+										{
+											"key": "access",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "channels",
+											"value": "{{channels}}",
+											"equals": true
+										},
+										{
+											"key": "include_docs",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "revs",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "update_seq",
+											"value": "false",
+											"equals": true
+										},
+										{
+											"key": "limit",
+											"value": "{{limit}}",
+											"equals": true
+										},
+										{
+											"key": "keys",
+											"value": "{{keys}}",
+											"equals": true
+										},
+										{
+											"key": "startkey",
+											"value": "{{startkey}}",
+											"equals": true
+										},
+										{
+											"key": "endkey",
+											"value": "{{endkey}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"key": "Content-Length",
+									"value": "1043",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 22:27:36 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 374,
+							"body": "{\"rows\":[\n{\"key\":\"05bfcc578d2746d574a7b3565d37a765\",\"id\":\"05bfcc578d2746d574a7b3565d37a765\",\"value\":{\"rev\":\"3-7fc6b14d68aaad1a6842c238cbd253d8\"},\"doc\":{\"_id\":\"05bfcc578d2746d574a7b3565d37a765\",\"_rev\":\"3-7fc6b14d68aaad1a6842c238cbd253d8\",\"_revisions\":{\"ids\":[\"7fc6b14d68aaad1a6842c238cbd253d8\",\"651a607cfc50800c9a4caff4e23a1a9a\",\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":3},\"value\":\"foobar\"}}\n,{\"key\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"id\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"value\":{\"rev\":\"2-651a607cfc50800c9a4caff4e23a1a9a\"},\"doc\":{\"_id\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"_rev\":\"2-651a607cfc50800c9a4caff4e23a1a9a\",\"_revisions\":{\"ids\":[\"651a607cfc50800c9a4caff4e23a1a9a\",\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":2},\"value\":\"foobar\"}}\n,{\"key\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"value\":{\"rev\":\"2-6762ea8dd160bf55508fe50f275dc962\"},\"doc\":{\"_id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"_rev\":\"2-6762ea8dd160bf55508fe50f275dc962\",\"_revisions\":{\"ids\":[\"6762ea8dd160bf55508fe50f275dc962\",\"0783647b15c4435371a2d83d8f97d77f\"],\"start\":2},\"channels\":[\"_admin\"],\"key\":\"value\",\"type\":\"foobar\",\"username\":\"admin\"}}\n,{\"key\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"id\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"id\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"70990ab0d9a3bb0fec069d284363efe1\",\"id\":\"70990ab0d9a3bb0fec069d284363efe1\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"70990ab0d9a3bb0fec069d284363efe1\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"77f1ed7f21763bde7809e13584512a3b\",\"id\":\"77f1ed7f21763bde7809e13584512a3b\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"77f1ed7f21763bde7809e13584512a3b\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"8e724c26b2db621e7fefd1b1069dc2a5\",\"id\":\"8e724c26b2db621e7fefd1b1069dc2a5\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"8e724c26b2db621e7fefd1b1069dc2a5\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"id\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"db3627e655768550cc024933def3f265\",\"id\":\"db3627e655768550cc024933def3f265\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"db3627e655768550cc024933def3f265\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"id\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"ee83120452394e09af05169b43c0a493\",\"id\":\"ee83120452394e09af05169b43c0a493\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"ee83120452394e09af05169b43c0a493\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"testdoc\",\"id\":\"testdoc\",\"value\":{\"rev\":\"16-befb94aa99deb2ea420ef8050c15becf\"},\"doc\":{\"_id\":\"testdoc\",\"_rev\":\"16-befb94aa99deb2ea420ef8050c15becf\",\"_revisions\":{\"ids\":[\"befb94aa99deb2ea420ef8050c15becf\",\"e589389fd64c95f6522efc498f10d33e\",\"f85e3d5281484f9bd779782c4570b9ae\",\"1f42890c242e24223afae914ff581a09\",\"18c60885efa1e467147253c9a69a07c0\",\"f05cff3ebc503ae9b3486c378d0b1a5f\",\"8d20176b8e5a7bcfbc0cf19a0a9b332d\",\"10dd956b7f818d324ee79e6c39995a97\",\"c7bde27dc8f25b59eddf1687254859e4\",\"68aeb4230dea31f5496db20afa2a12fc\",\"3fd41affdfd92e2fb8e9ea6abbfe90bd\",\"373546b6ca3ec862069d1ba932507867\",\"03b2117982b33ba9476bfda1f2a8881b\",\"faa0e0235486e0b6add78cc9e0f89e08\",\"85a0310f52db4a60f506d461f4e81274\",\"179900bc134a6eac295515793bf80080\"],\"start\":16},\"channels\":[\"_admin\"],\"value\":\"bar\"}}\n],\n\"total_rows\":13,\"update_seq\":48}"
+						}
+					]
 				},
 				{
-					"name": "All docs",
+					"name": "Get all docs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f7c0781c-c37c-4687-afb0-d78f70234b69",
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"pm.test(\"Get docs Success Test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"   ",
+									"    ",
+									"});",
+									""
+								]
+							}
+						}
+					],
 					"request": {
-						"url": "{{publicurl}}/{{db}}/_all_docs?access=false&channels=false&include_docs=false&revs=false&update_seq=false",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"keys\": [\n    \"{{doc}}\"\n  ]\n}"
+							"raw": "{\n  \"keys\": [\n    \"{{docid}}\"\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_all_docs?access=false&channels=false&include_docs=false&revs=false&update_seq=false",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_all_docs"
+							],
+							"query": [
+								{
+									"key": "access",
+									"value": "false",
+									"equals": true
+								},
+								{
+									"key": "channels",
+									"value": "false",
+									"equals": true
+								},
+								{
+									"key": "include_docs",
+									"value": "false",
+									"equals": true
+								},
+								{
+									"key": "revs",
+									"value": "false",
+									"equals": true
+								},
+								{
+									"key": "update_seq",
+									"value": "false",
+									"equals": true
+								}
+							]
 						},
 						"description": "This request retrieves specified documents from the database.\n"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "1667515c-dd25-48ee-80d7-fa5307770296",
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": false
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"keys\": [\n    \"{{docid}}\"\n  ]\n}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_all_docs?access=false&channels=false&include_docs=false&revs=false&update_seq=false",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_all_docs"
+									],
+									"query": [
+										{
+											"key": "access",
+											"value": "false",
+											"equals": true
+										},
+										{
+											"key": "channels",
+											"value": "false",
+											"equals": true
+										},
+										{
+											"key": "include_docs",
+											"value": "false",
+											"equals": true
+										},
+										{
+											"key": "revs",
+											"value": "false",
+											"equals": true
+										},
+										{
+											"key": "update_seq",
+											"value": "false",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"key": "Content-Length",
+									"value": "133",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 22:29:18 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 10,
+							"body": "{\"rows\":[\n{\"key\":\"testdoc\",\"id\":\"testdoc\",\"value\":{\"rev\":\"16-befb94aa99deb2ea420ef8050c15becf\"}}\n],\n\"total_rows\":1,\"update_seq\":48}"
+						}
+					]
 				},
 				{
-					"name": "OpenID Connect Authentication.",
+					"name": "Create bulk docs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4a0d285b-f580-4a44-b1d9-c5367f80590e",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Bulk Docs Create Success Test\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    var jsonData = pm.response.json();",
+									"   ",
+									"    var docId = jsonData[0][\"id\"];",
+									"    pm.environment.set(\"bulkdocid\",docId);",
+									"    var revId = jsonData[0][\"rev\"];",
+									"    pm.environment.set(\"bulkrev\",revId);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
 					"request": {
-						"url": "{{publicurl}}/{{db}}/_oidc?offline={{offline}}&provider={{provider}}",
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"docs\": [\n    {\n      \"id\": \"{{bulkdocid}}\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_bulk_docs",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_bulk_docs"
+							]
+						},
+						"description": "This request enables you to add, update, or delete multiple documents to a database in a single request. To add new documents, you can either specify the ID (`_id`) or let the software create an ID. To update existing documents, you must provide the document ID, revision identifier (`_rev`), and new document values. To delete existing documents you must provide the document ID, revision identifier, and the deletion flag (`_deleted`).\n\nThe JSON returned by the `_bulk_docs` operation consists of an array of JSON structures, one for each document in the original submission. The returned JSON structure should be examined to ensure that all of the documents submitted in the original request were successfully added to the database.\n"
+					},
+					"response": [
+						{
+							"id": "54b804ec-e746-4d5b-aa7e-ca234a761412",
+							"name": "415",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"docs\": [\n    {\n      \"id\": \"{{docid}}\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_bulk_docs",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_bulk_docs"
+									]
+								}
+							},
+							"status": "Unsupported Media Type",
+							"code": 415,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "77",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 22:50:31 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 15,
+							"body": "{\"error\":\"Unsupported Media Type\",\"reason\":\"Invalid content type text/plain\"}"
+						},
+						{
+							"id": "0862f2e7-18c1-4591-805d-4ba4bdabae67",
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": false
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"docs\": [\n    {\n      \"id\": \"{{docid}}\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_bulk_docs",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_bulk_docs"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "86",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 22:50:51 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 25,
+							"body": "[{\"id\":\"4d36bf78d0c8c58b571346526e021b92\",\"rev\":\"1-2d1992f26066e9392f00abe72ba029a5\"}]"
+						},
+						{
+							"id": "cb4026b9-20f6-41ae-9df9-f3a1a8efc73f",
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": false
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"docs\": [\n    {\n      \"id\": \"{{docid}}\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_bulk_docs",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_bulk_docs"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "86",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 22:55:27 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 25,
+							"body": "[{\"id\":\"61eb51de87862e146b647da19b150726\",\"rev\":\"1-2d1992f26066e9392f00abe72ba029a5\"}]"
+						}
+					]
+				},
+				{
+					"name": "Bulk get",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e5c82d20-cee8-4cec-8eb6-7b7f84e50fcf",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    // stack overflow soluition here .",
+									"    //find the JSON in the multi part response. There isnt a built in mechanism",
+									"    var p, q;",
+									"    var foundFirstBracket = false;",
+									"    var stackCount = 0;",
+									"    for(var i = 0; i < responseBody.length; i++)",
+									"    {",
+									"        if(responseBody[i] === '{')",
+									"        {",
+									"            if(!foundFirstBracket) ",
+									"            {",
+									"                foundFirstBracket = true;",
+									"                p = i;",
+									"            }",
+									"            stackCount++;",
+									"        }",
+									"        else if(responseBody[i] === '}') ",
+									"        {",
+									"            stackCount--;",
+									"        }",
+									"        if(stackCount === 0 && foundFirstBracket)",
+									"        {",
+									"            q = i;",
+									"            break;",
+									"        }",
+									"    }",
+									"    var jsonString = responseBody.substring(p, q+1);",
+									"    var jsonData = JSON.parse(jsonString);",
+									"    console.log(jsonData);",
+									"",
+									"    var docId = jsonData[\"_id\"];",
+									"",
+									"    var currDoc = pm.environment.get(\"bulkdocid\");",
+									"    pm.expect(docId).to.eql(currDoc);",
+									" ",
+									"    var revId = jsonData[\"_rev\"];",
+									"",
+									"    var currRev = pm.environment.get(\"bulkrev\");",
+									"    pm.expect(revId).to.eql(currRev);",
+									" ",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"docs\": [\n    {\n      \"id\": \"{{bulkdocid}}\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_bulk_get?revs=false&attachments=false",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_bulk_get"
+							],
+							"query": [
+								{
+									"key": "revs",
+									"value": "false",
+									"equals": true
+								},
+								{
+									"key": "attachments",
+									"value": "false",
+									"equals": true
+								}
+							]
+						},
+						"description": "This request returns any number of documents, as individual bodies in a MIME multipart response.\nEach enclosed body contains one requested document. The bodies appear in the same order as in the request, but can also be identified by their X-Doc-ID and X-Rev-ID headers.\nA body for a document with no attachments will have content type application/json and contain the document itself.\nA body for a document that has attachments will be written as a nested multipart/related body. Its first part will be the document's JSON, and the subsequent parts will be the attachments (each identified by a Content-Disposition header giving its attachment name.)\n"
+					},
+					"response": [
+						{
+							"id": "371f21d5-10e2-432e-b8fb-35f8ccfbb5fb",
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"docs\": [\n    {\n      \"id\": \"{{doc}}\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_bulk_get?revs=false&attachments=false",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_bulk_get"
+									],
+									"query": [
+										{
+											"key": "revs",
+											"value": "false",
+											"equals": true
+										},
+										{
+											"key": "attachments",
+											"value": "false",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "raw",
+							"_postman_previewtype": "multipart",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "323",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "multipart/mixed; boundary=\"5c668afeb6ef20d6f67865e2a6eb7c63fa759eb7c523f99ac6fc2afee511\"",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 23:17:50 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 35,
+							"body": "--5c668afeb6ef20d6f67865e2a6eb7c63fa759eb7c523f99ac6fc2afee511\r\nContent-Type: application/json\r\n\r\n{\"_id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"_rev\":\"2-6762ea8dd160bf55508fe50f275dc962\",\"channels\":[\"_admin\"],\"key\":\"value\",\"type\":\"foobar\",\"username\":\"admin\"}\r\n--5c668afeb6ef20d6f67865e2a6eb7c63fa759eb7c523f99ac6fc2afee511--\r\n"
+						}
+					]
+				},
+				{
+					"name": "Delete document",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/{{docid}}?rev={{rev}}",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"{{docid}}"
+							],
+							"query": [
+								{
+									"key": "rev",
+									"value": "{{rev}}",
+									"equals": true
+								}
+							]
+						},
+						"description": "This request deletes a document from the database. When a document is deleted, the revision number is updated so the database can track the deletion in synchronized copies.\n"
+					},
+					"response": [
+						{
+							"id": "a3e443c0-fd17-46a9-a2b0-8496bec0002a",
+							"name": "409",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/{{doc}}?rev={{rev}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{doc}}"
+									],
+									"query": [
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "58",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 23:27:05 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 17,
+							"body": "{\"error\":\"conflict\",\"reason\":\"Document revision conflict\"}"
+						},
+						{
+							"id": "62fe9cbc-c2db-4ffd-978f-dca17128ac62",
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/{{docid}}?rev={{rev}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{docid}}"
+									],
+									"query": [
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "70",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 23:27:53 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 23,
+							"body": "{\"id\":\"testdoc\",\"ok\":true,\"rev\":\"17-c02f8137c81a141696f78ac549675315\"}"
+						}
+					]
+				},
+				{
+					"name": "Create  local document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9c32710b-f3ad-43c5-ac18-e9e08866e058",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Create Local Doc Success Test\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    var jsonData = pm.response.json();",
+									"    var docId = jsonData[\"id\"];",
+									"    pm.expect(docId).to.eql(\"_local/\"+pm.environment.get(\"localdocid\"));",
+									"    var revId = jsonData[\"rev\"];",
+									"    pm.environment.set(\"localrev\",revId);",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"value\":\"{{localbody}}\"}"
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_local/{{localdocid}}",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_local",
+								"{{localdocid}}"
+							]
+						},
+						"description": "This request creates or updates a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by the client's replicator, as a place to store replication checkpoint data.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Get local doc",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6df77cc8-17ad-4cc8-b75a-05a74602d5f4",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Get Doc Success Test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    var jsonData = pm.response.json();",
+									"    var docId = jsonData[\"_id\"];",
+									"    var currDoc = pm.environment.get(\"localdocid\");",
+									"    pm.expect(docId).to.eql(\"_local/\"+currDoc);",
+									" ",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_local/{{localdocid}}",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_local",
+								"{{localdocid}}"
+							]
+						},
+						"description": "This request retrieves a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by Couchbase Lite's replicator, as a place to store replication checkpoint data.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a local document",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_local/{{localdocid}}?rev={{localrev}}&batch={{batch}}",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_local",
+								"{{localdocid}}"
+							],
+							"query": [
+								{
+									"key": "rev",
+									"value": "{{localrev}}",
+									"equals": true
+								},
+								{
+									"key": "batch",
+									"value": "{{batch}}",
+									"equals": true
+								}
+							]
+						},
+						"description": "This request deletes a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by Couchbase Lite's replicator, as a place to store replication checkpoint data.\n"
+					},
+					"response": [
+						{
+							"id": "65ded4cb-fa90-4a3e-a4b7-ac2ed02288e1",
+							"name": "409",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_local/{{localdocid}}?rev={{rev}}&batch={{batch}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_local",
+										"{{localdocid}}"
+									],
+									"query": [
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"equals": true
+										},
+										{
+											"key": "batch",
+											"value": "{{batch}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "56",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 23:25:54 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 17,
+							"body": "{\"error\":\"conflict\",\"reason\":\"Document update conflict\"}"
+						},
+						{
+							"id": "45026aad-72aa-4308-86f1-93313dbbac61",
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_local/{{localdocid}}?rev={{localrev}}&batch={{batch}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_local",
+										"{{localdocid}}"
+									],
+									"query": [
+										{
+											"key": "rev",
+											"value": "{{localrev}}",
+											"equals": true
+										},
+										{
+											"key": "batch",
+											"value": "{{batch}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 23:26:43 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 17,
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "session",
+			"description": "",
+			"item": [
+				{
+					"name": "Create a user session",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b27aba80-b313-49ba-a7f4-98b2b699855b",
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    var jsonData = pm.response.json();",
+									"    pm.environment.set(\"sessionid\",jsonData[\"session_id\"]);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{name}}\",\n  \"ttl\": 86400\n}"
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_session",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_session"
+							]
+						},
+						"description": "If the credentials provided in the request body are valid, the session is created with an idle session timeout of 24 hours. An idle session timeout in the context of Sync Gateway is defined as the following: if 10% or more of the current expiration time has elapsed when a subsequent request with that session id is processed, the session's expiry time is automatically updated to 24 hours from that time.\n"
+					},
+					"response": [
+						{
+							"id": "aacd6326-1020-4ff8-bab7-7b4389f03a18",
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"{{name}}\",\n  \"ttl\": 86400\n}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_session",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_session"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "110",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Jan 2018 02:41:55 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SyncGatewaySession=9367cb559c19c0a8117c4b088ad1c1a8aa833294; Path=/demodb; Expires=Tue, 30 Jan 2018 02:41:55 GMT",
+									"name": "Set-Cookie",
+									"description": "an HTTP cookie"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Mon Jan 29 2018 21:41:55 GMT-0500 (EST)",
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/demodb",
+									"secure": false,
+									"value": "9367cb559c19c0a8117c4b088ad1c1a8aa833294",
+									"key": "SyncGatewaySession"
+								}
+							],
+							"responseTime": 22,
+							"body": "{\"authentication_handlers\":[\"default\",\"cookie\"],\"ok\":true,\"userCtx\":{\"channels\":{\"!\":1,\"*\":2},\"name\":\"admin\"}}"
+						}
+					]
+				},
+				{
+					"name": "Delete a user session",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "{{cookie}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_session",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_session"
+							]
+						},
+						"description": "This request deletes the session that currently authenticates the requests.\n"
+					},
+					"response": [
+						{
+							"id": "9d8c1b06-9fda-46ee-be58-ff655c67b1dd",
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "cookie",
+										"value": "{{cookie}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_session",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_session"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Jan 2018 02:43:04 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SyncGatewaySession=; Expires=Mon, 29 Jan 2018 02:43:04 GMT",
+									"name": "Set-Cookie",
+									"description": "an HTTP cookie"
+								}
+							],
+							"cookie": [],
+							"responseTime": 6,
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "views",
+			"description": "",
+			"item": [
+				{
+					"name": "Query a view",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_design/{{ddoc}}/_view/{{view}}?conflicts={{conflicts}}&descending={{descending}}&endkey={{endkey}}&end_key={{end_key}}&endkey_docid={{endkey_docid}}&end_key_doc_id={{end_key_doc_id}}&include_docs={{include_docs}}&inclusive_end={{inclusive_end}}&group={{group}}&group_level={{group_level}}&key={{key}}&limit={{limit}}&skip={{skip}}&stale={{stale}}&startkey={{startkey}}&start_key={{start_key}}&startkey_docid={{startkey_docid}}&update_seq={{update_seq}}",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_design",
+								"{{ddoc}}",
+								"_view",
+								"{{view}}"
+							],
+							"query": [
+								{
+									"key": "conflicts",
+									"value": "{{conflicts}}"
+								},
+								{
+									"key": "descending",
+									"value": "{{descending}}"
+								},
+								{
+									"key": "endkey",
+									"value": "{{endkey}}"
+								},
+								{
+									"key": "end_key",
+									"value": "{{end_key}}"
+								},
+								{
+									"key": "endkey_docid",
+									"value": "{{endkey_docid}}"
+								},
+								{
+									"key": "end_key_doc_id",
+									"value": "{{end_key_doc_id}}"
+								},
+								{
+									"key": "include_docs",
+									"value": "{{include_docs}}"
+								},
+								{
+									"key": "inclusive_end",
+									"value": "{{inclusive_end}}"
+								},
+								{
+									"key": "group",
+									"value": "{{group}}"
+								},
+								{
+									"key": "group_level",
+									"value": "{{group_level}}"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "limit",
+									"value": "{{limit}}"
+								},
+								{
+									"key": "skip",
+									"value": "{{skip}}"
+								},
+								{
+									"key": "stale",
+									"value": "{{stale}}"
+								},
+								{
+									"key": "startkey",
+									"value": "{{startkey}}"
+								},
+								{
+									"key": "start_key",
+									"value": "{{start_key}}"
+								},
+								{
+									"key": "startkey_docid",
+									"value": "{{startkey_docid}}"
+								},
+								{
+									"key": "update_seq",
+									"value": "{{update_seq}}"
+								}
+							]
+						},
+						"description": "Query a view on a design document. This endpoint is only accessible if you have enabled views in the Sync Gateway configuration file (see [this guide](/documentation/mobile/current/develop/guides/sync-gateway/views/index.html) for more information on this topic).\n"
+					},
+					"response": [
+						{
+							"id": "9a2a6bd6-8b1c-491a-bf06-f1dc030ce3de",
+							"name": "403",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_design/{{ddoc}}/_view/{{view}}?conflicts={{conflicts}}&descending={{descending}}&endkey={{endkey}}&end_key={{end_key}}&endkey_docid={{endkey_docid}}&end_key_doc_id={{end_key_doc_id}}&include_docs={{include_docs}}&inclusive_end={{inclusive_end}}&group={{group}}&group_level={{group_level}}&key={{key}}&limit={{limit}}&skip={{skip}}&stale={{stale}}&startkey={{startkey}}&start_key={{start_key}}&startkey_docid={{startkey_docid}}&update_seq={{update_seq}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_design",
+										"{{ddoc}}",
+										"_view",
+										"{{view}}"
+									],
+									"query": [
+										{
+											"key": "conflicts",
+											"value": "{{conflicts}}",
+											"equals": true
+										},
+										{
+											"key": "descending",
+											"value": "{{descending}}",
+											"equals": true
+										},
+										{
+											"key": "endkey",
+											"value": "{{endkey}}",
+											"equals": true
+										},
+										{
+											"key": "end_key",
+											"value": "{{end_key}}",
+											"equals": true
+										},
+										{
+											"key": "endkey_docid",
+											"value": "{{endkey_docid}}",
+											"equals": true
+										},
+										{
+											"key": "end_key_doc_id",
+											"value": "{{end_key_doc_id}}",
+											"equals": true
+										},
+										{
+											"key": "include_docs",
+											"value": "{{include_docs}}",
+											"equals": true
+										},
+										{
+											"key": "inclusive_end",
+											"value": "{{inclusive_end}}",
+											"equals": true
+										},
+										{
+											"key": "group",
+											"value": "{{group}}",
+											"equals": true
+										},
+										{
+											"key": "group_level",
+											"value": "{{group_level}}",
+											"equals": true
+										},
+										{
+											"key": "key",
+											"value": "{{key}}",
+											"equals": true
+										},
+										{
+											"key": "limit",
+											"value": "{{limit}}",
+											"equals": true
+										},
+										{
+											"key": "skip",
+											"value": "{{skip}}",
+											"equals": true
+										},
+										{
+											"key": "stale",
+											"value": "{{stale}}",
+											"equals": true
+										},
+										{
+											"key": "startkey",
+											"value": "{{startkey}}",
+											"equals": true
+										},
+										{
+											"key": "start_key",
+											"value": "{{start_key}}",
+											"equals": true
+										},
+										{
+											"key": "startkey_docid",
+											"value": "{{startkey_docid}}",
+											"equals": true
+										},
+										{
+											"key": "update_seq",
+											"value": "{{update_seq}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "42",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 23:32:17 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 7,
+							"body": "{\"error\":\"Forbidden\",\"reason\":\"forbidden\"}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "database",
+			"description": "",
+			"item": [
+				{
+					"name": "Database info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f7d22daa-d5c8-447c-92d6-a5aa2ddaa965",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Get Database Info Success Test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    var jsonData = pm.response.json();",
+									"    var dbName = jsonData[\"db_name\"];",
+									"    var currDB = pm.environment.get(\"db\");",
+									"    pm.expect(dbName).to.eql(currDB);",
+									" ",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								""
+							]
+						},
+						"description": "This request retrieves information about the database.\n"
+					},
+					"response": [
+						{
+							"id": "acb8a4e6-659d-41e9-b3c5-26b7374c6464",
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "180",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 23:31:39 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 26,
+							"body": "{\"committed_update_seq\":52,\"compact_running\":false,\"db_name\":\"demodb\",\"disk_format_version\":0,\"instance_start_time\":1516923400395762,\"purge_seq\":0,\"state\":\"Online\",\"update_seq\":52}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "oidc",
+			"description": "",
+			"item": [
+				{
+					"name": "OpenID Connect Authentication.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_oidc?offline={{offline}}&provider={{provider}}",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_oidc"
+							],
+							"query": [
+								{
+									"key": "offline",
+									"value": "{{offline}}"
+								},
+								{
+									"key": "provider",
+									"value": "{{provider}}"
+								}
+							]
 						},
 						"description": "Called by clients to initiate the OIDC Authorization Code flow. \n"
 					},
@@ -410,18 +3709,36 @@
 				{
 					"name": "OpenID Connect Authentication callback.",
 					"request": {
-						"url": "{{publicurl}}/{{db}}/_oidc_callback?code={{code}}&provider={{provider}}",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_oidc_callback?code={{code}}&provider={{provider}}",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_oidc_callback"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "{{code}}"
+								},
+								{
+									"key": "provider",
+									"value": "{{provider}}"
+								}
+							]
 						},
 						"description": "Sync Gateway callback URL that clients are redirected to by the OpenID Connect provider. \n"
 					},
@@ -430,18 +3747,36 @@
 				{
 					"name": "OpenID Connect Authentication.",
 					"request": {
-						"url": "{{publicurl}}/{{db}}/_oidc_challenge?offline={{offline}}&provider={{provider}}",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_oidc_challenge?offline={{offline}}&provider={{provider}}",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_oidc_challenge"
+							],
+							"query": [
+								{
+									"key": "offline",
+									"value": "{{offline}}"
+								},
+								{
+									"key": "provider",
+									"value": "{{provider}}"
+								}
+							]
 						},
 						"description": "Called by clients to initiate the OIDC Authorization Code flow. \n"
 					},
@@ -450,202 +3785,79 @@
 				{
 					"name": "OpenID Connect refresh.",
 					"request": {
-						"url": "{{publicurl}}/{{db}}/_oidc_refresh?refresh_token={{refresh_token}}&provider={{provider}}",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"description": ""
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
+						},
+						"url": {
+							"raw": "{{publicurl}}/{{db}}/_oidc_refresh?refresh_token={{refresh_token}}&provider={{provider}}",
+							"host": [
+								"{{publicurl}}"
+							],
+							"path": [
+								"{{db}}",
+								"_oidc_refresh"
+							],
+							"query": [
+								{
+									"key": "refresh_token",
+									"value": "{{refresh_token}}"
+								},
+								{
+									"key": "provider",
+									"value": "{{provider}}"
+								}
+							]
 						},
 						"description": "Used to obtain a new OpenID Connect ID token based on the provided refresh token.\n"
 					},
 					"response": []
-				},
-				{
-					"name": "Database info",
-					"request": {
-						"url": "{{publicurl}}/{{db}}/",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {},
-						"description": "This request retrieves information about the database.\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Create document",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"var jsonData = JSON.parse(responseBody)",
-									"postman.setEnvironmentVariable(\"doc\", jsonData[\"id\"]);",
-									"postman.setEnvironmentVariable(\"rev\", jsonData[\"rev\"]);"
-								]
-							}
-						}
-					],
-					"request": {
-						"url": "{{publicurl}}/{{db}}/",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"description": ""
-							},
-							{
-								"key": "Authorization",
-								"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
-								"description": ""
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"key\":\"value\",\"channels\":[\"{{channelid}}\"]}"
-						},
-						"description": "This request creates a new document in the specified database. You can either specify the document ID by including the _id in the request message body (the value must be a string), or let the software generate an ID.\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Create a user session",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"if  (responseCode.code === 200) {",
-									"    var jsonData = JSON.parse(responseBody)",
-									"    postman.setEnvironmentVariable(\"sessionId\", jsonData[\"session_id\"]);",
-									"",
-									"}"
-								]
-							}
-						}
-					],
-					"request": {
-						"url": "{{publicurl}}/{{db}}/_session",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"name\": \"{{name}}\",\n  \"ttl\": 86400\n}"
-						},
-						"description": "If the credentials provided in the request body are valid, the session is created with an idle session timeout of 24 hours. An idle session timeout in the context of Sync Gateway is defined as the following: if 10% or more of the current expiration time has elapsed when a subsequent request with that session id is processed, the session's expiry time is automatically updated to 24 hours from that time.\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a user session",
-					"request": {
-						"url": "{{publicurl}}/{{db}}/_session",
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"description": ""
-							},
-							{
-								"key": "cookie",
-								"value": "{{cookie}}",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": "This request deletes the session that currently authenticates the requests.\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Create document copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"var jsonData = JSON.parse(responseBody)",
-									"postman.setEnvironmentVariable(\"docid\", jsonData[\"id\"]);",
-									"postman.setEnvironmentVariable(\"rev\", jsonData[\"rev\"]);"
-								]
-							}
-						}
-					],
-					"request": {
-						"url": "{{adminurl}}/{{db}}/",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"description": ""
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"boo\":\"bar\",\"channels\":[\"{{channelid}}\"]}"
-						},
-						"description": "This request creates a new document in the specified database. You can either specify the document ID by including the _id in the request message body (the value must be a string), or let the software generate an ID.\n"
-					},
-					"response": []
 				}
 			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "password",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b0f28a80-21d6-466b-ace8-87d17f82b1f9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		},
 		{
-			"name": "Server",
-			"request": {
-				"url": "{{publicurl}}/",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"description": "Returns meta-information about the server.\n"
-			},
-			"response": []
+			"listen": "test",
+			"script": {
+				"id": "4d0c4cd4-2a58-4769-af06-af7a1e4e4175",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
