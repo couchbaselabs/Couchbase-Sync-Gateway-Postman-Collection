@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "Sync Gateway Public (github)",
-		"_postman_id": "de226a79-0d5c-d655-0715-45c4313a11f8",
+		"_postman_id": "8b1d4e18-8c03-88b7-6e00-ab39a06e81e0",
 		"description": "Documentation for the Sync Gateway Public REST API. This page is generated from the Sync Gateway Public Swagger spec, the exact same information is also available at [developer.couchbase.com/mobile/swagger/sync-gateway-public](http://developer.couchbase.com/mobile/swagger/sync-gateway-public/).\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -109,7 +109,7 @@
 					},
 					"response": [
 						{
-							"id": "0ff8183e-5aef-49a8-9dcd-3ab098f86745",
+							"id": "3a4a02c9-1254-4153-bb35-a3926cd74098",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -281,7 +281,7 @@
 					},
 					"response": [
 						{
-							"id": "88468ae1-c2e4-42a9-b9b4-79991f869eec",
+							"id": "22cb2897-e9a3-46bd-aed7-3d160ca47791",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -358,7 +358,6 @@
 		},
 		{
 			"name": "server",
-			"description": "",
 			"item": [
 				{
 					"name": "Server",
@@ -401,7 +400,7 @@
 					},
 					"response": [
 						{
-							"id": "94a57982-ffff-4023-bd93-c1f94b0b519d",
+							"id": "1a8822f5-dd70-43f8-a40e-80a62739eef9",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -465,7 +464,6 @@
 		},
 		{
 			"name": "documents",
-			"description": "",
 			"item": [
 				{
 					"name": "Create document",
@@ -519,7 +517,7 @@
 					},
 					"response": [
 						{
-							"id": "54a8958d-db3e-4dea-a1c5-210440dec842",
+							"id": "d40b9ed1-1eb0-4856-ab8f-be56cc088ab0",
 							"name": "401",
 							"originalRequest": {
 								"method": "POST",
@@ -593,25 +591,22 @@
 							"body": "{\"error\":\"Unauthorized\",\"reason\":\"Invalid login\"}"
 						},
 						{
-							"id": "d7bc86d8-c0c3-4bc5-8eca-a12f75894167",
+							"id": "51d8fa13-de92-4cb8-bd57-962d7f273919",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									},
 									{
 										"key": "Authorization",
-										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
-										"disabled": false
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
 									},
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -733,7 +728,7 @@
 					},
 					"response": [
 						{
-							"id": "ddcf20cd-b97d-4f63-a08e-6568959de26c",
+							"id": "f3ad8cf1-e338-4667-8607-7a2600f3d898",
 							"name": "201",
 							"originalRequest": {
 								"method": "PUT",
@@ -819,25 +814,22 @@
 							"body": "{\"id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"ok\":true,\"rev\":\"2-6762ea8dd160bf55508fe50f275dc962\"}"
 						},
 						{
-							"id": "ade9577d-7f5d-4fc1-b107-51505ac60c98",
+							"id": "79d42740-89b6-451d-bc9c-bd4131d7198b",
 							"name": "409",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									},
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									},
 									{
 										"key": "Authorization",
-										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
-										"disabled": false
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
 									}
 								],
 								"body": {
@@ -971,7 +963,7 @@
 					},
 					"response": [
 						{
-							"id": "2d8537df-4163-46c9-9fd5-5d4f0a2bf9ee",
+							"id": "903854e4-5765-467b-978e-26d63dd0b079",
 							"name": "201",
 							"originalRequest": {
 								"method": "PUT",
@@ -1057,25 +1049,22 @@
 							"body": "{\"id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"ok\":true,\"rev\":\"2-6762ea8dd160bf55508fe50f275dc962\"}"
 						},
 						{
-							"id": "d4acf384-b3ac-4cc8-aeb2-1c7817e4902b",
+							"id": "4f5c49eb-e759-48ce-85c5-5f0e8a4f75a8",
 							"name": "409",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									},
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									},
 									{
 										"key": "Authorization",
-										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ=",
-										"disabled": false
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
 									}
 								],
 								"body": {
@@ -1140,7 +1129,7 @@
 							"body": "{\"error\":\"conflict\",\"reason\":\"Document revision conflict\"}"
 						},
 						{
-							"id": "18f82e54-6a28-48b7-8a09-2880f270785a",
+							"id": "a13e0433-08ca-4b2f-8274-4f5eb4ee7614",
 							"name": "201",
 							"originalRequest": {
 								"method": "PUT",
@@ -1293,7 +1282,7 @@
 					},
 					"response": [
 						{
-							"id": "f6eebcfd-1d5c-48ba-9adb-2f0f0d1661d5",
+							"id": "5eb3e0e0-46d7-4647-bf6f-2591616a3142",
 							"name": "201",
 							"originalRequest": {
 								"method": "PUT",
@@ -1313,7 +1302,9 @@
 								],
 								"body": {
 									"mode": "file",
-									"file": {}
+									"file": {
+										"src": ""
+									}
 								},
 								"url": {
 									"raw": "{{publicurl}}/{{db}}/{{docid}}/{{attachment}}?rev={{rev}}",
@@ -1432,7 +1423,7 @@
 					},
 					"response": [
 						{
-							"id": "358fcbf5-892c-4e5d-8a94-44d5f2ab684a",
+							"id": "d1eec0c4-b3b7-4beb-bbac-3db476ef52a1",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -1582,7 +1573,7 @@
 					},
 					"response": [
 						{
-							"id": "01e692ea-0bae-4cb6-b152-a31a57a9b6bc",
+							"id": "4b52f787-7870-4d4d-824d-05e6c1a57762",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -1675,15 +1666,14 @@
 							"body": "{\"_id\":\"testdoc\",\"_rev\":\"16-befb94aa99deb2ea420ef8050c15becf\",\"_revisions\":{\"ids\":[\"befb94aa99deb2ea420ef8050c15becf\",\"e589389fd64c95f6522efc498f10d33e\",\"f85e3d5281484f9bd779782c4570b9ae\",\"1f42890c242e24223afae914ff581a09\",\"18c60885efa1e467147253c9a69a07c0\",\"f05cff3ebc503ae9b3486c378d0b1a5f\",\"8d20176b8e5a7bcfbc0cf19a0a9b332d\",\"10dd956b7f818d324ee79e6c39995a97\",\"c7bde27dc8f25b59eddf1687254859e4\",\"68aeb4230dea31f5496db20afa2a12fc\",\"3fd41affdfd92e2fb8e9ea6abbfe90bd\",\"373546b6ca3ec862069d1ba932507867\",\"03b2117982b33ba9476bfda1f2a8881b\",\"faa0e0235486e0b6add78cc9e0f89e08\",\"85a0310f52db4a60f506d461f4e81274\",\"179900bc134a6eac295515793bf80080\"],\"start\":16},\"channels\":[\"_admin\"],\"value\":\"bar\"}"
 						},
 						{
-							"id": "3649d31a-18fc-4098-b1fd-cd95a3075c2f",
+							"id": "0dd6af90-8587-4fad-8786-95afeb8649bb",
 							"name": "404",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -1857,7 +1847,7 @@
 					},
 					"response": [
 						{
-							"id": "42a86716-e5e9-438d-a2f1-2e447b4e3b17",
+							"id": "07f4c04a-2626-4db7-ae66-3d6a059c00a0",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -2052,15 +2042,14 @@
 					},
 					"response": [
 						{
-							"id": "1667515c-dd25-48ee-80d7-fa5307770296",
+							"id": "0c0c6459-950f-4bac-bdc0-2653adf5b679",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									},
 									{
 										"key": "Content-Type",
@@ -2206,7 +2195,7 @@
 					},
 					"response": [
 						{
-							"id": "54b804ec-e746-4d5b-aa7e-ca234a761412",
+							"id": "59d5bae6-b2d3-4b29-9f89-ceb1ed26ee53",
 							"name": "415",
 							"originalRequest": {
 								"method": "POST",
@@ -2266,15 +2255,14 @@
 							"body": "{\"error\":\"Unsupported Media Type\",\"reason\":\"Invalid content type text/plain\"}"
 						},
 						{
-							"id": "0862f2e7-18c1-4591-805d-4ba4bdabae67",
+							"id": "538c35e6-b07c-48c7-9a8f-bd47e1c5f08f",
 							"name": "201",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									},
 									{
 										"key": "Content-Type",
@@ -2332,21 +2320,19 @@
 							"body": "[{\"id\":\"4d36bf78d0c8c58b571346526e021b92\",\"rev\":\"1-2d1992f26066e9392f00abe72ba029a5\"}]"
 						},
 						{
-							"id": "cb4026b9-20f6-41ae-9df9-f3a1a8efc73f",
+							"id": "4f0ea1c2-ccdf-4546-bdc6-cd31b6a9576f",
 							"name": "201",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									},
 									{
 										"key": "Content-Type",
 										"name": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -2498,7 +2484,7 @@
 					},
 					"response": [
 						{
-							"id": "371f21d5-10e2-432e-b8fb-35f8ccfbb5fb",
+							"id": "60ab9e1b-6d52-4490-8ab8-08c9563b1d9e",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -2610,7 +2596,7 @@
 					},
 					"response": [
 						{
-							"id": "a3e443c0-fd17-46a9-a2b0-8496bec0002a",
+							"id": "49ab7a58-9b50-4420-85c2-67867eb49958",
 							"name": "409",
 							"originalRequest": {
 								"method": "DELETE",
@@ -2677,15 +2663,14 @@
 							"body": "{\"error\":\"conflict\",\"reason\":\"Document revision conflict\"}"
 						},
 						{
-							"id": "62fe9cbc-c2db-4ffd-978f-dca17128ac62",
+							"id": "9f2f97b4-aaa2-40b1-9761-c3274b1518e7",
 							"name": "200",
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -2893,7 +2878,7 @@
 					},
 					"response": [
 						{
-							"id": "65ded4cb-fa90-4a3e-a4b7-ac2ed02288e1",
+							"id": "8afb6840-a650-4d1a-a51e-80669a68c7a0",
 							"name": "409",
 							"originalRequest": {
 								"method": "DELETE",
@@ -2966,15 +2951,14 @@
 							"body": "{\"error\":\"conflict\",\"reason\":\"Document update conflict\"}"
 						},
 						{
-							"id": "45026aad-72aa-4308-86f1-93313dbbac61",
+							"id": "114f2eba-a446-458d-8ffc-ae6bd0c27bf7",
 							"name": "200",
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -3045,7 +3029,6 @@
 		},
 		{
 			"name": "session",
-			"description": "",
 			"item": [
 				{
 					"name": "Create a user session",
@@ -3092,7 +3075,7 @@
 					},
 					"response": [
 						{
-							"id": "aacd6326-1020-4ff8-bab7-7b4389f03a18",
+							"id": "6873f164-8f4d-4052-a10f-c0f580637878",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -3155,7 +3138,7 @@
 							],
 							"cookie": [
 								{
-									"expires": "Mon Jan 29 2018 21:41:55 GMT-0500 (EST)",
+									"expires": "Invalid Date",
 									"httpOnly": false,
 									"domain": "localhost",
 									"path": "/demodb",
@@ -3201,7 +3184,7 @@
 					},
 					"response": [
 						{
-							"id": "9d8c1b06-9fda-46ee-be58-ff655c67b1dd",
+							"id": "431400b9-f257-4524-8d3b-93adb0ebe613",
 							"name": "200",
 							"originalRequest": {
 								"method": "DELETE",
@@ -3276,7 +3259,6 @@
 		},
 		{
 			"name": "views",
-			"description": "",
 			"item": [
 				{
 					"name": "Query a view",
@@ -3387,7 +3369,7 @@
 					},
 					"response": [
 						{
-							"id": "9a2a6bd6-8b1c-491a-bf06-f1dc030ce3de",
+							"id": "ad7b5d5a-b97e-4630-ad8a-142d4fe38117",
 							"name": "403",
 							"originalRequest": {
 								"method": "GET",
@@ -3551,7 +3533,6 @@
 		},
 		{
 			"name": "database",
-			"description": "",
 			"item": [
 				{
 					"name": "Database info",
@@ -3559,7 +3540,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f7d22daa-d5c8-447c-92d6-a5aa2ddaa965",
+								"id": "e19ded0d-4b42-4927-ade4-f347a5f74994",
 								"type": "text/javascript",
 								"exec": [
 									"pm.test(\"Get Database Info Success Test\", function () {",
@@ -3568,6 +3549,8 @@
 									"    var dbName = jsonData[\"db_name\"];",
 									"    var currDB = pm.environment.get(\"db\");",
 									"    pm.expect(dbName).to.eql(currDB);",
+									"    var lastSeq = jsonData[\"update_seq\"];",
+									"    pm.environment.set(\"update_seq\",lastSeq);",
 									" ",
 									"});",
 									""
@@ -3601,7 +3584,7 @@
 					},
 					"response": [
 						{
-							"id": "acb8a4e6-659d-41e9-b3c5-26b7374c6464",
+							"id": "5538bfdf-9509-4c2a-a8b9-e70c7d9fd9fa",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -3666,7 +3649,6 @@
 		},
 		{
 			"name": "oidc",
-			"description": "",
 			"item": [
 				{
 					"name": "OpenID Connect Authentication.",
