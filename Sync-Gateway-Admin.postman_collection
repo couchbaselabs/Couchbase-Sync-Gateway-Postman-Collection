@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "Sync Gateway Admin (github)",
-		"_postman_id": "7212a1e3-b6a6-ad31-62cb-4d5b0520127f",
+		"_postman_id": "27727651-29bc-4b84-9ea1-983c076493d3",
 		"description": "Documentation for the Sync Gateway Admin REST API. This page is generated from the Sync Gateway Admin Swagger spec, the exact same information is also available at [developer.couchbase.com/mobile/swagger/sync-gateway-admin](http://developer.couchbase.com/mobile/swagger/sync-gateway-admin/).\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -61,7 +61,7 @@
 					},
 					"response": [
 						{
-							"id": "230c4a88-de38-47fc-8594-87873d96ffe0",
+							"id": "7b603d22-3614-4805-a99b-245d1bfc58a9",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -92,7 +92,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -120,7 +119,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 16,
 							"body": "{\"Interface\":\":4984\",\"AdminInterface\":\":4985\",\"log\":[\"*\"],\"Databases\":{\"demodb\":{\"server\":\"http://cb-server-demo:8091\",\"pool\":\"default\",\"bucket\":\"demodb\",\"username\":\"admin\",\"password\":\"password\",\"name\":\"demodb\",\"users\":{\"admin\":{\"name\":\"demo\",\"admin_channels\":[\"*\"],\"all_channels\":null,\"password\":\"password\"},\"demo\":{\"name\":\"demo\",\"all_channels\":null,\"password\":\"password\"},\"tester\":{\"name\":\"demo\",\"all_channels\":null,\"password\":\"password\"}},\"import_docs\":\"continuous\",\"unsupported\":{\"user_views\":{},\"replicator_2\":true,\"oidc_test_provider\":{}},\"enable_shared_bucket_access\":true}}}"
 						}
 					]
@@ -167,7 +165,7 @@
 					},
 					"response": [
 						{
-							"id": "a05c75de-2927-4754-9b7e-5388fe12cd6a",
+							"id": "eaed04ad-f4b3-4a77-a5a9-4804a0d39e81",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -195,7 +193,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -223,7 +220,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 15,
 							"body": "{\"ADMIN\":true,\"couchdb\":\"Welcome\",\"vendor\":{\"name\":\"Couchbase Sync Gateway\",\"version\":1.5},\"version\":\"Couchbase Sync Gateway/1.5.0(594;e78dbf1)\"}"
 						}
 					]
@@ -279,7 +275,7 @@
 					},
 					"response": [
 						{
-							"id": "c4adc0f1-d15b-4472-98eb-516ec29ec683",
+							"id": "da7863ad-5cb5-4754-be8e-0a78088e58c1",
 							"name": "200",
 							"originalRequest": {
 								"method": "PUT",
@@ -310,7 +306,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -338,7 +333,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 14,
 							"body": ""
 						}
 					]
@@ -388,7 +382,7 @@
 					},
 					"response": [
 						{
-							"id": "f62cfda6-6a14-4f2d-b422-7e1652728c8d",
+							"id": "e4aeaac1-688f-49de-8904-ccde9627a4ea",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -419,7 +413,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Encoding",
@@ -453,7 +446,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 42,
 							"body": "{\n\"cb\": {\"ops\": {}, \"pools\": {}},\n\"cmdline\": [\"sync_gateway\",\"-adminInterface\",\":4985\",\"/etc/sync_gateway/sync_gateway.json\"],\n\"goroutine_stats\": {\"HighWaterMark\":24,\"Snapshots\":[24]}\n,\n\"mc\": {\"recv\": {\"bytes\":{\"0x1f\":28,\"0x89\":24,\"SASL_AUTH\":24,\"SASL_LIST_MECHS\":66,\"UPR_OPEN\":24,\"total\":166},\"errs\":{},\"ops\":{\"0x1f\":1,\"0x89\":1,\"SASL_AUTH\":1,\"SASL_LIST_MECHS\":1,\"UPR_OPEN\":1,\"total\":5}}, \"tap\": {\"bytes\":{},\"errs\":{},\"ops\":{}}, \"xmit\": {\"bytes\":{\"0x1f\":101,\"0x89\":30,\"NOOP\":9600,\"SASL_AUTH\":44,\"SASL_LIST_MECHS\":24,\"UPR_CONTROL\":137,\"UPR_OPEN\":90,\"UPR_STREAMREQ\":73728,\"total\":83754},\"errs\":{},\"ops\":{\"0x1f\":1,\"0x89\":1,\"NOOP\":400,\"SASL_AUTH\":1,\"SASL_LIST_MECHS\":1,\"UPR_CONTROL\":3,\"UPR_OPEN\":1,\"UPR_STREAMREQ\":1024,\"total\":1432}}},\n\"memstats\": {\"Alloc\":5790768,\"TotalAlloc\":2049004008,\"Sys\":14395640,\"Lookups\":61,\"Mallocs\":43578435,\"Frees\":43553941,\"HeapAlloc\":5790768,\"HeapSys\":9994240,\"HeapIdle\":2605056,\"HeapInuse\":7389184,\"HeapReleased\":0,\"HeapObjects\":24494,\"StackInuse\":1540096,\"StackSys\":1540096,\"MSpanInuse\":99840,\"MSpanSys\":114688,\"MCacheInuse\":2400,\"MCacheSys\":16384,\"BuckHashSys\":1463259,\"GCSys\":585728,\"OtherSys\":681245,\"NextGC\":7461949,\"LastGC\":1516983969163180562,\"PauseTotalNs\":527760617,\"PauseNs\":[93589,6690750,366863,131643,74611,384243,1470952,201760,474537,362570,94088,1630962,751406,694376,843298,1090105,171197,186778,106973,541557,504700,306237,431487,704562,407814,1986040,526875,336400,175491,349785,148623,1041762,2597812,342792,567326,7571401,164704,361169,232324,116561,521580,417703,85398,1022784,421399,205955,78507,146026,1805454,644534,2579933,156213,173793,651125,127049,442674,125252,556839,105175,102379,56134,397027,92690,548248,450365,746912,197266,199664,189675,649829,188776,1237729,103677,295549,333605,663610,278069,164805,152519,300043,375453,521680,210550,62425,341494,171596,372257,617166,550645,115662,2237940,131444,379450,1429100,202459,1661423,185180,111468,1551954,908120,308933,115663,549247,470040,286060,541356,232024,549547,287458,793757,103576,992820,910518,578912,187477,888945,645733,125851,396429,1784380,372058,500306,464847,373257,582607,357475,388638,460952,697571,103677,169399,150121,303239,1413918,522080,302641,106274,192970,278569,1478842,85098,1726848,712154,95786,424696,87495,344590,95886,111168,255795,62526,312229,325414,758798,358474,257194,159810,97883,164305,259491,1757911,96686,333004,292452,110868,1552555,401824,322516,473137,1271189,103276,440177,509095,352980,313827,413608,506099,335002,884849,423997,422098,458455,128447,64124,84799,168400,171995,5355435,539958,279767,321219,107372,1791072,1137148,2535187,574217,318521,124152,289456,295049,358273,127248,515986,519383,572019,1061239,373756,996416,97284,165303,92390,404419,90492,289057,734428,419900,678893,1263398,55634,947274,428690,474137,498108,483825,478831,121355,112865,136338,471241,789761,662313,92990,106874,635845,1267893,79206,215444,1846505,138136,122754,419502,65023,190774,626555,499207,6928465,459853,277869,468644,105974,3389272,1159522,552244,73312,327011,389937],\"PauseEnd\":[1516977438520090386,1516977466426447096,1516977488951555994,1516977513976323326,1516977539007597526,1516977564042104885,1516977591577117938,1516977614107399622,1516977641642644101,1516977666673595484,1516977694204251915,1516977721732524778,1516977746765474787,1516977771795697936,1516977796832518046,1516977824364952164,1516977849394686994,1516977874426721990,1516977901963421240,1516977926996138625,1516977952029858320,1516977977063251402,1516978002092282868,1516978027121644241,1516978052149301639,1516978079689212173,1516978107223208834,1516978134757659157,1516978159788161275,1516978184822868895,1516978212362604837,1516978234895373865,1516978262429914776,1516978289964866779,1516978312495983587,1516978337538181400,1516978365062438615,1516978392598342087,1516978417631164544,1516978442660986267,1516978470201264340,1516978497735538948,1516978520272922107,1516978547804824335,1516978572838817501,1516978600366657057,1516978622894921055,1516978650425377901,1516978677961815638,1516978705492842306,1516978730523305268,1516978758055011828,1516978783084922357,1516978810621199237,1516978835651087983,1516978860683573642,1516978885715381007,1516978913249003142,1516978938281816212,1516978965809775477,1516978990846853079,1516979016072793838,1516979041101205639,1516979066133565148,1516979093671799102,1516979116199868783,1516979143736598724,1516979171282256157,1516979196309168639,1516979221340351846,1516979248867938054,1516979273900689397,1516979301430329265,1516979328962216362,1516979351484302054,1516979376519960542,1516979404051458701,1516979429080263035,1516979454106950086,1516979479131741688,1516979504167795108,1516979529196354932,1516979556724957333,1516979579255049510,1516979606792406206,1516979629323928084,1516979656860797461,1516979681896263877,1516979706925774073,1516979731952433456,1516979756986206385,1516979782015115794,1516979809548647736,1516979834579957726,1516979857108424019,1516979884640601876,1516979912173466516,1516979937201545009,1516979962234500901,1516979987265969063,1516980014795178250,1516980039828409615,1516980067363053238,1516980092400815812,1516980119930919337,1516980147464210968,1516980174999705111,1516980197526474357,1516980225059466055,1516980250093100416,1516980275126050091,1516980300159554007,1516980325196448194,1516980350238967296,1516980377777667210,1516980400310864517,1516980427842500626,1516980455372483800,1516980480407760009,1516980505433853332,1516980532962918497,1516980557997372584,1516980583031018731,1516980608064300910,1516980635606170258,1516980660638360036,1516980688170545292,1516980710707130772,1516980735734959533,1516980760765466511,1516980785804537311,1516980813345099012,1516980838378681335,1516980865907549434,1516980893448533733,1516980920987313153,1516980948518672491,1516980973551636649,1516981001081397387,1516981023614713053,1516981048645381339,1516981076182652451,1516981101213514107,1516981128747064242,1516981156280200768,1516981183806192984,1516981206325190367,1516981231349628857,1516981258882114956,1516981283906489522,1516981311429516563,1516981338963767165,1516981366502844031,1516981394040369141,1516981419070833669,1516981446602876795,1516981474138704323,1516981501673512562,1516981529201770686,1516981551732057551,1516981576766738369,1516981604294912792,1516981629325947642,1516981651861417748,1516981679388133705,1516981706919726765,1516981734458635631,1516981756991832439,1516981782025743471,1516981807065004245,1516981832094471359,1516981859628609594,1516981884660862497,1516981912202694189,1516981937237133793,1516981964775724337,1516981992310005203,1516982017343326636,1516982044877169023,1516982067406616287,1516982094941269211,1516982119977308214,1516982145018073200,1516982170049182762,1516982197585536864,1516982222610880678,1516982250143164917,1516982256121875514,1516982275177780911,1516982302713961819,1516982332746483250,1516982357778740048,1516982385318392730,1516982412869458647,1516982437898779734,1516982467925228782,1516982495453333987,1516982522972591807,1516982550492016229,1516982575514149359,1516982603043715029,1516982630575926954,1516982658105967259,1516982685642059073,1516982710674628599,1516982738207709591,1516982765741249438,1516982793276170543,1516982820806700567,1516982848375992025,1516982875903818661,1516982903445440703,1516982930968851187,1516982958505185813,1516982986039564562,1516983013579388141,1516983041112407706,1516983068651726485,1516983096182928110,1516983123713967429,1516983151249366266,1516983178783845896,1516983206314156580,1516983233852463961,1516983263911670378,1516983291442604421,1516983318971682071,1516983344006043068,1516983374043349812,1516983401578887284,1516983429111378577,1516983456645753132,1516983484181529121,1516983511716447729,1516983539244459645,1516983569276360913,1516983596814010275,1516983624350198974,1516983651885328132,1516983674410843468,1516983701942286507,1516983729474663336,1516983759508777573,1516983784543042785,1516983812075116773,1516983837111931355,1516983864661200907,1516983892201206270,1516983919733281158,1516983947265630819,1516983969158367082,1516983969163180562,1516977338396342886,1516977363427273843,1516977388460036723,1516977413492268135],\"NumGC\":1020,\"GCCPUFraction\":6.602273118341988e-05,\"EnableGC\":true,\"DebugGC\":false,\"BySize\":[{\"Size\":0,\"Mallocs\":0,\"Frees\":0},{\"Size\":8,\"Mallocs\":33739,\"Frees\":33531},{\"Size\":16,\"Mallocs\":3023289,\"Frees\":3018653},{\"Size\":32,\"Mallocs\":21214282,\"Frees\":21202568},{\"Size\":48,\"Mallocs\":174019,\"Frees\":171282},{\"Size\":64,\"Mallocs\":70462,\"Frees\":70117},{\"Size\":80,\"Mallocs\":42412,\"Frees\":42103},{\"Size\":96,\"Mallocs\":45077,\"Frees\":44704},{\"Size\":112,\"Mallocs\":17159,\"Frees\":16802},{\"Size\":128,\"Mallocs\":2183,\"Frees\":2133},{\"Size\":144,\"Mallocs\":21612,\"Frees\":20429},{\"Size\":160,\"Mallocs\":22082,\"Frees\":21725},{\"Size\":176,\"Mallocs\":22731,\"Frees\":22703},{\"Size\":192,\"Mallocs\":2105,\"Frees\":2083},{\"Size\":208,\"Mallocs\":10365,\"Frees\":10320},{\"Size\":224,\"Mallocs\":10192,\"Frees\":10183},{\"Size\":240,\"Mallocs\":10482,\"Frees\":10464},{\"Size\":256,\"Mallocs\":385,\"Frees\":361},{\"Size\":288,\"Mallocs\":10404,\"Frees\":10319},{\"Size\":320,\"Mallocs\":10451,\"Frees\":10278},{\"Size\":352,\"Mallocs\":2381,\"Frees\":2354},{\"Size\":384,\"Mallocs\":34,\"Frees\":17},{\"Size\":416,\"Mallocs\":156,\"Frees\":62},{\"Size\":448,\"Mallocs\":50,\"Frees\":45},{\"Size\":480,\"Mallocs\":10113,\"Frees\":10107},{\"Size\":512,\"Mallocs\":333,\"Frees\":170},{\"Size\":576,\"Mallocs\":71,\"Frees\":58},{\"Size\":640,\"Mallocs\":184,\"Frees\":142},{\"Size\":704,\"Mallocs\":20232,\"Frees\":20226},{\"Size\":768,\"Mallocs\":23,\"Frees\":20},{\"Size\":896,\"Mallocs\":61,\"Frees\":37},{\"Size\":1024,\"Mallocs\":10252,\"Frees\":10225},{\"Size\":1152,\"Mallocs\":31,\"Frees\":21},{\"Size\":1280,\"Mallocs\":133,\"Frees\":25},{\"Size\":1408,\"Mallocs\":17,\"Frees\":14},{\"Size\":1536,\"Mallocs\":10108,\"Frees\":10106},{\"Size\":1664,\"Mallocs\":23,\"Frees\":10},{\"Size\":2048,\"Mallocs\":172,\"Frees\":45},{\"Size\":2304,\"Mallocs\":12416,\"Frees\":11389},{\"Size\":2560,\"Mallocs\":20,\"Frees\":7},{\"Size\":2816,\"Mallocs\":26,\"Frees\":25},{\"Size\":3072,\"Mallocs\":3,\"Frees\":1},{\"Size\":3328,\"Mallocs\":13,\"Frees\":1},{\"Size\":4096,\"Mallocs\":10163,\"Frees\":10143},{\"Size\":4608,\"Mallocs\":6,\"Frees\":6},{\"Size\":5376,\"Mallocs\":10102,\"Frees\":10097},{\"Size\":6144,\"Mallocs\":18,\"Frees\":8},{\"Size\":6400,\"Mallocs\":3,\"Frees\":0},{\"Size\":6656,\"Mallocs\":2,\"Frees\":0},{\"Size\":6912,\"Mallocs\":3,\"Frees\":1},{\"Size\":8192,\"Mallocs\":10116,\"Frees\":10111},{\"Size\":8448,\"Mallocs\":50460,\"Frees\":50460},{\"Size\":8704,\"Mallocs\":0,\"Frees\":0},{\"Size\":9472,\"Mallocs\":0,\"Frees\":0},{\"Size\":10496,\"Mallocs\":19,\"Frees\":5},{\"Size\":12288,\"Mallocs\":10096,\"Frees\":10096},{\"Size\":13568,\"Mallocs\":1,\"Frees\":1},{\"Size\":14080,\"Mallocs\":0,\"Frees\":0},{\"Size\":16384,\"Mallocs\":4,\"Frees\":4},{\"Size\":16640,\"Mallocs\":0,\"Frees\":0},{\"Size\":17664,\"Mallocs\":10094,\"Frees\":10094}]},\n\"syncGateway_changeCache\": {\"lag-queue-0000ms\": 8, \"lag-tap-0000ms\": 5, \"lag-total-0000ms\": 5, \"lag-total-9223372036800ms\": 3, \"maxPending\": 0},\n\"syncGateway_db\": {\"document_gets\": 7, \"revisionCache_adds\": 5, \"revs_added\": 5, \"sequence_gets\": 2, \"sequence_reserves\": 9},\n\"syncGateway_dcp\": {\"dataUpdate_count\": 26, \"loadCheckpoint_count\": 1024, \"persistCheckpoint_count\": 8, \"setMetadata_count\": 1050},\n\"syncGateway_gocb\": {\"Get\": 1061, \"Set\": 3, \"SetRaw\": 8, \"SingleOps\": 0, \"Update_Get\": 22, \"Update_GetWithXattr\": 5, \"Update_Insert\": 1, \"Update_Replace\": 1, \"ViewOps\": 0, \"WriteCasWithXattr_Insert\": 5},\n\"syncGateway_httpListener\": {\"max_active\": 0, \"max_wait\": 0},\n\"syncGateway_index\": {},\n\"syncGateway_index_clocks\": {},\n\"syncGateway_rest\": {\"requests_0000ms\": 38, \"requests_0200ms\": 1},\n\"syncGateway_stats\": {\"bulkApi.BulkDocsPerDocRollingMean\": 0, \"bulkApi.BulkDocsRollingMean\": 0, \"bulkApi.BulkGetPerDocRollingMean\": 0, \"bulkApi.BulkGetRollingMean\": 0, \"changesFeeds_active\": 0, \"changesFeeds_total\": 0, \"goroutines_highWaterMark\": 24, \"handler.CheckAuthRollingMean\": 18352052, \"indexReader.getChanges.Count\": 0, \"indexReader.getChanges.Time\": 0, \"indexReader.getChanges.UseCached\": 0, \"indexReader.getChanges.UseIndexed\": 0, \"indexReader.numReaders.OneShot\": 0, \"indexReader.numReaders.Persistent\": 0, \"indexReader.pollPrincipals.Count\": 0, \"indexReader.pollPrincipals.Time\": 0, \"indexReader.pollReaders.Count\": 0, \"indexReader.pollReaders.Time\": 0, \"indexReader.seqHasher.GetClockTime\": 0, \"indexReader.seqHasher.GetHash\": 0, \"requests_active\": 1, \"requests_total\": 40, \"revisionCache_hits\": 0, \"revisionCache_misses\": 2, \"sequenceTiming\": {}}\n}\n"
 						}
 					]
@@ -503,7 +495,7 @@
 					},
 					"response": [
 						{
-							"id": "17a70315-c0c1-44ba-9536-e08c4b681910",
+							"id": "a46d9ba1-b547-481e-969d-c7ed5d212df6",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -534,7 +526,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -562,7 +553,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 15,
 							"body": "{\"*\":true,\"HTTP\":true}"
 						}
 					]
@@ -624,7 +614,7 @@
 					},
 					"response": [
 						{
-							"id": "92e8b74a-98b5-44ee-b628-5c7624a0cddf",
+							"id": "1114748b-e92b-41f8-8097-6ac6e55bc400",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -655,7 +645,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -683,7 +672,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 16,
 							"body": "{\"type\":\"replication\",\"replication_id\":\"repl101\",\"continuous\":true,\"source\":\"http://:4985/local_demodb\",\"target\":\"http://localhost:4984/demodb\",\"docs_read\":0,\"docs_written\":0,\"doc_write_failures\":0,\"start_last_seq\":0,\"end_last_seq\":null}"
 						}
 					]
@@ -719,7 +707,7 @@
 					},
 					"response": [
 						{
-							"id": "37f69948-835d-4914-8455-aa0901117768",
+							"id": "c63a54d9-5e22-48e5-9eca-0028bcb96b07",
 							"name": "404 not found",
 							"originalRequest": {
 								"method": "POST",
@@ -750,7 +738,6 @@
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -778,11 +765,10 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 16,
 							"body": "{\"error\":\"not_found\",\"reason\":\"No replication found matching specified parameters\"}"
 						},
 						{
-							"id": "6bbc122e-3d43-4d29-a37b-9111e05850d3",
+							"id": "30c5cc96-cffc-4cb5-9476-3e594b274d1a",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -813,7 +799,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -841,7 +826,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 15,
 							"body": "{\"type\":\"replication\",\"replication_id\":\"repl101\",\"continuous\":true,\"source\":\"http://:4985/local_demodb\",\"target\":\"http://localhost:4984/demodb\",\"docs_read\":0,\"docs_written\":0,\"doc_write_failures\":0,\"start_last_seq\":0,\"end_last_seq\":null}"
 						}
 					]
@@ -955,7 +939,7 @@
 					},
 					"response": [
 						{
-							"id": "4f0f0e14-7258-4a20-899d-4326087b8907",
+							"id": "84760eba-09e7-444c-bf40-733ff1f127af",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -1044,7 +1028,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Cache-Control",
@@ -1084,7 +1067,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 33,
 							"body": "{\"results\":[\r\n{\"seq\":1,\"id\":\"_user/tester\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":2,\"id\":\"_user/admin\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":3,\"id\":\"_user/demo\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":9,\"id\":\"0b5b3564521d370dffa7d03996327a36\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":10,\"id\":\"1ea3728e4571967ba5841619ebcb7f98\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":11,\"id\":\"385aa0e987308114dcf1c9a85cadf5ca\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":12,\"id\":\"5a0ac4bbba6ae04abccd389e64a42281\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":13,\"id\":\"b48054057dc5b167e6ed6c4cc5e4b520\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":19,\"id\":\"db3627e655768550cc024933def3f265\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":20,\"id\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":21,\"id\":\"ee83120452394e09af05169b43c0a493\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":22,\"id\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":23,\"id\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":24,\"id\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":26,\"id\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"changes\":[{\"rev\":\"2-651a607cfc50800c9a4caff4e23a1a9a\"}]}\n,{\"seq\":29,\"id\":\"05bfcc578d2746d574a7b3565d37a765\",\"changes\":[{\"rev\":\"3-7fc6b14d68aaad1a6842c238cbd253d8\"}]}\n,{\"seq\":32,\"id\":\"testdoc\",\"changes\":[{\"rev\":\"8-c7bde27dc8f25b59eddf1687254859e4\"}]}\n],\n\"last_seq\":\"32\"}\n"
 						}
 					]
@@ -1135,7 +1117,7 @@
 					},
 					"response": [
 						{
-							"id": "b6c5751b-b813-45ed-9f42-d78c7c351d5d",
+							"id": "4a64e62f-95ee-4d9b-b37f-56f6a82efd5f",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -1167,7 +1149,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Cache-Control",
@@ -1207,7 +1188,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 33,
 							"body": "{\"results\":[\r\n{\"seq\":1,\"id\":\"_user/tester\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":2,\"id\":\"_user/admin\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":3,\"id\":\"_user/demo\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":9,\"id\":\"0b5b3564521d370dffa7d03996327a36\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":10,\"id\":\"1ea3728e4571967ba5841619ebcb7f98\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":11,\"id\":\"385aa0e987308114dcf1c9a85cadf5ca\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":12,\"id\":\"5a0ac4bbba6ae04abccd389e64a42281\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":13,\"id\":\"b48054057dc5b167e6ed6c4cc5e4b520\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":19,\"id\":\"db3627e655768550cc024933def3f265\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":20,\"id\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":21,\"id\":\"ee83120452394e09af05169b43c0a493\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":22,\"id\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":23,\"id\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":24,\"id\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":26,\"id\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"changes\":[{\"rev\":\"2-651a607cfc50800c9a4caff4e23a1a9a\"}]}\n,{\"seq\":29,\"id\":\"05bfcc578d2746d574a7b3565d37a765\",\"changes\":[{\"rev\":\"3-7fc6b14d68aaad1a6842c238cbd253d8\"}]}\n,{\"seq\":32,\"id\":\"testdoc\",\"changes\":[{\"rev\":\"8-c7bde27dc8f25b59eddf1687254859e4\"}]}\n],\n\"last_seq\":\"32\"}\n"
 						}
 					]
@@ -1272,7 +1252,7 @@
 					},
 					"response": [
 						{
-							"id": "4d9e898a-3823-434d-9128-8a32f71e5101",
+							"id": "5ab94d70-9f08-491d-9996-b592f752cf3f",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -1304,7 +1284,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -1332,7 +1311,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 17,
 							"body": "{\"committed_update_seq\":35,\"compact_running\":false,\"db_name\":\"demodb\",\"disk_format_version\":0,\"instance_start_time\":1516923400395762,\"purge_seq\":0,\"state\":\"Online\",\"update_seq\":35}"
 						}
 					]
@@ -1383,7 +1361,7 @@
 					},
 					"response": [
 						{
-							"id": "3b9b9963-d43b-418f-96f4-61870db1a767",
+							"id": "1901f450-a507-43ab-81d4-6532cbf5a49b",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -1415,7 +1393,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -1443,7 +1420,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 348,
 							"body": "{\"revs\":0}"
 						}
 					]
@@ -1494,71 +1470,7 @@
 					},
 					"response": [
 						{
-							"id": "f4ec58bd-d818-4766-be68-8891bb02b2e3",
-							"name": "201",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n   \"server\": \"walrus:\",\n      \"bucket\": \"{{walrusdb}}\",\n      \"users\": { \"GUEST\": { \"disabled\": true, \"admin_channels\": [\"*\"] } }\n      }"
-								},
-								"url": {
-									"raw": "{{adminurl}}/{{walrusdb}}/",
-									"host": [
-										"{{adminurl}}"
-									],
-									"path": [
-										"{{walrusdb}}",
-										""
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "0",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "text/plain; charset=utf-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 27 Jan 2018 16:08:17 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 72,
-							"body": ""
-						},
-						{
-							"id": "23ac5fba-073a-4a1a-9e82-c6c60ac5aea9",
+							"id": "3c17f1ba-9c56-4c10-b67d-f7ae87238dd2",
 							"name": "412",
 							"originalRequest": {
 								"method": "PUT",
@@ -1590,7 +1502,6 @@
 							"status": "Precondition Failed",
 							"code": 412,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -1618,8 +1529,69 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 5,
 							"body": "{\"error\":\"Precondition Failed\",\"reason\":\"Duplicate database name \\\"walrustestdb\\\"\"}"
+						},
+						{
+							"id": "22601373-87d8-4a6f-ba9d-b6f272c7df01",
+							"name": "201",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"server\": \"walrus:\",\n      \"bucket\": \"{{walrusdb}}\",\n      \"users\": { \"GUEST\": { \"disabled\": true, \"admin_channels\": [\"*\"] } }\n      }"
+								},
+								"url": {
+									"raw": "{{adminurl}}/{{walrusdb}}/",
+									"host": [
+										"{{adminurl}}"
+									],
+									"path": [
+										"{{walrusdb}}",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2018 16:08:17 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": ""
 						}
 					]
 				},
@@ -1675,7 +1647,7 @@
 					},
 					"response": [
 						{
-							"id": "92be098b-9827-4cf7-852d-fbafeaa2cf0c",
+							"id": "bfa8b1e8-f4b8-4280-b956-5a6e5bfe5e90",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -1707,7 +1679,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -1735,11 +1706,10 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 16,
 							"body": "{\"server\":\"http://cb-server-demo:8091\",\"pool\":\"default\",\"bucket\":\"demodb\",\"username\":\"admin\",\"password\":\"password\",\"name\":\"demodb\",\"users\":{\"admin\":{\"name\":\"demo\",\"admin_channels\":[\"*\"],\"all_channels\":null,\"password\":\"password\"},\"demo\":{\"name\":\"demo\",\"all_channels\":null,\"password\":\"password\"},\"tester\":{\"name\":\"demo\",\"all_channels\":null,\"password\":\"password\"}},\"import_docs\":\"continuous\",\"unsupported\":{\"user_views\":{},\"replicator_2\":true,\"oidc_test_provider\":{}},\"enable_shared_bucket_access\":true}"
 						},
 						{
-							"id": "13e21f60-2aff-47ee-b720-45548b20c3b2",
+							"id": "7a8f0e0c-8eb9-4ae1-9b6c-4a87eab96a6a",
 							"name": "503",
 							"originalRequest": {
 								"method": "GET",
@@ -1771,7 +1741,6 @@
 							"status": "Service Unavailable",
 							"code": 503,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -1799,7 +1768,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 16,
 							"body": "{\"error\":\"Service Unavailable\",\"reason\":\"DB is currently under maintenance\"}"
 						}
 					]
@@ -1850,7 +1818,7 @@
 					},
 					"response": [
 						{
-							"id": "e6833c15-702f-4021-9246-6b2e6ee28a5c",
+							"id": "d5c52c2e-7e56-479d-9699-322cc8a37673",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -1882,7 +1850,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -1910,11 +1877,10 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 15,
 							"body": ""
 						},
 						{
-							"id": "8a5749f5-68a0-4c2e-adec-475a10c70db6",
+							"id": "2e6075c2-924d-4528-897d-438fabc19a90",
 							"name": "404",
 							"originalRequest": {
 								"method": "POST",
@@ -1946,7 +1912,6 @@
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -1974,11 +1939,10 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 15,
 							"body": "{\"error\":\"not_found\",\"reason\":\"no such database \\\"walrustestdb\\\"\"}"
 						},
 						{
-							"id": "6128daec-dc81-4e07-91ca-1965f71dbf41",
+							"id": "2668eb37-336e-47ed-83c9-b9b0d93fd128",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -2010,7 +1974,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -2038,7 +2001,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 5,
 							"body": ""
 						}
 					]
@@ -2089,7 +2051,7 @@
 					},
 					"response": [
 						{
-							"id": "4dc35d4d-1279-4a11-aa8b-83929012246b",
+							"id": "d3eae337-848a-426d-905f-d90cbe02f858",
 							"name": "201",
 							"originalRequest": {
 								"method": "PUT",
@@ -2121,7 +2083,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -2149,7 +2110,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 14,
 							"body": ""
 						}
 					]
@@ -2186,71 +2146,7 @@
 					},
 					"response": [
 						{
-							"id": "a7d2a393-a9cc-4da3-b0f9-5b094b68757a",
-							"name": "503",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{adminurl}}/{{walrusdb}}/_resync",
-									"host": [
-										"{{adminurl}}"
-									],
-									"path": [
-										"{{walrusdb}}",
-										"_resync"
-									]
-								}
-							},
-							"status": "Service Unavailable",
-							"code": 503,
-							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "92",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 27 Jan 2018 16:16:50 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 16,
-							"body": "{\"error\":\"Service Unavailable\",\"reason\":\"Database must be _offline before calling /_resync\"}"
-						},
-						{
-							"id": "9d444dfb-eed0-4338-a688-cc8f6a798a97",
+							"id": "e66d3cfc-f519-4f1f-8570-408d5abf207b",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -2282,7 +2178,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -2310,8 +2205,69 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 104,
 							"body": "{\"changes\":0}"
+						},
+						{
+							"id": "68572065-afa6-497e-86f2-9cef57609a56",
+							"name": "503",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{adminurl}}/{{walrusdb}}/_resync",
+									"host": [
+										"{{adminurl}}"
+									],
+									"path": [
+										"{{walrusdb}}",
+										"_resync"
+									]
+								}
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "92",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2018 16:16:50 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": "{\"error\":\"Service Unavailable\",\"reason\":\"Database must be _offline before calling /_resync\"}"
 						}
 					]
 				},
@@ -2361,7 +2317,7 @@
 					},
 					"response": [
 						{
-							"id": "14d860d9-6598-4800-8809-3bf11ddede55",
+							"id": "a8147125-f5cc-4219-9941-a9a0c0a43d07",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -2393,7 +2349,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -2421,7 +2376,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 16,
 							"body": ""
 						}
 					]
@@ -2430,6 +2384,7 @@
 		},
 		{
 			"name": "users",
+			"description": null,
 			"item": [
 				{
 					"name": "Creates a new user",
@@ -2489,72 +2444,7 @@
 					},
 					"response": [
 						{
-							"id": "9e37f2e4-576e-4def-9e8b-643863fbd139",
-							"name": "201",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"name\": \"{{user}}\",\n  \"password\": \"{{password}}\",\n  \"admin_channels\": [\n    \"{{channelid}}\"\n  ],\n  \"email\": \"{{email}}\",\n  \"disabled\": false\n}"
-								},
-								"url": {
-									"raw": "{{adminurl}}/{{db}}/_user/",
-									"host": [
-										"{{adminurl}}"
-									],
-									"path": [
-										"{{db}}",
-										"_user",
-										""
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "0",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "text/plain; charset=utf-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 27 Jan 2018 19:17:50 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 168,
-							"body": ""
-						},
-						{
-							"id": "89f6898e-e0b3-43ff-a71c-cd47c79ecb03",
+							"id": "c750bad1-320e-4979-9e3d-e96043c25457",
 							"name": "409",
 							"originalRequest": {
 								"method": "POST",
@@ -2587,7 +2477,6 @@
 							"status": "Conflict",
 							"code": 409,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -2615,11 +2504,73 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 36,
 							"body": "{\"error\":\"conflict\",\"reason\":\"Already exists\"}"
 						},
 						{
-							"id": "67b0beba-61fc-40d3-af9d-71e1cff15643",
+							"id": "9814957d-fe8f-490a-94fc-6e7c634b59c4",
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"{{user}}\",\n  \"password\": \"{{password}}\",\n  \"admin_channels\": [\n    \"{{channelid}}\"\n  ],\n  \"email\": \"{{email}}\",\n  \"disabled\": false\n}"
+								},
+								"url": {
+									"raw": "{{adminurl}}/{{db}}/_user/",
+									"host": [
+										"{{adminurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_user",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jan 2018 19:17:50 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"id": "e0bdd5b6-f495-45e6-b839-0a8bd8d4a62a",
 							"name": "201",
 							"originalRequest": {
 								"method": "POST",
@@ -2652,7 +2603,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -2680,7 +2630,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 174,
 							"body": ""
 						}
 					]
@@ -2745,7 +2694,7 @@
 					},
 					"response": [
 						{
-							"id": "bf195781-4f8f-4c6a-9aa5-fc9514b87a01",
+							"id": "e33dc61b-18ff-4590-be53-c82f26964d41",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -2778,7 +2727,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Encoding",
@@ -2812,7 +2760,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 35,
 							"body": "[\"admin\",\"demo\",\"tester\"]"
 						}
 					]
@@ -2864,7 +2811,7 @@
 					},
 					"response": [
 						{
-							"id": "11a5fe7f-8afb-4ece-9bb3-629819f16381",
+							"id": "6160ea5e-596d-4030-a113-7e665d1d463d",
 							"name": "200",
 							"originalRequest": {
 								"method": "PUT",
@@ -2897,7 +2844,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -2925,7 +2871,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 470,
 							"body": ""
 						}
 					]
@@ -2984,7 +2929,7 @@
 					},
 					"response": [
 						{
-							"id": "ed6fbdc0-59ff-43df-bdb5-af0000ea9453",
+							"id": "f11ecb60-d24a-426c-8a67-7e2f2d537caa",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -3017,7 +2962,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Encoding",
@@ -3051,7 +2995,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 13,
 							"body": "{\"name\":\"demouser\",\"admin_channels\":[\"_admin\"],\"all_channels\":[\"!\",\"_admin\"],\"email\":\"demouser@example.com\",\"disabled\":true,\"admin_roles\":[\"owner\"],\"roles\":[\"owner\"]}"
 						}
 					]
@@ -3104,7 +3047,7 @@
 					},
 					"response": [
 						{
-							"id": "19e33b28-8426-45f1-aecd-3347a6243793",
+							"id": "90c563cf-886c-40b9-8b3b-b515e3ac63de",
 							"name": "201",
 							"originalRequest": {
 								"method": "PUT",
@@ -3137,7 +3080,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -3165,7 +3107,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 77,
 							"body": ""
 						}
 					]
@@ -3229,7 +3170,7 @@
 					},
 					"response": [
 						{
-							"id": "b06e403e-d1ba-4c01-8b7b-8a70dd567ca2",
+							"id": "fab38206-56fe-4f54-b90b-4b4b040a3d7a",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -3261,7 +3202,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Encoding",
@@ -3295,7 +3235,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 96,
 							"body": "[\"owner\"]"
 						}
 					]
@@ -3354,7 +3293,7 @@
 					},
 					"response": [
 						{
-							"id": "7fd811d2-16c5-4c25-9262-6f528007e846",
+							"id": "86948503-95fb-49b8-affd-7234921aa8f9",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -3387,7 +3326,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Encoding",
@@ -3421,11 +3359,10 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 13,
 							"body": "{\"name\":\"owner\",\"admin_channels\":[\"_admin\"],\"all_channels\":[\"!\",\"_admin\"]}"
 						},
 						{
-							"id": "ef474878-8f60-40ec-92e7-2088f6bcd86c",
+							"id": "83a491b9-a3b0-4edc-8b8a-9cbcfbd36aae",
 							"name": "404",
 							"originalRequest": {
 								"method": "GET",
@@ -3458,7 +3395,6 @@
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -3486,7 +3422,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 2,
 							"body": "{\"error\":\"not_found\",\"reason\":\"missing\"}"
 						}
 					]
@@ -3538,72 +3473,7 @@
 					},
 					"response": [
 						{
-							"id": "51f2e756-fabc-4cdc-9c91-a91d4e93c57e",
-							"name": "404",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{adminurl}}/{{db}}/_role/{{user}}",
-									"host": [
-										"{{adminurl}}"
-									],
-									"path": [
-										"{{db}}",
-										"_role",
-										"{{user}}"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "40",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Jan 2018 03:29:20 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 12,
-							"body": "{\"error\":\"not_found\",\"reason\":\"missing\"}"
-						},
-						{
-							"id": "de5138a0-c460-4d93-9637-3f0a67de8736",
+							"id": "da184a1c-a140-4d54-a0d2-5ec57881473e",
 							"name": "200",
 							"originalRequest": {
 								"method": "DELETE",
@@ -3636,7 +3506,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -3664,8 +3533,70 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 4,
 							"body": ""
+						},
+						{
+							"id": "92f05200-6b19-4bf2-9489-cbf75ace551f",
+							"name": "404",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{adminurl}}/{{db}}/_role/{{user}}",
+									"host": [
+										"{{adminurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_role",
+										"{{user}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "40",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 03:29:20 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": "{\"error\":\"not_found\",\"reason\":\"missing\"}"
 						}
 					]
 				},
@@ -3716,7 +3647,7 @@
 					},
 					"response": [
 						{
-							"id": "eb79a14f-785e-43e6-ab6b-3ceb2570c43b",
+							"id": "bc4a5bde-02fe-43ae-8144-b1cfa2c7feb0",
 							"name": "200",
 							"originalRequest": {
 								"method": "DELETE",
@@ -3749,7 +3680,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -3777,7 +3707,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 6,
 							"body": ""
 						}
 					]
@@ -3786,6 +3715,7 @@
 		},
 		{
 			"name": "document",
+			"description": null,
 			"item": [
 				{
 					"name": "Create document(POST)",
@@ -3835,7 +3765,7 @@
 					},
 					"response": [
 						{
-							"id": "d81183c9-7c31-441d-8d67-ed82576ac7dc",
+							"id": "526a7d51-2da5-4585-9efd-5b89bf772aee",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -3867,7 +3797,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -3907,7 +3836,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 25,
 							"body": "{\"id\":\"70990ab0d9a3bb0fec069d284363efe1\",\"ok\":true,\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}"
 						}
 					]
@@ -3964,71 +3892,7 @@
 					},
 					"response": [
 						{
-							"id": "01eaa069-e5e1-4d11-b0e8-036ab3d1b48a",
-							"name": "409 conflict",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\"value\":\"{{body}}\"}"
-								},
-								"url": {
-									"raw": "{{adminurl}}/{{db}}/{{docid}}",
-									"host": [
-										"{{adminurl}}"
-									],
-									"path": [
-										"{{db}}",
-										"{{docid}}"
-									]
-								}
-							},
-							"status": "Conflict",
-							"code": 409,
-							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "47",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 26 Jan 2018 18:50:55 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 17,
-							"body": "{\"error\":\"conflict\",\"reason\":\"Document exists\"}"
-						},
-						{
-							"id": "1f0b9dd3-7271-46f6-83ac-7dc6087a44f6",
+							"id": "6a498014-c7fe-4a2a-a502-4a7d88d3bd76",
 							"name": "200",
 							"originalRequest": {
 								"method": "PUT",
@@ -4060,7 +3924,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -4094,8 +3957,69 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 11,
 							"body": "{\"id\":\"testdoc\",\"ok\":true,\"rev\":\"8-c7bde27dc8f25b59eddf1687254859e4\"}"
+						},
+						{
+							"id": "501053a8-feb0-4817-b87d-75452a9419dd",
+							"name": "409 conflict",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"value\":\"{{body}}\"}"
+								},
+								"url": {
+									"raw": "{{adminurl}}/{{db}}/{{docid}}",
+									"host": [
+										"{{adminurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{docid}}"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "47",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Jan 2018 18:50:55 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": "{\"error\":\"conflict\",\"reason\":\"Document exists\"}"
 						}
 					]
 				},
@@ -4163,7 +4087,7 @@
 					},
 					"response": [
 						{
-							"id": "510d57bb-469f-4847-9426-65adcb9939b1",
+							"id": "3bd150ae-67f1-4c64-a7af-296028aa8dae",
 							"name": "201",
 							"originalRequest": {
 								"method": "PUT",
@@ -4207,7 +4131,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -4241,7 +4164,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 27,
 							"body": "{\"id\":\"testdoc\",\"ok\":true,\"rev\":\"4-03b2117982b33ba9476bfda1f2a8881b\"}"
 						}
 					]
@@ -4325,7 +4247,102 @@
 					},
 					"response": [
 						{
-							"id": "0dd49a06-5d01-4a8f-a611-0e26879e44d6",
+							"id": "a346a687-9a39-4b64-ab65-c1d2b4516dda",
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{adminurl}}/{{db}}/{{docid}}?attachments=false&atts_since={{atts_since}}&open_revs={{open_revs}}&revs=false&show_exp=false",
+									"host": [
+										"{{adminurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{docid}}"
+									],
+									"query": [
+										{
+											"key": "attachments",
+											"value": "false",
+											"equals": true
+										},
+										{
+											"key": "atts_since",
+											"value": "{{atts_since}}",
+											"equals": true
+										},
+										{
+											"key": "open_revs",
+											"value": "{{open_revs}}",
+											"equals": true
+										},
+										{
+											"key": "revs",
+											"value": "false",
+											"equals": true
+										},
+										{
+											"key": "show_exp",
+											"value": "false",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "78",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Jan 2018 19:01:22 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Etag",
+									"value": "\"3-faa0e0235486e0b6add78cc9e0f89e08\"",
+									"name": "Etag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": "{\"_id\":\"testdoc\",\"_rev\":\"3-faa0e0235486e0b6add78cc9e0f89e08\",\"value\":\"foobar\"}"
+						},
+						{
+							"id": "33c0eb4f-98e1-4d7f-a7b8-8debe0a774a0",
 							"name": "404 not found",
 							"originalRequest": {
 								"method": "GET",
@@ -4384,7 +4401,6 @@
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -4412,105 +4428,7 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 3,
 							"body": "{\"error\":\"not_found\",\"reason\":\"missing\"}"
-						},
-						{
-							"id": "5b7c3757-6be8-4d5c-ae13-be4eb20c5908",
-							"name": "200",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{adminurl}}/{{db}}/{{docid}}?attachments=false&atts_since={{atts_since}}&open_revs={{open_revs}}&revs=false&show_exp=false",
-									"host": [
-										"{{adminurl}}"
-									],
-									"path": [
-										"{{db}}",
-										"{{docid}}"
-									],
-									"query": [
-										{
-											"key": "attachments",
-											"value": "false",
-											"equals": true
-										},
-										{
-											"key": "atts_since",
-											"value": "{{atts_since}}",
-											"equals": true
-										},
-										{
-											"key": "open_revs",
-											"value": "{{open_revs}}",
-											"equals": true
-										},
-										{
-											"key": "revs",
-											"value": "false",
-											"equals": true
-										},
-										{
-											"key": "show_exp",
-											"value": "false",
-											"equals": true
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "78",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 26 Jan 2018 19:01:22 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Etag",
-									"value": "\"3-faa0e0235486e0b6add78cc9e0f89e08\"",
-									"name": "Etag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 18,
-							"body": "{\"_id\":\"testdoc\",\"_rev\":\"3-faa0e0235486e0b6add78cc9e0f89e08\",\"value\":\"foobar\"}"
 						}
 					]
 				},
@@ -4567,7 +4485,7 @@
 					},
 					"response": [
 						{
-							"id": "abf4567e-5cf3-4bbf-ac3f-091a5589c907",
+							"id": "c5534367-28ff-4b98-9557-c418ec3cdc01",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -4600,7 +4518,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -4628,7 +4545,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 6,
 							"body": "{\"_sync\":{\"rev\":\"8-c7bde27dc8f25b59eddf1687254859e4\",\"sequence\":32,\"recent_sequences\":[14,15,16,17,18,30,31,32],\"history\":{\"revs\":[\"4-03b2117982b33ba9476bfda1f2a8881b\",\"2-85a0310f52db4a60f506d461f4e81274\",\"6-3fd41affdfd92e2fb8e9ea6abbfe90bd\",\"1-179900bc134a6eac295515793bf80080\",\"7-68aeb4230dea31f5496db20afa2a12fc\",\"8-c7bde27dc8f25b59eddf1687254859e4\",\"3-faa0e0235486e0b6add78cc9e0f89e08\",\"5-373546b6ca3ec862069d1ba932507867\"],\"parents\":[6,3,7,-1,2,4,1,0],\"deleted\":[1,4],\"channels\":[null,null,null,null,null,null,null,null]},\"cas\":\"0x0000791f0e770d15\",\"time_saved\":\"2018-01-26T20:45:52.032798088Z\"},\"value\":\"foo\"}"
 						}
 					]
@@ -4728,7 +4644,7 @@
 					},
 					"response": [
 						{
-							"id": "dc7738df-b30e-4982-b70c-79caaf0ecf22",
+							"id": "8e41548e-44d5-4069-a6d7-5f6665ef12c1",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -4807,7 +4723,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Encoding",
@@ -4841,7 +4756,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 646,
 							"body": "{\"rows\":[\n{\"key\":\"05bfcc578d2746d574a7b3565d37a765\",\"id\":\"05bfcc578d2746d574a7b3565d37a765\",\"value\":{\"rev\":\"3-7fc6b14d68aaad1a6842c238cbd253d8\"}}\n,{\"key\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"id\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"value\":{\"rev\":\"2-651a607cfc50800c9a4caff4e23a1a9a\"}}\n,{\"key\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"id\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}}\n,{\"key\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"id\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}}\n,{\"key\":\"70990ab0d9a3bb0fec069d284363efe1\",\"id\":\"70990ab0d9a3bb0fec069d284363efe1\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}}\n,{\"key\":\"77f1ed7f21763bde7809e13584512a3b\",\"id\":\"77f1ed7f21763bde7809e13584512a3b\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}}\n,{\"key\":\"8e724c26b2db621e7fefd1b1069dc2a5\",\"id\":\"8e724c26b2db621e7fefd1b1069dc2a5\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}}\n,{\"key\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"id\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}}\n,{\"key\":\"db3627e655768550cc024933def3f265\",\"id\":\"db3627e655768550cc024933def3f265\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}}\n,{\"key\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"id\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}}\n,{\"key\":\"ee83120452394e09af05169b43c0a493\",\"id\":\"ee83120452394e09af05169b43c0a493\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}}\n,{\"key\":\"testdoc\",\"id\":\"testdoc\",\"value\":{\"rev\":\"8-c7bde27dc8f25b59eddf1687254859e4\"}}\n],\n\"total_rows\":12,\"update_seq\":35}"
 						}
 					]
@@ -4908,78 +4822,7 @@
 					},
 					"response": [
 						{
-							"id": "2de10651-cf1a-45ed-a6fe-d7c1251a22f2",
-							"name": "200",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{adminurl}}/{{db}}/{{doc}}?rev={{rev}}",
-									"host": [
-										"{{adminurl}}"
-									],
-									"path": [
-										"{{db}}",
-										"{{doc}}"
-									],
-									"query": [
-										{
-											"key": "rev",
-											"value": "{{rev}}",
-											"equals": true
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "69",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 26 Jan 2018 18:42:53 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 26,
-							"body": "{\"id\":\"testdoc\",\"ok\":true,\"rev\":\"2-85a0310f52db4a60f506d461f4e81274\"}"
-						},
-						{
-							"id": "2a8cb6c6-420c-49ad-802a-e4376ad3423c",
+							"id": "b1dc0147-a650-4499-835e-f93b92f4bf4e",
 							"name": "409 conflict",
 							"originalRequest": {
 								"method": "DELETE",
@@ -5018,7 +4861,6 @@
 							"status": "Conflict",
 							"code": 409,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -5046,8 +4888,76 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 16,
 							"body": "{\"error\":\"conflict\",\"reason\":\"Document revision conflict\"}"
+						},
+						{
+							"id": "fa1e7df3-062a-470c-afc0-24b73e28a2b4",
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{adminurl}}/{{db}}/{{doc}}?rev={{rev}}",
+									"host": [
+										"{{adminurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{doc}}"
+									],
+									"query": [
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "69",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Jan 2018 18:42:53 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":\"testdoc\",\"ok\":true,\"rev\":\"2-85a0310f52db4a60f506d461f4e81274\"}"
 						}
 					]
 				},
@@ -5105,7 +5015,7 @@
 					},
 					"response": [
 						{
-							"id": "ebc390d2-c4ff-46cd-a8ba-0cb2f5c58f33",
+							"id": "462116c9-b8cf-4425-ba24-9a4091dd8a7d",
 							"name": "201",
 							"originalRequest": {
 								"method": "POST",
@@ -5137,7 +5047,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -5165,7 +5074,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 23,
 							"body": "[{\"id\":\"db3627e655768550cc024933def3f265\",\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]"
 						}
 					]
@@ -5226,7 +5134,7 @@
 					},
 					"response": [
 						{
-							"id": "7a060de5-6b31-4ecc-a5c2-cb51fa298d68",
+							"id": "89d6a544-5601-4914-8066-ac26f0c33d0e",
 							"name": "201",
 							"originalRequest": {
 								"method": "POST",
@@ -5258,7 +5166,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -5286,7 +5193,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 27,
 							"body": "[{\"id\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"rev\":\"2-651a607cfc50800c9a4caff4e23a1a9a\"}]"
 						}
 					]
@@ -5365,6 +5271,11 @@
 								"disabled": true
 							},
 							{
+								"key": "Accept",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
 								"key": "//Accept",
 								"value": "application/json",
 								"disabled": true
@@ -5400,7 +5311,7 @@
 					},
 					"response": [
 						{
-							"id": "e849eee9-bced-415d-9bf4-b7dd98771b5b",
+							"id": "cc3bf770-76f6-4d09-8a16-5ea01d9a6345",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -5413,6 +5324,11 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": true
 									},
 									{
 										"key": "Accept",
@@ -5455,7 +5371,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "raw",
-							"_postman_previewtype": "multipart",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -5483,7 +5398,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 4,
 							"body": "--d112ec5b3c7e8a72397a81cead74fdd26c3f95dd390b33766ccf3d6397c2\r\nContent-Type: application/json\r\n\r\n{\"_id\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"value\":\"foo\"}\r\n--d112ec5b3c7e8a72397a81cead74fdd26c3f95dd390b33766ccf3d6397c2--\r\n"
 						}
 					]
@@ -5541,7 +5455,7 @@
 					},
 					"response": [
 						{
-							"id": "790c6e2d-599d-4f5b-8c2a-5d1b3ff9ff97",
+							"id": "6f92fbbf-b85e-479e-952c-f7c8daef9041",
 							"name": "201",
 							"originalRequest": {
 								"method": "PUT",
@@ -5574,7 +5488,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -5602,11 +5515,10 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 21,
 							"body": "{\"id\":\"_local/admin_localdoc\",\"ok\":true,\"rev\":\"0-1\"}"
 						},
 						{
-							"id": "a18c1f97-7535-4150-9caa-05b3cc40c1c6",
+							"id": "fcd3d733-61de-45ce-bacb-55596ac8206a",
 							"name": "409",
 							"originalRequest": {
 								"method": "PUT",
@@ -5639,7 +5551,6 @@
 							"status": "Conflict",
 							"code": 409,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -5667,7 +5578,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 16,
 							"body": "{\"error\":\"conflict\",\"reason\":\"Document update conflict\"}"
 						}
 					]
@@ -5725,7 +5635,7 @@
 					},
 					"response": [
 						{
-							"id": "3238feb1-50b1-487e-aaf0-1405b188efaa",
+							"id": "2a03050b-2452-4ba3-a89e-1923a72345ee",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -5758,7 +5668,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -5786,11 +5695,10 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 17,
 							"body": "{\"_id\":\"_local/admin_localdoc\",\"_rev\":\"0-1\",\"value\":\"helloworld again\"}"
 						},
 						{
-							"id": "b7ce2b64-c0dc-40ad-af46-5cd7ae959ace",
+							"id": "1c763afa-ed6a-46fa-bc12-eb51af45ffe3",
 							"name": "404",
 							"originalRequest": {
 								"method": "GET",
@@ -5823,7 +5731,6 @@
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -5851,7 +5758,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 7,
 							"body": "{\"error\":\"not_found\",\"reason\":\"missing\"}"
 						}
 					]
@@ -5915,84 +5821,7 @@
 					},
 					"response": [
 						{
-							"id": "c75fa6aa-51d1-4efd-9838-8cbb5844a10a",
-							"name": "409",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{adminurl}}/{{db}}/_local/{{local_doc}}?rev={{rev}}&batch={{batch}}",
-									"host": [
-										"{{adminurl}}"
-									],
-									"path": [
-										"{{db}}",
-										"_local",
-										"{{local_doc}}"
-									],
-									"query": [
-										{
-											"key": "rev",
-											"value": "{{rev}}",
-											"equals": true
-										},
-										{
-											"key": "batch",
-											"value": "{{batch}}",
-											"equals": true
-										}
-									]
-								}
-							},
-							"status": "Conflict",
-							"code": 409,
-							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "56",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 26 Jan 2018 20:48:33 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 14,
-							"body": "{\"error\":\"conflict\",\"reason\":\"Document update conflict\"}"
-						},
-						{
-							"id": "4e5bbe36-34c4-407b-ba17-099e60c4823c",
+							"id": "46d89d9e-3b51-43ac-bfbc-ec4f344b395f",
 							"name": "200",
 							"originalRequest": {
 								"method": "DELETE",
@@ -6037,7 +5866,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -6065,88 +5893,10 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 18,
 							"body": ""
 						},
 						{
-							"id": "240d2edf-2258-45cc-898f-10883ef22ad5",
-							"name": "200",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{adminurl}}/{{db}}/_local/{{localdocid}}?rev={{localrev}}&batch={{batch}}",
-									"host": [
-										"{{adminurl}}"
-									],
-									"path": [
-										"{{db}}",
-										"_local",
-										"{{localdocid}}"
-									],
-									"query": [
-										{
-											"key": "rev",
-											"value": "{{localrev}}",
-											"equals": true
-										},
-										{
-											"key": "batch",
-											"value": "{{batch}}",
-											"equals": true
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "0",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "text/plain; charset=utf-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 26 Jan 2018 21:04:01 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 14,
-							"body": ""
-						},
-						{
-							"id": "48021666-90be-4b9b-84d4-1e8d4218b4a7",
+							"id": "b2dc2e5f-0633-480f-85e6-24a563131132",
 							"name": "404",
 							"originalRequest": {
 								"method": "DELETE",
@@ -6191,7 +5941,6 @@
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -6219,8 +5968,157 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 5,
 							"body": "{\"error\":\"not_found\",\"reason\":\"No previous revision to replace\"}"
+						},
+						{
+							"id": "68d2c0ba-523d-452e-95f5-3324c1451ccd",
+							"name": "409",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{adminurl}}/{{db}}/_local/{{local_doc}}?rev={{rev}}&batch={{batch}}",
+									"host": [
+										"{{adminurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_local",
+										"{{local_doc}}"
+									],
+									"query": [
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"equals": true
+										},
+										{
+											"key": "batch",
+											"value": "{{batch}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "56",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Jan 2018 20:48:33 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": "{\"error\":\"conflict\",\"reason\":\"Document update conflict\"}"
+						},
+						{
+							"id": "a2803cf8-62f4-44db-b5a6-20db55919954",
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{adminurl}}/{{db}}/_local/{{localdocid}}?rev={{localrev}}&batch={{batch}}",
+									"host": [
+										"{{adminurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_local",
+										"{{localdocid}}"
+									],
+									"query": [
+										{
+											"key": "rev",
+											"value": "{{localrev}}",
+											"equals": true
+										},
+										{
+											"key": "batch",
+											"value": "{{batch}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Jan 2018 21:04:01 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": ""
 						}
 					]
 				},
@@ -6310,7 +6208,7 @@
 					},
 					"response": [
 						{
-							"id": "a0720663-acc3-4433-b895-1ce388c9ecfd",
+							"id": "ebcd1660-cadb-4f2f-a2d7-6b200bc2c8c9",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -6342,7 +6240,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Cache-Control",
@@ -6382,7 +6279,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 26,
 							"body": "{\"purged\":{\r\n}\n}\n"
 						}
 					]
@@ -6391,6 +6287,7 @@
 		},
 		{
 			"name": "query",
+			"description": null,
 			"item": [
 				{
 					"name": "Create / Update views of a design document",
@@ -6435,11 +6332,12 @@
 								"_design",
 								"{{ddoc}}"
 							]
-						}
+						},
+						"description": null
 					},
 					"response": [
 						{
-							"id": "06ca8556-1117-4f55-82b6-bf1d34267f30",
+							"id": "c73b15b7-6c23-44e2-97e1-198f5caa8eb1",
 							"name": "201",
 							"originalRequest": {
 								"method": "PUT",
@@ -6472,7 +6370,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -6500,7 +6397,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 215,
 							"body": ""
 						}
 					]
@@ -6552,7 +6448,7 @@
 					},
 					"response": [
 						{
-							"id": "93d9d8be-7a74-46cf-98af-bd88525230f9",
+							"id": "6fa77b9d-9b1d-48d9-b75f-d3e392ef132d",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -6585,7 +6481,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -6613,7 +6508,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 24,
 							"body": "{\"views\":{\"foobarview\":{\"map\":\"function(doc,meta) {\\n\\t                    var sync = meta.xattrs._sync;\\n\\t                    if (sync === undefined || meta.id.substring(0,6) == \\\"_sync:\\\")\\n\\t                      return;\\n\\t                    if ((sync.flags \\u0026 1) || sync.deleted)\\n\\t                      return;\\n\\t                    meta.rev = sync.rev;\\n\\t\\t\\t\\t\\t\\t(function(doc, meta) {if (doc.value == \\\"foo\\\") {emit(doc.id, null);}}) (doc, meta);}\"}}}"
 						}
 					]
@@ -6759,7 +6653,7 @@
 					},
 					"response": [
 						{
-							"id": "40830d2b-27b5-4198-8220-e8e5712dd4c1",
+							"id": "7925f83e-cac2-41b1-8cc3-832694c929b2",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -6886,7 +6780,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -6914,7 +6807,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 23,
 							"body": "{\"total_rows\":10,\"rows\":[{\"id\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"key\":null,\"value\":null},{\"id\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"key\":null,\"value\":null},{\"id\":\"70990ab0d9a3bb0fec069d284363efe1\",\"key\":null,\"value\":null},{\"id\":\"77f1ed7f21763bde7809e13584512a3b\",\"key\":null,\"value\":null},{\"id\":\"8e724c26b2db621e7fefd1b1069dc2a5\",\"key\":null,\"value\":null},{\"id\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"key\":null,\"value\":null},{\"id\":\"db3627e655768550cc024933def3f265\",\"key\":null,\"value\":null},{\"id\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"key\":null,\"value\":null},{\"id\":\"ee83120452394e09af05169b43c0a493\",\"key\":null,\"value\":null},{\"id\":\"testdoc\",\"key\":null,\"value\":null}],\"Collator\":{}}"
 						}
 					]
@@ -6975,7 +6867,7 @@
 					},
 					"response": [
 						{
-							"id": "6b755cc9-1bfb-433e-88aa-ff3e4fcc1271",
+							"id": "8d5fda72-c228-46d0-a318-55e846e1dcde",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -7017,7 +6909,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -7045,7 +6936,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 31,
 							"body": "{\"total_rows\":10,\"rows\":[{\"id\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"key\":null,\"value\":null},{\"id\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"key\":null,\"value\":null},{\"id\":\"70990ab0d9a3bb0fec069d284363efe1\",\"key\":null,\"value\":null},{\"id\":\"77f1ed7f21763bde7809e13584512a3b\",\"key\":null,\"value\":null},{\"id\":\"8e724c26b2db621e7fefd1b1069dc2a5\",\"key\":null,\"value\":null},{\"id\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"key\":null,\"value\":null},{\"id\":\"db3627e655768550cc024933def3f265\",\"key\":null,\"value\":null},{\"id\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"key\":null,\"value\":null},{\"id\":\"ee83120452394e09af05169b43c0a493\",\"key\":null,\"value\":null},{\"id\":\"testdoc\",\"key\":null,\"value\":null}],\"Collator\":{}}"
 						}
 					]
@@ -7097,72 +6987,7 @@
 					},
 					"response": [
 						{
-							"id": "30c10ad8-b046-403b-b5ae-ee3be9aa282e",
-							"name": "200",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{adminurl}}/{{db}}/_design/{{ddoc}}",
-									"host": [
-										"{{adminurl}}"
-									],
-									"path": [
-										"{{db}}",
-										"_design",
-										"{{ddoc}}"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "0",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "text/plain; charset=utf-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Jan 2018 03:46:23 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 30,
-							"body": ""
-						},
-						{
-							"id": "ee5e2363-b131-429d-8de6-b18d2e28f59f",
+							"id": "71bc6785-2dce-4678-9375-235caae96441",
 							"name": "500",
 							"originalRequest": {
 								"method": "DELETE",
@@ -7195,7 +7020,6 @@
 							"status": "Internal Server Error",
 							"code": 500,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -7223,8 +7047,70 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 22,
 							"body": "{\"error\":\"Internal Server Error\",\"reason\":\"Internal error: {\\\"error\\\":\\\"not_found\\\",\\\"reason\\\":\\\"deleted\\\"}\\n\"}"
+						},
+						{
+							"id": "34560a80-9509-450e-8ef0-7cabb2e4a37c",
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{adminurl}}/{{db}}/_design/{{ddoc}}",
+									"host": [
+										"{{adminurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_design",
+										"{{ddoc}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 03:46:23 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": ""
 						}
 					]
 				}
@@ -7232,6 +7118,7 @@
 		},
 		{
 			"name": "oidc",
+			"description": null,
 			"item": [
 				{
 					"name": "OpenID Connect Authentication.",
@@ -7275,7 +7162,7 @@
 					},
 					"response": [
 						{
-							"id": "ea0b961b-db9b-476c-86f0-f799ef7b0bd1",
+							"id": "2d2241bb-6a65-4099-a4a3-9fe09eed5e0d",
 							"name": "400",
 							"originalRequest": {
 								"method": "GET",
@@ -7319,7 +7206,6 @@
 							"status": "Bad Request",
 							"code": 400,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -7347,7 +7233,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 20,
 							"body": "{\"error\":\"Bad Request\",\"reason\":\"OpenID Connect not configured for database demodb\"}"
 						}
 					]
@@ -7394,7 +7279,7 @@
 					},
 					"response": [
 						{
-							"id": "3697d7cf-43a3-461c-93c5-c95a30c1432a",
+							"id": "0ed91089-8be5-4784-a096-48dd66a45e56",
 							"name": "400",
 							"originalRequest": {
 								"method": "GET",
@@ -7438,7 +7323,6 @@
 							"status": "Bad Request",
 							"code": 400,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -7466,7 +7350,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 17,
 							"body": "{\"error\":\"Bad Request\",\"reason\":\"Code must be present on oidc callback\"}"
 						}
 					]
@@ -7513,7 +7396,7 @@
 					},
 					"response": [
 						{
-							"id": "3bc42db9-b487-46a2-b387-7d26202065ad",
+							"id": "8ec31d9a-68ce-417a-b3aa-723b2132551d",
 							"name": "400",
 							"originalRequest": {
 								"method": "GET",
@@ -7557,7 +7440,6 @@
 							"status": "Bad Request",
 							"code": 400,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -7585,7 +7467,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 14,
 							"body": "{\"error\":\"Bad Request\",\"reason\":\"OpenID Connect not configured for database demodb\"}"
 						}
 					]
@@ -7632,7 +7513,7 @@
 					},
 					"response": [
 						{
-							"id": "d5fa53d9-38c1-418b-9a7f-1568ce1ac259",
+							"id": "913b7131-bff7-46dd-bfaa-11614531807e",
 							"name": "400",
 							"originalRequest": {
 								"method": "GET",
@@ -7676,7 +7557,6 @@
 							"status": "Bad Request",
 							"code": 400,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -7704,7 +7584,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 23,
 							"body": "{\"error\":\"Bad Request\",\"reason\":\"Refresh token must be present for oidc refresh\"}"
 						}
 					]
@@ -7713,6 +7592,7 @@
 		},
 		{
 			"name": "session",
+			"description": null,
 			"item": [
 				{
 					"name": "Creates a new session",
@@ -7773,7 +7653,7 @@
 					},
 					"response": [
 						{
-							"id": "81240152-b3f1-45a2-8806-ce34c9f47823",
+							"id": "2dd7d710-3ce7-4538-83e3-5bf9ae49ab57",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -7805,7 +7685,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -7833,7 +7712,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 22,
 							"body": "{\"session_id\":\"129694e799527f8e0639f9d76b1007d97d392737\",\"expires\":\"2018-01-29T03:55:27.443673194Z\",\"cookie_name\":\"SyncGatewaySession\"}"
 						}
 					]
@@ -7885,7 +7763,7 @@
 					},
 					"response": [
 						{
-							"id": "d97e3ac4-ff0a-442c-97ea-af973d8e81a1",
+							"id": "1466c5fc-c6e4-4f17-9393-6130d7cd3189",
 							"name": "404",
 							"originalRequest": {
 								"method": "GET",
@@ -7918,7 +7796,6 @@
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -7946,11 +7823,10 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 3,
 							"body": "{\"error\":\"not_found\",\"reason\":\"missing\"}"
 						},
 						{
-							"id": "e203df7b-7a07-44fa-a7dc-a96ff243100d",
+							"id": "0d444f0d-2dd8-496b-8f62-417fcb7a4a8d",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -7983,7 +7859,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -8011,7 +7886,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 6,
 							"body": "{\"authentication_handlers\":[\"default\",\"cookie\"],\"ok\":true,\"userCtx\":{\"channels\":{\"!\":1,\"*\":2},\"name\":\"admin\"}}"
 						}
 					]
@@ -8051,74 +7925,7 @@
 					},
 					"response": [
 						{
-							"id": "16b7daaf-00b6-4e38-96e9-78d72d87761f",
-							"name": "404",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{adminurl}}/{{db}}/_user/{{name}}/_session/{{sessionid}}",
-									"host": [
-										"{{adminurl}}"
-									],
-									"path": [
-										"{{db}}",
-										"_user",
-										"{{name}}",
-										"_session",
-										"{{sessionid}}"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "40",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Jan 2018 03:58:51 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 9,
-							"body": "{\"error\":\"not_found\",\"reason\":\"missing\"}"
-						},
-						{
-							"id": "3e361985-f403-402f-a133-071dd46a2126",
+							"id": "d6b7bcb8-b596-45a0-8ea0-c1c033da0603",
 							"name": "200",
 							"originalRequest": {
 								"method": "DELETE",
@@ -8153,7 +7960,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -8181,11 +7987,10 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 19,
 							"body": ""
 						},
 						{
-							"id": "e1b96836-3684-4204-8be5-b31398263be6",
+							"id": "7e9d90d7-2ae2-4524-8e4b-a006df2cd00b",
 							"name": "404",
 							"originalRequest": {
 								"method": "DELETE",
@@ -8220,7 +8025,71 @@
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "40",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 03:58:51 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": "{\"error\":\"not_found\",\"reason\":\"missing\"}"
+						},
+						{
+							"id": "252f10c9-5af1-48ef-83d8-528f0ec2071c",
+							"name": "404",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{adminurl}}/{{db}}/_user/{{name}}/_session/{{sessionid}}",
+									"host": [
+										"{{adminurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_user",
+										"{{name}}",
+										"_session",
+										"{{sessionid}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -8248,7 +8117,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 9,
 							"body": "{\"error\":\"not_found\",\"reason\":\"missing\"}"
 						}
 					]
@@ -8300,7 +8168,7 @@
 					},
 					"response": [
 						{
-							"id": "692adbd0-27c2-4e48-a426-5111e5ed3afb",
+							"id": "2956d3d4-5858-4f03-ba5b-29a9775c1396",
 							"name": "404",
 							"originalRequest": {
 								"method": "DELETE",
@@ -8333,7 +8201,6 @@
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -8361,7 +8228,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 14,
 							"body": "{\"error\":\"not_found\",\"reason\":\"missing\"}"
 						}
 					]
@@ -8414,7 +8280,7 @@
 					},
 					"response": [
 						{
-							"id": "f2ec2fd0-79e1-4ec6-ba1d-e421cee0272d",
+							"id": "01ddb029-170a-4d12-9efd-faa1fc0bee49",
 							"name": "200",
 							"originalRequest": {
 								"method": "DELETE",
@@ -8448,7 +8314,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -8476,7 +8341,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 184,
 							"body": ""
 						}
 					]
@@ -8485,6 +8349,7 @@
 		},
 		{
 			"name": "cleanup",
+			"description": null,
 			"item": [
 				{
 					"name": "Delete database",
@@ -8532,7 +8397,7 @@
 					},
 					"response": [
 						{
-							"id": "abb7b739-9c70-4c2e-9b70-388b40d6b081",
+							"id": "59ce4971-0ea9-401f-b650-71ceeb1be557",
 							"name": "200",
 							"originalRequest": {
 								"method": "DELETE",
@@ -8564,7 +8429,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -8592,11 +8456,10 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 6,
 							"body": "{}"
 						},
 						{
-							"id": "678d4e76-08f6-47c7-a091-2fc2b22c5cbf",
+							"id": "87ba3cbf-8f9b-47fb-8748-a21888f7cf8b",
 							"name": "404",
 							"originalRequest": {
 								"method": "DELETE",
@@ -8628,7 +8491,6 @@
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -8656,7 +8518,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 5,
 							"body": "{\"error\":\"not_found\",\"reason\":\"no such database \\\"walrustestdb\\\"\"}"
 						}
 					]

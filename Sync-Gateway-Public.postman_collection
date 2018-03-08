@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "Sync Gateway Public (github)",
-		"_postman_id": "8b1d4e18-8c03-88b7-6e00-ab39a06e81e0",
+		"_postman_id": "aba4ee74-e060-42aa-bc8a-c412af483ade",
 		"description": "Documentation for the Sync Gateway Public REST API. This page is generated from the Sync Gateway Public Swagger spec, the exact same information is also available at [developer.couchbase.com/mobile/swagger/sync-gateway-public](http://developer.couchbase.com/mobile/swagger/sync-gateway-public/).\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -109,7 +109,7 @@
 					},
 					"response": [
 						{
-							"id": "3a4a02c9-1254-4153-bb35-a3926cd74098",
+							"id": "c47bdd2f-b590-49af-b188-e330b79021d3",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -194,7 +194,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Cache-Control",
@@ -234,7 +233,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 44,
 							"body": "{\"results\":[\r\n{\"seq\":\"2:1\",\"id\":\"_user/tester\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":2,\"id\":\"_user/admin\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":3,\"id\":\"_user/demo\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":9,\"id\":\"0b5b3564521d370dffa7d03996327a36\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":10,\"id\":\"1ea3728e4571967ba5841619ebcb7f98\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":11,\"id\":\"385aa0e987308114dcf1c9a85cadf5ca\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":12,\"id\":\"5a0ac4bbba6ae04abccd389e64a42281\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":13,\"id\":\"b48054057dc5b167e6ed6c4cc5e4b520\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":19,\"id\":\"db3627e655768550cc024933def3f265\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":20,\"id\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":21,\"id\":\"ee83120452394e09af05169b43c0a493\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":22,\"id\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":23,\"id\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":24,\"id\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":26,\"id\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"changes\":[{\"rev\":\"2-651a607cfc50800c9a4caff4e23a1a9a\"}]}\n,{\"seq\":29,\"id\":\"05bfcc578d2746d574a7b3565d37a765\",\"changes\":[{\"rev\":\"3-7fc6b14d68aaad1a6842c238cbd253d8\"}]}\n,{\"seq\":33,\"id\":\"70990ab0d9a3bb0fec069d284363efe1\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":34,\"id\":\"77f1ed7f21763bde7809e13584512a3b\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":35,\"id\":\"8e724c26b2db621e7fefd1b1069dc2a5\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":38,\"id\":\"_user/demouser\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":43,\"id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"changes\":[{\"rev\":\"2-6762ea8dd160bf55508fe50f275dc962\"}]}\n,{\"seq\":49,\"id\":\"4d36bf78d0c8c58b571346526e021b92\",\"changes\":[{\"rev\":\"1-2d1992f26066e9392f00abe72ba029a5\"}]}\n,{\"seq\":50,\"id\":\"61eb51de87862e146b647da19b150726\",\"changes\":[{\"rev\":\"1-2d1992f26066e9392f00abe72ba029a5\"}]}\n,{\"seq\":51,\"id\":\"74e457186e61ed8a7bc532b02b82ee3e\",\"changes\":[{\"rev\":\"1-3485f73b3b56c1a4a03a0e6f78eebd9d\"}]}\n,{\"seq\":52,\"id\":\"testdoc\",\"deleted\":true,\"changes\":[{\"rev\":\"17-c02f8137c81a141696f78ac549675315\"}]}\n],\n\"last_seq\":\"52\"}\n"
 						}
 					]
@@ -281,7 +279,7 @@
 					},
 					"response": [
 						{
-							"id": "22cb2897-e9a3-46bd-aed7-3d160ca47791",
+							"id": "5b025c37-0d5f-4174-a5c6-9de4634011e4",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -309,7 +307,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Cache-Control",
@@ -349,7 +346,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 30,
 							"body": "{\"results\":[\r\n{\"seq\":\"2:1\",\"id\":\"_user/tester\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":2,\"id\":\"_user/admin\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":3,\"id\":\"_user/demo\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":9,\"id\":\"0b5b3564521d370dffa7d03996327a36\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":10,\"id\":\"1ea3728e4571967ba5841619ebcb7f98\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":11,\"id\":\"385aa0e987308114dcf1c9a85cadf5ca\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":12,\"id\":\"5a0ac4bbba6ae04abccd389e64a42281\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":13,\"id\":\"b48054057dc5b167e6ed6c4cc5e4b520\",\"deleted\":true,\"changes\":[{\"rev\":\"2-88e54e36ba894f7f6dc3ef32e2a0a05a\"}]}\n,{\"seq\":19,\"id\":\"db3627e655768550cc024933def3f265\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":20,\"id\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":21,\"id\":\"ee83120452394e09af05169b43c0a493\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":22,\"id\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":23,\"id\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":24,\"id\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":26,\"id\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"changes\":[{\"rev\":\"2-651a607cfc50800c9a4caff4e23a1a9a\"}]}\n,{\"seq\":29,\"id\":\"05bfcc578d2746d574a7b3565d37a765\",\"changes\":[{\"rev\":\"3-7fc6b14d68aaad1a6842c238cbd253d8\"}]}\n,{\"seq\":33,\"id\":\"70990ab0d9a3bb0fec069d284363efe1\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":34,\"id\":\"77f1ed7f21763bde7809e13584512a3b\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":35,\"id\":\"8e724c26b2db621e7fefd1b1069dc2a5\",\"changes\":[{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"}]}\n,{\"seq\":38,\"id\":\"_user/demouser\",\"changes\":[{\"rev\":\"\"}]}\n,{\"seq\":43,\"id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"changes\":[{\"rev\":\"2-6762ea8dd160bf55508fe50f275dc962\"}]}\n,{\"seq\":49,\"id\":\"4d36bf78d0c8c58b571346526e021b92\",\"changes\":[{\"rev\":\"1-2d1992f26066e9392f00abe72ba029a5\"}]}\n,{\"seq\":50,\"id\":\"61eb51de87862e146b647da19b150726\",\"changes\":[{\"rev\":\"1-2d1992f26066e9392f00abe72ba029a5\"}]}\n,{\"seq\":51,\"id\":\"74e457186e61ed8a7bc532b02b82ee3e\",\"changes\":[{\"rev\":\"1-3485f73b3b56c1a4a03a0e6f78eebd9d\"}]}\n,{\"seq\":52,\"id\":\"testdoc\",\"deleted\":true,\"changes\":[{\"rev\":\"17-c02f8137c81a141696f78ac549675315\"}]}\n],\n\"last_seq\":\"52\"}\n"
 						}
 					]
@@ -358,6 +354,7 @@
 		},
 		{
 			"name": "server",
+			"description": null,
 			"item": [
 				{
 					"name": "Server",
@@ -400,7 +397,7 @@
 					},
 					"response": [
 						{
-							"id": "1a8822f5-dd70-43f8-a40e-80a62739eef9",
+							"id": "6cf8a4e6-73d4-440f-9670-32699676a7cc",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -427,7 +424,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -455,7 +451,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 5,
 							"body": "{\"couchdb\":\"Welcome\",\"vendor\":{\"name\":\"Couchbase Sync Gateway\",\"version\":1.5},\"version\":\"Couchbase Sync Gateway/1.5.0(594;e78dbf1)\"}"
 						}
 					]
@@ -464,6 +459,7 @@
 		},
 		{
 			"name": "documents",
+			"description": null,
 			"item": [
 				{
 					"name": "Create document",
@@ -517,81 +513,7 @@
 					},
 					"response": [
 						{
-							"id": "d40b9ed1-1eb0-4856-ab8f-be56cc088ab0",
-							"name": "401",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\"key\":\"value\",\"channels\":[\"{{channelid}}\"]}"
-								},
-								"url": {
-									"raw": "{{publicurl}}/{{db}}/",
-									"host": [
-										"{{publicurl}}"
-									],
-									"path": [
-										"{{db}}",
-										""
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "49",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Jan 2018 20:25:13 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "Www-Authenticate",
-									"value": "Basic realm=\"Couchbase Sync Gateway\"",
-									"name": "Www-Authenticate",
-									"description": "Indicates the authentication scheme that should be used to access the requested entity."
-								}
-							],
-							"cookie": [],
-							"responseTime": 104,
-							"body": "{\"error\":\"Unauthorized\",\"reason\":\"Invalid login\"}"
-						},
-						{
-							"id": "51d8fa13-de92-4cb8-bd57-962d7f273919",
+							"id": "58bacf6d-f327-4278-adde-1b248e6ff78a",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -627,7 +549,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -667,8 +588,79 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 75,
 							"body": "{\"id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"ok\":true,\"rev\":\"1-0783647b15c4435371a2d83d8f97d77f\"}"
+						},
+						{
+							"id": "dbb916b0-2ca2-49e8-9851-ad4f1adead9d",
+							"name": "401",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"key\":\"value\",\"channels\":[\"{{channelid}}\"]}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "49",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 20:25:13 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Www-Authenticate",
+									"value": "Basic realm=\"Couchbase Sync Gateway\"",
+									"name": "Www-Authenticate",
+									"description": "Indicates the authentication scheme that should be used to access the requested entity."
+								}
+							],
+							"cookie": [],
+							"body": "{\"error\":\"Unauthorized\",\"reason\":\"Invalid login\"}"
 						}
 					]
 				},
@@ -678,7 +670,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "eb7f0412-bc06-4ceb-99d4-f2ba6c4e318c",
+								"id": "fad6a8eb-f35b-4174-adfc-f7a347dba0bf",
 								"type": "text/javascript",
 								"exec": [
 									"pm.test(\"Create Doc Success Test\", function () {",
@@ -689,6 +681,8 @@
 									"    var revId = jsonData[\"rev\"];",
 									"    pm.environment.set(\"rev\",revId);",
 									"});",
+									"",
+									"",
 									""
 								]
 							}
@@ -728,93 +722,7 @@
 					},
 					"response": [
 						{
-							"id": "f3ad8cf1-e338-4667-8607-7a2600f3d898",
-							"name": "201",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"key\": \"value\",\n  \"type\":\"foobar\",\n  \"username\":\"{{name}}\",\n  \"channels\":[\"{{channelid}}\"]\n}"
-								},
-								"url": {
-									"raw": "{{publicurl}}/{{db}}/{{doc}}?new_edits=true&rev={{rev}}",
-									"host": [
-										"{{publicurl}}"
-									],
-									"path": [
-										"{{db}}",
-										"{{doc}}"
-									],
-									"query": [
-										{
-											"key": "new_edits",
-											"value": "true",
-											"equals": true
-										},
-										{
-											"key": "rev",
-											"value": "{{rev}}",
-											"equals": true
-										}
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "94",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Jan 2018 21:56:54 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Etag",
-									"value": "\"2-6762ea8dd160bf55508fe50f275dc962\"",
-									"name": "Etag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 37,
-							"body": "{\"id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"ok\":true,\"rev\":\"2-6762ea8dd160bf55508fe50f275dc962\"}"
-						},
-						{
-							"id": "79d42740-89b6-451d-bc9c-bd4131d7198b",
+							"id": "34a9d2af-7244-4ee2-865d-7097a33e90de",
 							"name": "409",
 							"originalRequest": {
 								"method": "PUT",
@@ -862,7 +770,6 @@
 							"status": "Conflict",
 							"code": 409,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -890,8 +797,91 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 6,
 							"body": "{\"error\":\"conflict\",\"reason\":\"Document revision conflict\"}"
+						},
+						{
+							"id": "23523837-df7e-44cb-b3eb-9c285c5658e9",
+							"name": "201",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"key\": \"value\",\n  \"type\":\"foobar\",\n  \"username\":\"{{name}}\",\n  \"channels\":[\"{{channelid}}\"]\n}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/{{doc}}?new_edits=true&rev={{rev}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{doc}}"
+									],
+									"query": [
+										{
+											"key": "new_edits",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "94",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 21:56:54 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Etag",
+									"value": "\"2-6762ea8dd160bf55508fe50f275dc962\"",
+									"name": "Etag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"testdoc\",\n    \"ok\": true,\n    \"rev\": \"2-6762ea8dd160bf55508fe50f275dc962\"\n    \n}"
 						}
 					]
 				},
@@ -963,93 +953,7 @@
 					},
 					"response": [
 						{
-							"id": "903854e4-5765-467b-978e-26d63dd0b079",
-							"name": "201",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Basic ZGVtb3VzZXI6cGFzc3dvcmQ="
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"key\": \"value\",\n  \"type\":\"foobar\",\n  \"username\":\"{{name}}\",\n  \"channels\":[\"{{channelid}}\"]\n}"
-								},
-								"url": {
-									"raw": "{{publicurl}}/{{db}}/{{doc}}?new_edits=true&rev={{rev}}",
-									"host": [
-										"{{publicurl}}"
-									],
-									"path": [
-										"{{db}}",
-										"{{doc}}"
-									],
-									"query": [
-										{
-											"key": "new_edits",
-											"value": "true",
-											"equals": true
-										},
-										{
-											"key": "rev",
-											"value": "{{rev}}",
-											"equals": true
-										}
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "94",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Jan 2018 21:56:54 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Etag",
-									"value": "\"2-6762ea8dd160bf55508fe50f275dc962\"",
-									"name": "Etag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 37,
-							"body": "{\"id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"ok\":true,\"rev\":\"2-6762ea8dd160bf55508fe50f275dc962\"}"
-						},
-						{
-							"id": "4f5c49eb-e759-48ce-85c5-5f0e8a4f75a8",
+							"id": "2abe2df4-54e3-4420-856a-c4efe96ec8cb",
 							"name": "409",
 							"originalRequest": {
 								"method": "PUT",
@@ -1097,7 +1001,6 @@
 							"status": "Conflict",
 							"code": 409,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -1125,11 +1028,10 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 6,
 							"body": "{\"error\":\"conflict\",\"reason\":\"Document revision conflict\"}"
 						},
 						{
-							"id": "a13e0433-08ca-4b2f-8274-4f5eb4ee7614",
+							"id": "ca863d99-0bdc-4f69-a5a4-9e5cf1565890",
 							"name": "201",
 							"originalRequest": {
 								"method": "PUT",
@@ -1177,7 +1079,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -1211,8 +1112,7 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 26,
-							"body": "{\"id\":\"testdoc\",\"ok\":true,\"rev\":\"13-1f42890c242e24223afae914ff581a09\"}"
+							"body": "{\n    \"id\": \"testdoc\",\n    \"ok\": true,\n    \"rev\": \"13-1f42890c242e24223afae914ff581a09\"\n    \n}"
 						}
 					]
 				},
@@ -1256,9 +1156,7 @@
 						],
 						"body": {
 							"mode": "file",
-							"file": {
-								"src": ""
-							}
+							"file": {}
 						},
 						"url": {
 							"raw": "{{publicurl}}/{{db}}/{{docid}}/{{attachment}}?rev={{rev}}",
@@ -1282,7 +1180,7 @@
 					},
 					"response": [
 						{
-							"id": "5eb3e0e0-46d7-4647-bf6f-2591616a3142",
+							"id": "55a1d18a-d592-453a-9c26-e2bd1ae56185",
 							"name": "201",
 							"originalRequest": {
 								"method": "PUT",
@@ -1328,7 +1226,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -1362,7 +1259,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 30,
 							"body": "{\"_id\":\"testdoc\",\"_rev\":\"16-befb94aa99deb2ea420ef8050c15becf\",\"channels\":[\"_admin\"],\"value\":\"bar\"}"
 						}
 					]
@@ -1423,7 +1319,7 @@
 					},
 					"response": [
 						{
-							"id": "d1eec0c4-b3b7-4beb-bbac-3db476ef52a1",
+							"id": "862d839c-7c30-44eb-893e-f85914cc27ea",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -1459,7 +1355,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -1493,7 +1388,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 21,
 							"body": "{\"_id\":\"testdoc\",\"_rev\":\"16-befb94aa99deb2ea420ef8050c15becf\",\"channels\":[\"_admin\"],\"value\":\"bar\"}"
 						}
 					]
@@ -1573,100 +1467,7 @@
 					},
 					"response": [
 						{
-							"id": "4b52f787-7870-4d4d-824d-05e6c1a57762",
-							"name": "200",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{publicurl}}/{{db}}/{{docid}}?attachments=true&atts_since={{atts_since}}&open_revs={{open_revs}}&revs=true&show_exp=false",
-									"host": [
-										"{{publicurl}}"
-									],
-									"path": [
-										"{{db}}",
-										"{{docid}}"
-									],
-									"query": [
-										{
-											"key": "attachments",
-											"value": "true",
-											"equals": true
-										},
-										{
-											"key": "atts_since",
-											"value": "{{atts_since}}",
-											"equals": true
-										},
-										{
-											"key": "open_revs",
-											"value": "{{open_revs}}",
-											"equals": true
-										},
-										{
-											"key": "revs",
-											"value": "true",
-											"equals": true
-										},
-										{
-											"key": "show_exp",
-											"value": "false",
-											"equals": true
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "692",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Jan 2018 22:21:50 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Etag",
-									"value": "\"16-befb94aa99deb2ea420ef8050c15becf\"",
-									"name": "Etag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 22,
-							"body": "{\"_id\":\"testdoc\",\"_rev\":\"16-befb94aa99deb2ea420ef8050c15becf\",\"_revisions\":{\"ids\":[\"befb94aa99deb2ea420ef8050c15becf\",\"e589389fd64c95f6522efc498f10d33e\",\"f85e3d5281484f9bd779782c4570b9ae\",\"1f42890c242e24223afae914ff581a09\",\"18c60885efa1e467147253c9a69a07c0\",\"f05cff3ebc503ae9b3486c378d0b1a5f\",\"8d20176b8e5a7bcfbc0cf19a0a9b332d\",\"10dd956b7f818d324ee79e6c39995a97\",\"c7bde27dc8f25b59eddf1687254859e4\",\"68aeb4230dea31f5496db20afa2a12fc\",\"3fd41affdfd92e2fb8e9ea6abbfe90bd\",\"373546b6ca3ec862069d1ba932507867\",\"03b2117982b33ba9476bfda1f2a8881b\",\"faa0e0235486e0b6add78cc9e0f89e08\",\"85a0310f52db4a60f506d461f4e81274\",\"179900bc134a6eac295515793bf80080\"],\"start\":16},\"channels\":[\"_admin\"],\"value\":\"bar\"}"
-						},
-						{
-							"id": "0dd6af90-8587-4fad-8786-95afeb8649bb",
+							"id": "8515596b-fc2b-4560-a1a7-619b2ab585a7",
 							"name": "404",
 							"originalRequest": {
 								"method": "GET",
@@ -1721,7 +1522,6 @@
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -1749,8 +1549,98 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 17,
 							"body": "{\"error\":\"not_found\",\"reason\":\"deleted\"}"
+						},
+						{
+							"id": "8e55ae90-7749-4724-9244-1286e4cb48d3",
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/{{docid}}?attachments=true&atts_since={{atts_since}}&open_revs={{open_revs}}&revs=true&show_exp=false",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{docid}}"
+									],
+									"query": [
+										{
+											"key": "attachments",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "atts_since",
+											"value": "{{atts_since}}",
+											"equals": true
+										},
+										{
+											"key": "open_revs",
+											"value": "{{open_revs}}",
+											"equals": true
+										},
+										{
+											"key": "revs",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "show_exp",
+											"value": "false",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "692",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 22:21:50 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Etag",
+									"value": "\"16-befb94aa99deb2ea420ef8050c15becf\"",
+									"name": "Etag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": "{\"_id\":\"testdoc\",\"_rev\":\"16-befb94aa99deb2ea420ef8050c15becf\",\"_revisions\":{\"ids\":[\"befb94aa99deb2ea420ef8050c15becf\",\"e589389fd64c95f6522efc498f10d33e\",\"f85e3d5281484f9bd779782c4570b9ae\",\"1f42890c242e24223afae914ff581a09\",\"18c60885efa1e467147253c9a69a07c0\",\"f05cff3ebc503ae9b3486c378d0b1a5f\",\"8d20176b8e5a7bcfbc0cf19a0a9b332d\",\"10dd956b7f818d324ee79e6c39995a97\",\"c7bde27dc8f25b59eddf1687254859e4\",\"68aeb4230dea31f5496db20afa2a12fc\",\"3fd41affdfd92e2fb8e9ea6abbfe90bd\",\"373546b6ca3ec862069d1ba932507867\",\"03b2117982b33ba9476bfda1f2a8881b\",\"faa0e0235486e0b6add78cc9e0f89e08\",\"85a0310f52db4a60f506d461f4e81274\",\"179900bc134a6eac295515793bf80080\"],\"start\":16},\"channels\":[\"_admin\"],\"value\":\"bar\"}"
 						}
 					]
 				},
@@ -1847,7 +1737,7 @@
 					},
 					"response": [
 						{
-							"id": "07f4c04a-2626-4db7-ae66-3d6a059c00a0",
+							"id": "97cff1cb-2f8a-4b0d-984c-88b8e71b2b7a",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -1926,7 +1816,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Encoding",
@@ -1960,7 +1849,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 374,
 							"body": "{\"rows\":[\n{\"key\":\"05bfcc578d2746d574a7b3565d37a765\",\"id\":\"05bfcc578d2746d574a7b3565d37a765\",\"value\":{\"rev\":\"3-7fc6b14d68aaad1a6842c238cbd253d8\"},\"doc\":{\"_id\":\"05bfcc578d2746d574a7b3565d37a765\",\"_rev\":\"3-7fc6b14d68aaad1a6842c238cbd253d8\",\"_revisions\":{\"ids\":[\"7fc6b14d68aaad1a6842c238cbd253d8\",\"651a607cfc50800c9a4caff4e23a1a9a\",\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":3},\"value\":\"foobar\"}}\n,{\"key\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"id\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"value\":{\"rev\":\"2-651a607cfc50800c9a4caff4e23a1a9a\"},\"doc\":{\"_id\":\"31fb4b79987df63477bdd6dbdc20dee0\",\"_rev\":\"2-651a607cfc50800c9a4caff4e23a1a9a\",\"_revisions\":{\"ids\":[\"651a607cfc50800c9a4caff4e23a1a9a\",\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":2},\"value\":\"foobar\"}}\n,{\"key\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"value\":{\"rev\":\"2-6762ea8dd160bf55508fe50f275dc962\"},\"doc\":{\"_id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"_rev\":\"2-6762ea8dd160bf55508fe50f275dc962\",\"_revisions\":{\"ids\":[\"6762ea8dd160bf55508fe50f275dc962\",\"0783647b15c4435371a2d83d8f97d77f\"],\"start\":2},\"channels\":[\"_admin\"],\"key\":\"value\",\"type\":\"foobar\",\"username\":\"admin\"}}\n,{\"key\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"id\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"6e5a3f6feef6f1c1c32503adbf33bfd3\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"id\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"6e9f8da6e5e43505a87c3b051f519fc8\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"70990ab0d9a3bb0fec069d284363efe1\",\"id\":\"70990ab0d9a3bb0fec069d284363efe1\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"70990ab0d9a3bb0fec069d284363efe1\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"77f1ed7f21763bde7809e13584512a3b\",\"id\":\"77f1ed7f21763bde7809e13584512a3b\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"77f1ed7f21763bde7809e13584512a3b\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"8e724c26b2db621e7fefd1b1069dc2a5\",\"id\":\"8e724c26b2db621e7fefd1b1069dc2a5\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"8e724c26b2db621e7fefd1b1069dc2a5\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"id\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"8f11f17baaa78fc18187f73ba0a5e6f4\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"db3627e655768550cc024933def3f265\",\"id\":\"db3627e655768550cc024933def3f265\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"db3627e655768550cc024933def3f265\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"id\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"df31ffb9fed4f127d608c2a2d97b0f97\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"ee83120452394e09af05169b43c0a493\",\"id\":\"ee83120452394e09af05169b43c0a493\",\"value\":{\"rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\"},\"doc\":{\"_id\":\"ee83120452394e09af05169b43c0a493\",\"_rev\":\"1-fc2cf22c5e5007bd966869ebfe9e276a\",\"_revisions\":{\"ids\":[\"fc2cf22c5e5007bd966869ebfe9e276a\"],\"start\":1},\"value\":\"foo\"}}\n,{\"key\":\"testdoc\",\"id\":\"testdoc\",\"value\":{\"rev\":\"16-befb94aa99deb2ea420ef8050c15becf\"},\"doc\":{\"_id\":\"testdoc\",\"_rev\":\"16-befb94aa99deb2ea420ef8050c15becf\",\"_revisions\":{\"ids\":[\"befb94aa99deb2ea420ef8050c15becf\",\"e589389fd64c95f6522efc498f10d33e\",\"f85e3d5281484f9bd779782c4570b9ae\",\"1f42890c242e24223afae914ff581a09\",\"18c60885efa1e467147253c9a69a07c0\",\"f05cff3ebc503ae9b3486c378d0b1a5f\",\"8d20176b8e5a7bcfbc0cf19a0a9b332d\",\"10dd956b7f818d324ee79e6c39995a97\",\"c7bde27dc8f25b59eddf1687254859e4\",\"68aeb4230dea31f5496db20afa2a12fc\",\"3fd41affdfd92e2fb8e9ea6abbfe90bd\",\"373546b6ca3ec862069d1ba932507867\",\"03b2117982b33ba9476bfda1f2a8881b\",\"faa0e0235486e0b6add78cc9e0f89e08\",\"85a0310f52db4a60f506d461f4e81274\",\"179900bc134a6eac295515793bf80080\"],\"start\":16},\"channels\":[\"_admin\"],\"value\":\"bar\"}}\n],\n\"total_rows\":13,\"update_seq\":48}"
 						}
 					]
@@ -2042,7 +1930,7 @@
 					},
 					"response": [
 						{
-							"id": "0c0c6459-950f-4bac-bdc0-2653adf5b679",
+							"id": "7d446091-3d87-4806-9419-3460f165b95a",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -2102,7 +1990,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Encoding",
@@ -2136,7 +2023,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 10,
 							"body": "{\"rows\":[\n{\"key\":\"testdoc\",\"id\":\"testdoc\",\"value\":{\"rev\":\"16-befb94aa99deb2ea420ef8050c15becf\"}}\n],\n\"total_rows\":1,\"update_seq\":48}"
 						}
 					]
@@ -2195,7 +2081,7 @@
 					},
 					"response": [
 						{
-							"id": "59d5bae6-b2d3-4b29-9f89-ceb1ed26ee53",
+							"id": "007120b6-494f-47bb-a721-3bea23b3840e",
 							"name": "415",
 							"originalRequest": {
 								"method": "POST",
@@ -2223,7 +2109,6 @@
 							"status": "Unsupported Media Type",
 							"code": 415,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -2251,11 +2136,10 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 15,
 							"body": "{\"error\":\"Unsupported Media Type\",\"reason\":\"Invalid content type text/plain\"}"
 						},
 						{
-							"id": "538c35e6-b07c-48c7-9a8f-bd47e1c5f08f",
+							"id": "b4bd1412-1048-4406-8bba-ef2890ff51b5",
 							"name": "201",
 							"originalRequest": {
 								"method": "POST",
@@ -2288,72 +2172,6 @@
 							"status": "Created",
 							"code": 201,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "86",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Jan 2018 22:50:51 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 25,
-							"body": "[{\"id\":\"4d36bf78d0c8c58b571346526e021b92\",\"rev\":\"1-2d1992f26066e9392f00abe72ba029a5\"}]"
-						},
-						{
-							"id": "4f0ea1c2-ccdf-4546-bdc6-cd31b6a9576f",
-							"name": "201",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"docs\": [\n    {\n      \"id\": \"{{docid}}\"\n    }\n  ]\n}"
-								},
-								"url": {
-									"raw": "{{publicurl}}/{{db}}/_bulk_docs",
-									"host": [
-										"{{publicurl}}"
-									],
-									"path": [
-										"{{db}}",
-										"_bulk_docs"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -2381,8 +2199,70 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 25,
 							"body": "[{\"id\":\"61eb51de87862e146b647da19b150726\",\"rev\":\"1-2d1992f26066e9392f00abe72ba029a5\"}]"
+						},
+						{
+							"id": "e3ae8e62-de32-4c8e-bf79-080415e93569",
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"docs\": [\n    {\n      \"id\": \"{{docid}}\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_bulk_docs",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_bulk_docs"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "86",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 22:50:51 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": "[{\"id\":\"4d36bf78d0c8c58b571346526e021b92\",\"rev\":\"1-2d1992f26066e9392f00abe72ba029a5\"}]"
 						}
 					]
 				},
@@ -2484,7 +2364,7 @@
 					},
 					"response": [
 						{
-							"id": "60ab9e1b-6d52-4490-8ab8-08c9563b1d9e",
+							"id": "fd6f7590-3718-43b5-8464-1225db453a9f",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -2528,7 +2408,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "raw",
-							"_postman_previewtype": "multipart",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -2556,7 +2435,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 35,
 							"body": "--5c668afeb6ef20d6f67865e2a6eb7c63fa759eb7c523f99ac6fc2afee511\r\nContent-Type: application/json\r\n\r\n{\"_id\":\"61c24c83b8a9e57540b8f8b82a348b99\",\"_rev\":\"2-6762ea8dd160bf55508fe50f275dc962\",\"channels\":[\"_admin\"],\"key\":\"value\",\"type\":\"foobar\",\"username\":\"admin\"}\r\n--5c668afeb6ef20d6f67865e2a6eb7c63fa759eb7c523f99ac6fc2afee511--\r\n"
 						}
 					]
@@ -2596,7 +2474,7 @@
 					},
 					"response": [
 						{
-							"id": "49ab7a58-9b50-4420-85c2-67867eb49958",
+							"id": "e41fa3dc-e089-47c9-a1d5-a8e9195a8f23",
 							"name": "409",
 							"originalRequest": {
 								"method": "DELETE",
@@ -2631,7 +2509,6 @@
 							"status": "Conflict",
 							"code": 409,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -2659,11 +2536,10 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 17,
 							"body": "{\"error\":\"conflict\",\"reason\":\"Document revision conflict\"}"
 						},
 						{
-							"id": "9f2f97b4-aaa2-40b1-9761-c3274b1518e7",
+							"id": "3bf0e8ff-a805-4d25-98a9-1e978bedd10c",
 							"name": "200",
 							"originalRequest": {
 								"method": "DELETE",
@@ -2698,7 +2574,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -2726,7 +2601,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 23,
 							"body": "{\"id\":\"testdoc\",\"ok\":true,\"rev\":\"17-c02f8137c81a141696f78ac549675315\"}"
 						}
 					]
@@ -2878,80 +2752,7 @@
 					},
 					"response": [
 						{
-							"id": "8afb6840-a650-4d1a-a51e-80669a68c7a0",
-							"name": "409",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{publicurl}}/{{db}}/_local/{{localdocid}}?rev={{rev}}&batch={{batch}}",
-									"host": [
-										"{{publicurl}}"
-									],
-									"path": [
-										"{{db}}",
-										"_local",
-										"{{localdocid}}"
-									],
-									"query": [
-										{
-											"key": "rev",
-											"value": "{{rev}}",
-											"equals": true
-										},
-										{
-											"key": "batch",
-											"value": "{{batch}}",
-											"equals": true
-										}
-									]
-								}
-							},
-							"status": "Conflict",
-							"code": 409,
-							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
-							"header": [
-								{
-									"key": "Content-Length",
-									"value": "56",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Jan 2018 23:25:54 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Server",
-									"value": "Couchbase Sync Gateway/1.5.0",
-									"name": "Server",
-									"description": "A name for the server"
-								}
-							],
-							"cookie": [],
-							"responseTime": 17,
-							"body": "{\"error\":\"conflict\",\"reason\":\"Document update conflict\"}"
-						},
-						{
-							"id": "114f2eba-a446-458d-8ffc-ae6bd0c27bf7",
+							"id": "8b02f130-7604-4259-943f-4f421ec5a6c5",
 							"name": "200",
 							"originalRequest": {
 								"method": "DELETE",
@@ -2992,7 +2793,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -3020,8 +2820,78 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 17,
 							"body": ""
+						},
+						{
+							"id": "19eb0b93-7173-4adb-9372-c991e9321d1a",
+							"name": "409",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{publicurl}}/{{db}}/_local/{{localdocid}}?rev={{rev}}&batch={{batch}}",
+									"host": [
+										"{{publicurl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_local",
+										"{{localdocid}}"
+									],
+									"query": [
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"equals": true
+										},
+										{
+											"key": "batch",
+											"value": "{{batch}}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "56",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2018 23:25:54 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Couchbase Sync Gateway/1.5.0",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"body": "{\"error\":\"conflict\",\"reason\":\"Document update conflict\"}"
 						}
 					]
 				}
@@ -3029,6 +2899,7 @@
 		},
 		{
 			"name": "session",
+			"description": null,
 			"item": [
 				{
 					"name": "Create a user session",
@@ -3075,7 +2946,7 @@
 					},
 					"response": [
 						{
-							"id": "6873f164-8f4d-4052-a10f-c0f580637878",
+							"id": "92d07065-419d-4132-8e02-7d662c170f31",
 							"name": "200",
 							"originalRequest": {
 								"method": "POST",
@@ -3103,7 +2974,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -3147,7 +3017,6 @@
 									"key": "SyncGatewaySession"
 								}
 							],
-							"responseTime": 22,
 							"body": "{\"authentication_handlers\":[\"default\",\"cookie\"],\"ok\":true,\"userCtx\":{\"channels\":{\"!\":1,\"*\":2},\"name\":\"admin\"}}"
 						}
 					]
@@ -3184,7 +3053,7 @@
 					},
 					"response": [
 						{
-							"id": "431400b9-f257-4524-8d3b-93adb0ebe613",
+							"id": "50edf943-a7ea-4d8e-bce0-958e10df882d",
 							"name": "200",
 							"originalRequest": {
 								"method": "DELETE",
@@ -3216,7 +3085,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "plain",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -3250,7 +3118,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 6,
 							"body": ""
 						}
 					]
@@ -3259,6 +3126,7 @@
 		},
 		{
 			"name": "views",
+			"description": null,
 			"item": [
 				{
 					"name": "Query a view",
@@ -3369,7 +3237,7 @@
 					},
 					"response": [
 						{
-							"id": "ad7b5d5a-b97e-4630-ad8a-142d4fe38117",
+							"id": "f2405450-ed20-4502-ba17-5f1438feb448",
 							"name": "403",
 							"originalRequest": {
 								"method": "GET",
@@ -3496,7 +3364,6 @@
 							"status": "Forbidden",
 							"code": 403,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -3524,7 +3391,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 7,
 							"body": "{\"error\":\"Forbidden\",\"reason\":\"forbidden\"}"
 						}
 					]
@@ -3533,6 +3399,7 @@
 		},
 		{
 			"name": "database",
+			"description": null,
 			"item": [
 				{
 					"name": "Database info",
@@ -3584,7 +3451,7 @@
 					},
 					"response": [
 						{
-							"id": "5538bfdf-9509-4c2a-a8b9-e70c7d9fd9fa",
+							"id": "2f568ad7-ff98-4cff-99fe-542b33fd8eae",
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -3612,7 +3479,6 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"_postman_previewtype": "text",
 							"header": [
 								{
 									"key": "Content-Length",
@@ -3640,7 +3506,6 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": 26,
 							"body": "{\"committed_update_seq\":52,\"compact_running\":false,\"db_name\":\"demodb\",\"disk_format_version\":0,\"instance_start_time\":1516923400395762,\"purge_seq\":0,\"state\":\"Online\",\"update_seq\":52}"
 						}
 					]
@@ -3649,6 +3514,7 @@
 		},
 		{
 			"name": "oidc",
+			"description": null,
 			"item": [
 				{
 					"name": "OpenID Connect Authentication.",
