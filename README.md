@@ -15,6 +15,9 @@ This is the Environment Definitions file that defines the variables used by the 
 ####  sync-gateway-config.json
 This is very simple sample sync gateway file corresponding to the sample environment that you can use to jumpstart your testing. If you have a sync gateway running, you can relaunch your sync gateway with this sample config file.
 
+- By default, the collections point to a mock server
+- Update the "adminurl" and "publicurl" environment variables with the Admin and Public URL Sync Gateway endpoints of your setup .
+
 
 ### Prequiresites
 You should have Sync Gateway [installed](https://www.couchbase.com/downloads) and running. 
