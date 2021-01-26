@@ -7,10 +7,10 @@ These are the Postman Collections and environment variable definition files for 
 
 ####  Sync-Gateway-Public.postman_collection
 
-[This](https://raw.githubusercontent.com/couchbaselabs/Couchbase-Sync-Gateway-Postman-Collection/master/Sync-Gateway-Public.postman_collection) is the Portman collection corresponding to the [Public interface](https://docs.couchbase.com/sync-gateway/current/refer/rest-api-public.html) of the Sync Gateway
+[This](https://raw.githubusercontent.com/couchbaselabs/Couchbase-Sync-Gateway-Postman-Collection/master/Sync-Gateway-Public.postman_collection) is the Postman collection corresponding to the [Public interface](https://docs.couchbase.com/sync-gateway/current/refer/rest-api-public.html) of the Sync Gateway
 
 ####  Sync-Gateway-Environment.postman_environment
-This is the Environment Definitions file that defines the variables used by the Admin and Public collections
+[This](https://raw.githubusercontent.com/couchbaselabs/Couchbase-Sync-Gateway-Postman-Collection/master/Sync-Gateway-Public.postman_collection) is the Environment Definitions file that defines the variables used by the Admin and Public collections
 
 ####  sync-gateway-config.json
 This is very simple sample sync gateway file corresponding to the sample environment that you can use to jumpstart your testing. If you have a sync gateway running, you can relaunch your sync gateway with this sample config file.
