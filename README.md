@@ -3,11 +3,11 @@ These are the Postman Collections and environment variable definition files for 
 
 #### Sync-Gateway-Admin.postman_collection 
 
-This is the Portman collection corresponding to the [Admin interface](https://developer.couchbase.com/documentation/mobile/1.5/references/sync-gateway/admin-rest-api/index.html) of the Sync Gateway
+[This](https://raw.githubusercontent.com/couchbaselabs/Couchbase-Sync-Gateway-Postman-Collection/master/Sync-Gateway-Admin.postman_collection) is the Postman collection corresponding to the [Admin interface](https://docs.couchbase.com/sync-gateway/current/refer/rest-api-admin.html) of the Sync Gateway
 
 ####  Sync-Gateway-Public.postman_collection
 
-This is the Portman collection corresponding to the [Public interface](https://developer.couchbase.com/documentation/mobile/1.5/references/sync-gateway/rest-api/index.html) of the Sync Gateway
+[This](https://raw.githubusercontent.com/couchbaselabs/Couchbase-Sync-Gateway-Postman-Collection/master/Sync-Gateway-Public.postman_collection) is the Portman collection corresponding to the [Public interface](https://docs.couchbase.com/sync-gateway/current/refer/rest-api-public.html) of the Sync Gateway
 
 ####  Sync-Gateway-Environment.postman_environment
 This is the Environment Definitions file that defines the variables used by the Admin and Public collections
