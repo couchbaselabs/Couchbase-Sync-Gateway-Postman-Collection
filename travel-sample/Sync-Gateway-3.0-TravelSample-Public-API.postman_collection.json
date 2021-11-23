@@ -468,7 +468,40 @@
 						},
 						{
 							"name": "Create or update document",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Create/Update Doc Success Test\", function () {",
+											"    pm.response.to.have.status(201);",
+											"    var jsonData = pm.response.json();",
+											"    var docId = jsonData[\"id\"];",
+											"    pm.expect(docId).to.eql(pm.environment.get(\"newdoc\"));",
+											"    var revId = jsonData[\"rev\"];",
+											"    pm.environment.set(\"rev\",revId);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
 								"method": "PUT",
 								"header": [
 									{
@@ -478,7 +511,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "pm.test(\"Create/Update Doc Success Test\", function () {\n    pm.response.to.have.status(201);\n    var jsonData = pm.response.json();\n    var docId = jsonData[\"id\"];\n    pm.expect(docId).to.eql(pm.environment.get(\"newdoc\"));\n    var revId = jsonData[\"rev\"];\n    pm.environment.set(\"rev\",revId);\n});",
+									"raw": "   { \n       \"type\" : \"hotel\", \n                \"address\": \"123 Main Street\", \n                \"city\": \"Mountain View\",\n                \"country\": \"USA\",\n                \"description\": \"Welcome to the Hotel California. Such a lovely place (such a lovely place).Such a lovely face Plenty of room at the Hotel California. Any time of year (any time of year) you can find it here\",\n                \"directions\": \"Metro Line A\",\n                 \"name\": \"Hotel California\",\n                 \"pets_ok\": false,\n                 \"phone\": \"555-234-1234\",\n                     \"free_breakfast\": true,\n    \"free_internet\": true,\n    \"free_parking\": false,\n    \"state\": \"CA\",\n    \"title\": \"Welcome to Hotel California\",\n    \"tollfree\": null,\n    \"url\": \"http://www.hotelcalifornia.com\",\n    \"vacancy\": true\n    } ",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -596,10 +629,25 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{publicUrl}}/{{db}}/{{newdoc}}?rev={{rev}}&attachments={{include_attachments}} &atts_since={{atts_since}} &open_revs={{open_revs}} &revs={{include_revs}} &show_exp={{show_exp}}",
+									"raw": "{{publicUrl}}/{{db}}/{{newdoc}}?rev={{rev}}&attachments={{include_attachments}}&atts_since={{atts_since}}&open_revs={{open_revs}}&revs={{include_revs}}&show_exp={{show_exp}}",
 									"host": [
 										"{{publicUrl}}"
 									],
@@ -615,22 +663,22 @@
 										},
 										{
 											"key": "attachments",
-											"value": "{{include_attachments}} ",
+											"value": "{{include_attachments}}",
 											"description": "Default is false. Include attachment bodies in response."
 										},
 										{
 											"key": "atts_since",
-											"value": "{{atts_since}} ",
+											"value": "{{atts_since}}",
 											"description": "Include attachments only since specified revisions. Does not include attachments for specified revisions."
 										},
 										{
 											"key": "open_revs",
-											"value": "{{open_revs}} ",
+											"value": "{{open_revs}}",
 											"description": "Option to fetch specified revisions of the document. The value can be `all` to fetch all leaf revisions or an array of revision numbers (i.e. open_revs=[\"rev1\", \"rev2\"]). Only [leaf revision](glossary.html) bodies that haven't been pruned are guaranteed to be returned.\n\nIf this option is specified the response will be in multipart format. Use the `Accept: application/json` request header to get the result as a JSON object.\n"
 										},
 										{
 											"key": "revs",
-											"value": "{{include_revs}} ",
+											"value": "{{include_revs}}",
 											"description": "Default is false. Indicates whether to include a _revisions property for each document in the response, which contains a revision history of the document. The length of the returned revision tree can be specified with the `revs_limit` querystring parameter."
 										},
 										{
@@ -1950,13 +1998,13 @@
 									"type": "basic",
 									"basic": [
 										{
-											"key": "username",
-											"value": "sgw_admin",
+											"key": "password",
+											"value": "password",
 											"type": "string"
 										},
 										{
-											"key": "password",
-											"value": "password",
+											"key": "username",
+											"value": "{{username}}",
 											"type": "string"
 										}
 									]
