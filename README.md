@@ -13,16 +13,16 @@ The collection supports v3.0 of Sync Gateway REST interface.
 
 # Postman Collections
 
-## Sync-Gateway-3.0-Admin-API.postman_collection.json
+### Sync-Gateway-3.0-Admin-API.postman_collection.json
 
 [Sync-Gateway-3.0-Admin-API.postman_collection](https://raw.githubusercontent.com/couchbaselabs/Couchbase-Sync-Gateway-Postman-Collection/master/Sync-Gateway-3.0-Admin-API.postman_collection.json) corresponds to the [Sync Gateway Admin interface](https://docs.couchbase.com/sync-gateway/3.0/rest-api-admin.html) that includes database management and administration, defining access controls and end user management.
 
 
-## Sync-Gateway-3.0-Public-API.postman_collection.json
+### Sync-Gateway-3.0-Public-API.postman_collection.json
 
 [Sync-Gateway-3.0-Public-API.postman_collection](https://raw.githubusercontent.com/couchbaselabs/Couchbase-Sync-Gateway-Postman-Collection/master/Sync-Gateway-3.0-Public-API.postman_collection.json) corresponds to the [Sync Gateway Public interface](https://docs.couchbase.com/sync-gateway/3.0/rest-api.html) that enables read/write access to application data.
 
-## Sync-Gateway-3.0-Metrics-API.postman_collection.json
+### Sync-Gateway-3.0-Metrics-API.postman_collection.json
 
 [Sync-Gateway-3.0-Metrics-API.postman_collection](https://raw.githubusercontent.com/couchbaselabs/Couchbase-Sync-Gateway-Postman-Collection/master/Sync-Gateway-3.0-Metrics-API.postman_collection.json) corresponds to the [Sync Gateway Metrics interface](https://docs.couchbase.com/sync-gateway/3.0/rest-api.html) that enables access to cluster-level stats in Prometheus and custom JSON format.
 
@@ -31,6 +31,7 @@ The collection supports v3.0 of Sync Gateway REST interface.
 [Sync-Gateway-3.0-Environment.postman_environment](https://raw.githubusercontent.com/couchbaselabs/Couchbase-Sync-Gateway-Postman-Collection/master/Sync-Gateway-3.0-Environment.postman_environment.json) is the Environment Definitions file that defines the variables. The variables will have to be customized with values corresponding to your environment.
 
 ## Usage
+
 *  Download [Postman client](https://www.getpostman.com/) for free for your platform. There is a Pro version as well if you want the added functionality.
 
 * Launch Postman API client and [import](https://learning.postman.com/docs/running-collections/working-with-data-files/) the collections and environment file
@@ -110,10 +111,10 @@ SUCCESS: User admin set
 Sign in as “Administrator” and “password” in login page
 
 * Go to “buckets” menu and confirm that the `travel-sample` bucket is loaded. This bucket contains sample data.
-![](https://blog.couchbase.com/wp-content/uploads/2021/11/Screen-Shot-2021-11-07-at-4.39.08-PM-e1636345591885.png)
+![](https://blog.couchbase.com/wp-content/uploads/2021/11/admin-ui-bucket.png)
 
 * Go to “security” menu and confirm the following users are created. The users have been explained earlier.
-![](https://blog.couchbase.com/wp-content/uploads/2021/11/Screen-Shot-2021-11-07-at-4.39.20-PM-e1636345636217.png)
+![](https://blog.couchbase.com/wp-content/uploads/2021/11/admin-ui-security.png)
 
 ### Install Sync Gateway
 
@@ -161,7 +162,7 @@ You should see equivalent of the following message
 
 ```bash
 {"couchdb":"Welcome","vendor":{"name":"Couchbase Sync Gateway","version":"3.0"},"version":"Couchbase Sync Gateway/{version-maintenance}(145;e3f46be) EE"}
-
+```
 
 ### Using Postman
 
