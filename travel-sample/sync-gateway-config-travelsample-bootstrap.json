@@ -1,0 +1,55 @@
+{
+  "bootstrap": {
+    "server": "couchbases://cb-server",
+    "server_tls_skip_verify": true,
+    "username": "admin",
+    "password": "password"
+  },
+  "api": {
+    "public_interface": ":4984",
+    "admin_interface": ":4985",
+    "metrics_interface": ":4986",
+    "https": {}
+  },
+  "logging": {
+    "log_file_path": "/var/tmp/sglogs",
+    "console": {
+      "rotation": {},
+      "log_level": "debug",
+      "log_keys": [
+        "*"
+      ]
+    },
+    "error": {
+      "enabled": true,
+      "rotation": {
+        "max_size": 20,
+        "max_age": 180
+      }
+    },
+    "warn": {
+      "enabled": true,
+      "rotation": {
+        "max_size": 20,
+        "max_age": 90
+      }
+    },
+    "info": {
+      "enabled": false,
+      "rotation": {}
+    },
+    "debug": {
+      "enabled": false,
+      "rotation": {}
+    },
+    "trace": {
+      "rotation": {}
+    },
+    "stats": {
+      "rotation": {}
+    }
+  },
+  "auth": {},
+  "replicator": {},
+  "unsupported": {}
+}
