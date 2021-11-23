@@ -1,0 +1,3949 @@
+{
+	"info": {
+		"_postman_id": "052c7884-5bcd-41ba-9ca8-9a408e9588b3",
+		"name": "Sync Gateway 3.0 Public API",
+		"description": "This yaml API spec documents the Sync Gateway Public REST API.\n\nThe swagger spec isn’t officially supported or actively maintained. It is offered as a convenient starting point for developers.\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{db}",
+			"item": [
+				{
+					"name": "{doc}",
+					"item": [
+						{
+							"name": "{attachment}",
+							"item": [
+								{
+									"name": "Get attachment",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "username",
+													"value": "{{username}}",
+													"type": "string"
+												},
+												{
+													"key": "password",
+													"value": "password",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/{{doc}}/{{attachment}}?rev={{rev}}",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"{{doc}}",
+												"{{attachment}}"
+											],
+											"query": [
+												{
+													"key": "rev",
+													"value": "{{rev}}",
+													"description": "Revision identifier of the parent revision the new one should replace. (Not used when creating a new document.)"
+												}
+											]
+										},
+										"description": "This request retrieves a file attachment associated with the document. The raw data of the associated attachment is returned (just as if you were accessing a static file). The Content-Type response header is the same content type set when the document attachment was added to the database.\n\nTo remove an attachment from a document, simply update the `_attachments` dictionary of the document in the PUT `/{db}/{id}` request. From then on, the attachment will not be replicated but will still reside in the Couchbase Server bucket (see open ticket [#1648](https://github.com/couchbase/sync_gateway/issues/1648)).\n"
+									},
+									"response": [
+										{
+											"name": "Not Found, the specified database, document or attachment was not found.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "Cookie",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{publicUrl}}/{{db}}/{{doc}}/{{attachment}}?rev=<string>",
+													"host": [
+														"{{publicUrl}}"
+													],
+													"path": [
+														"{{db}}",
+														"{{doc}}",
+														"{{attachment}}"
+													],
+													"query": [
+														{
+															"key": "rev",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "db",
+															"value": "<string>",
+															"description": "(Required) Database name"
+														},
+														{
+															"key": "doc",
+															"value": "<string>",
+															"description": "(Required) Document ID"
+														},
+														{
+															"key": "attachment",
+															"value": "<string>",
+															"description": "(Required) Attachment name. This value must be URL encoded. For example, if the attachment name is `blob_/avatar`, the path component passed to the URL should be `blob_%2Favatar` (tested with [URLEncoder](https://www.urlencoder.org/))."
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "The message body contains the attachment, in the format specified in the Content-Type header.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "Cookie",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{publicUrl}}/{{db}}/{{doc}}/{{attachment}}?rev=<string>",
+													"host": [
+														"{{publicUrl}}"
+													],
+													"path": [
+														"{{db}}",
+														"{{doc}}",
+														"{{attachment}}"
+													],
+													"query": [
+														{
+															"key": "rev",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "db",
+															"value": "<string>",
+															"description": "(Required) Database name"
+														},
+														{
+															"key": "doc",
+															"value": "<string>",
+															"description": "(Required) Document ID"
+														},
+														{
+															"key": "attachment",
+															"value": "<string>",
+															"description": "(Required) Attachment name. This value must be URL encoded. For example, if the attachment name is `blob_/avatar`, the path component passed to the URL should be `blob_%2Favatar` (tested with [URLEncoder](https://www.urlencoder.org/))."
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "\"incididunt elit commodo laborum\""
+										},
+										{
+											"name": "Not Modified, the attachment wasn't modified if ETag equals the If-None-Match header",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "Cookie",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{publicUrl}}/{{db}}/{{doc}}/{{attachment}}?rev=<string>",
+													"host": [
+														"{{publicUrl}}"
+													],
+													"path": [
+														"{{db}}",
+														"{{doc}}",
+														"{{attachment}}"
+													],
+													"query": [
+														{
+															"key": "rev",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "db",
+															"value": "<string>",
+															"description": "(Required) Database name"
+														},
+														{
+															"key": "doc",
+															"value": "<string>",
+															"description": "(Required) Document ID"
+														},
+														{
+															"key": "attachment",
+															"value": "<string>",
+															"description": "(Required) Attachment name. This value must be URL encoded. For example, if the attachment name is `blob_/avatar`, the path component passed to the URL should be `blob_%2Favatar` (tested with [URLEncoder](https://www.urlencoder.org/))."
+														}
+													]
+												}
+											},
+											"status": "Not Modified",
+											"code": 304,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Add or update attachment",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "username",
+													"value": "{{username}}",
+													"type": "string"
+												},
+												{
+													"key": "password",
+													"value": "password",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "file",
+											"file": {}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/{{doc}}/{{attachment}}?rev={{rev}}",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"{{doc}}",
+												"{{attachment}}"
+											],
+											"query": [
+												{
+													"key": "rev",
+													"value": "{{rev}}",
+													"description": "Revision identifier of the parent revision the new one should replace. (Not used when creating a new document.)"
+												}
+											]
+										},
+										"description": "This request adds or updates the supplied request content as an attachment to the specified document, the maximum content size of an attachment is 20MB. The attachment name must be a URL-encoded string (the file name). You must also supply either the rev query parameter or the If-Match HTTP header for validation, and the Content-Type headers (to set the attachment content type).\n\n  When uploading an attachment using an existing attachment name, the corresponding stored content of the database will be updated. Because you must supply the revision information to add an attachment to the document, this serves as validation to update the existing attachment.\n\n  Uploading an attachment updates the corresponding document revision. Revisions are tracked for the parent document, not individual attachments.\n\n  To remove an attachment from a document, simply update the `_attachments` dictionary of the document in the PUT `/{db}/{id}` request. From then on, the attachment will not be replicated but will still reside in the Couchbase Server bucket (see open ticket [#1648](https://github.com/couchbase/sync_gateway/issues/1648)).\n"
+									},
+									"response": [
+										{
+											"name": "Operation completed successfully",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "Cookie",
+														"value": "<API Key>"
+													},
+													{
+														"description": "Attachment Content-Type",
+														"key": "Content-Type",
+														"value": "incididunt elit commodo laborum"
+													}
+												],
+												"body": {
+													"mode": "file",
+													"file": {},
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{publicUrl}}/{{db}}/{{doc}}/{{attachment}}?rev=<string>",
+													"host": [
+														"{{publicUrl}}"
+													],
+													"path": [
+														"{{db}}",
+														"{{doc}}",
+														"{{attachment}}"
+													],
+													"query": [
+														{
+															"key": "rev",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "db",
+															"value": "<string>",
+															"description": "(Required) Database name"
+														},
+														{
+															"key": "doc",
+															"value": "<string>",
+															"description": "(Required) Document ID"
+														},
+														{
+															"key": "attachment",
+															"value": "<string>",
+															"description": "(Required) Attachment name. This value must be URL encoded. For example, if the attachment name is `blob_/avatar`, the path component passed to the URL should be `blob_%2Favatar` (tested with [URLEncoder](https://www.urlencoder.org/))."
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"id\": \"culpa ut\",\n \"rev\": \"pariatur Lorem\",\n \"ok\": true\n}"
+										},
+										{
+											"name": "Conflict, the document revision wasn't specified or it's not the latest.",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "Cookie",
+														"value": "<API Key>"
+													},
+													{
+														"description": "Attachment Content-Type",
+														"key": "Content-Type",
+														"value": "incididunt elit commodo laborum"
+													}
+												],
+												"body": {
+													"mode": "file",
+													"file": {},
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{publicUrl}}/{{db}}/{{doc}}/{{attachment}}?rev=<string>",
+													"host": [
+														"{{publicUrl}}"
+													],
+													"path": [
+														"{{db}}",
+														"{{doc}}",
+														"{{attachment}}"
+													],
+													"query": [
+														{
+															"key": "rev",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "db",
+															"value": "<string>",
+															"description": "(Required) Database name"
+														},
+														{
+															"key": "doc",
+															"value": "<string>",
+															"description": "(Required) Document ID"
+														},
+														{
+															"key": "attachment",
+															"value": "<string>",
+															"description": "(Required) Attachment name. This value must be URL encoded. For example, if the attachment name is `blob_/avatar`, the path component passed to the URL should be `blob_%2Favatar` (tested with [URLEncoder](https://www.urlencoder.org/))."
+														}
+													]
+												}
+											},
+											"status": "Conflict",
+											"code": 409,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get document",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/{{doc}}?rev={{rev}}&attachments={{include_attachments}} &atts_since={{atts_since}} &open_revs={{open_revs}} &revs={{include_revs}} &show_exp={{show_exp}}",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{doc}}"
+									],
+									"query": [
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"description": "Revision identifier of the revision to get. By default, Sync Gateway returns the current revision. This parameter is generally only needed for conflict resolution. For example where the app might need to retrieve a conflicting leaf revision that isn't the current revision."
+										},
+										{
+											"key": "attachments",
+											"value": "{{include_attachments}} ",
+											"description": "Default is false. Include attachment bodies in response."
+										},
+										{
+											"key": "atts_since",
+											"value": "{{atts_since}} ",
+											"description": "Include attachments only since specified revisions. Does not include attachments for specified revisions."
+										},
+										{
+											"key": "open_revs",
+											"value": "{{open_revs}} ",
+											"description": "Option to fetch specified revisions of the document. The value can be `all` to fetch all leaf revisions or an array of revision numbers (i.e. open_revs=[\"rev1\", \"rev2\"]). Only [leaf revision](glossary.html) bodies that haven't been pruned are guaranteed to be returned.\n\nIf this option is specified the response will be in multipart format. Use the `Accept: application/json` request header to get the result as a JSON object.\n"
+										},
+										{
+											"key": "revs",
+											"value": "{{include_revs}} ",
+											"description": "Default is false. Indicates whether to include a _revisions property for each document in the response, which contains a revision history of the document. The length of the returned revision tree can be specified with the `revs_limit` querystring parameter."
+										},
+										{
+											"key": "show_exp",
+											"value": "{{show_exp}}",
+											"description": "Whether to show the _exp property in the response."
+										}
+									]
+								},
+								"description": "This request retrieves a document from a database."
+							},
+							"response": [
+								{
+									"name": "The message body contains the following objects in a JSON document.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/{{doc}}?rev=<string>&attachments=false&atts_since=<string>,<string>&open_revs=<string>,<string>&revs=false&show_exp=false",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"{{doc}}"
+											],
+											"query": [
+												{
+													"key": "rev",
+													"value": "<string>"
+												},
+												{
+													"key": "attachments",
+													"value": "false"
+												},
+												{
+													"key": "atts_since",
+													"value": "<string>,<string>"
+												},
+												{
+													"key": "open_revs",
+													"value": "<string>,<string>"
+												},
+												{
+													"key": "revs",
+													"value": "false"
+												},
+												{
+													"key": "show_exp",
+													"value": "false"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												},
+												{
+													"key": "doc",
+													"value": "<string>",
+													"description": "(Required) Document ID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								}
+							]
+						},
+						{
+							"name": "Create or update document",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"_id\": \"<string>\",\n    \"_rev\": \"<string>\",\n    \"_exp\": \"<string>\",\n    \"_revisions\": {\n        \"start\": \"<integer>\",\n        \"ids\": [\n            \"<string>\",\n            \"<string>\"\n        ]\n    },\n    \"_attachments\": {\n        \"attachment_name\": {\n            \"content_type\": \"<string>\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/{{doc}}?new_edits={{new_edits}}&rev={{rev}}",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{doc}}"
+									],
+									"query": [
+										{
+											"key": "new_edits",
+											"value": "{{new_edits}}",
+											"description": "Default is true. Setting this to false indicates that the request body is an already-existing revision that should be directly inserted into the database, instead of a modification to apply to the current document. (This mode is used by the replicato.) This option must be used in conjunction with the `_revisions` property in the request body."
+										},
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"description": "(Required) Revision identifier of the revision to update. It must be the last revision in the history."
+										}
+									]
+								},
+								"description": "This request creates a new document or creates a new revision of an existing document. It enables you to specify the identifier for a new document rather than letting the software create an identifier. If you want to create a new document and let the software create an identifier, use the POST /db request.\nIf the document specified by doc does not exist, a new document is created and assigned the identifier specified in doc. If the document already exists, the document is updated with the JSON document in the message body and given a new revision. The maximum size allowed for a document is 20MB.\n\nSince Sync Gateway 1.3, an expiry property (`_exp`) can also be specified to purge the document after a given time. If **convergence** is enabled (introduced in Sync Gateway 1.5), the behaviour of the expiry feature changes in the following way: when the expiry value is reached, instead of getting purged, the **active** revision of the document is tombstoned. If there is another non-tombstoned revision for this document (i.e a conflict) it will become the active revision. The tombstoned revision will be purged when the server's metadata purge interval is reached.\n"
+							},
+							"response": [
+								{
+									"name": "The response is a JSON document that contains the following objects",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"_id\": \"<string>\",\n    \"_rev\": \"<string>\",\n    \"_exp\": \"<string>\",\n    \"_revisions\": {\n        \"start\": \"<integer>\",\n        \"ids\": [\n            \"<string>\",\n            \"<string>\"\n        ]\n    },\n    \"_attachments\": {\n        \"attachment_name\": {\n            \"content_type\": \"<string>\"\n        }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/{{doc}}?new_edits=true&rev=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"{{doc}}"
+											],
+											"query": [
+												{
+													"key": "new_edits",
+													"value": "true"
+												},
+												{
+													"key": "rev",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												},
+												{
+													"key": "doc",
+													"value": "<string>",
+													"description": "(Required) Document ID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"culpa ut\",\n \"rev\": \"pariatur Lorem\",\n \"ok\": true\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete document",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/{{doc}}?rev={{rev}}",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"{{doc}}"
+									],
+									"query": [
+										{
+											"key": "rev",
+											"value": "{{rev}}",
+											"description": "(Required) Revision identifier of the revision to delete. It must be the identifier of the latest revision in the history."
+										}
+									]
+								},
+								"description": "This request deletes a document from the database. When a document is deleted, the revision number is updated so the database can track the deletion in synchronized copies.\n"
+							},
+							"response": [
+								{
+									"name": "Document successfully removed",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/{{doc}}?rev=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"{{doc}}"
+											],
+											"query": [
+												{
+													"key": "rev",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												},
+												{
+													"key": "doc",
+													"value": "<string>",
+													"description": "(Required) Document ID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"culpa ut\",\n \"rev\": \"pariatur Lorem\",\n \"ok\": true\n}"
+								}
+							]
+						},
+						{
+							"name": "Create document",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\"<object>\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "db",
+											"value": "<string>",
+											"description": "(Required) Database name"
+										}
+									]
+								},
+								"description": "This request creates a new document in the specified database. You can either specify the document ID by including the _id in the request message body (the value must be a string), or let the software generate an ID.\n\nThe maximum size allowed for a document is 20MB.\n"
+							},
+							"response": [
+								{
+									"name": "The document was written successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "\"<object>\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												""
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"culpa ut\",\n \"rev\": \"pariatur Lorem\",\n \"ok\": true\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": " local/{local doc}",
+					"item": [
+						{
+							"name": "Get local doc",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_local/{{local_doc}}",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_local",
+										"{{local_doc}}"
+									],
+									"variable": [
+										{
+											"key": "db",
+											"value": "<string>",
+											"description": "(Required) Database name"
+										},
+										{
+											"key": "local_doc",
+											"value": "<string>",
+											"description": "(Required) Local document IDs begin with _local/."
+										}
+									]
+								},
+								"description": "This request retrieves a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by Couchbase Lite's replicator, as a place to store replication checkpoint data.\n"
+							},
+							"response": [
+								{
+									"name": "The message body contains the following objects in a JSON document.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_local/{{local_doc}}",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_local",
+												"{{local_doc}}"
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												},
+												{
+													"key": "local_doc",
+													"value": "<string>",
+													"description": "(Required) Local document IDs begin with _local/."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"culpa ut\",\n \"rev\": \"pariatur Lorem\",\n \"ok\": true\n}"
+								}
+							]
+						},
+						{
+							"name": "Create or update a local document",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_local/{{local_doc}}",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_local",
+										"{{local_doc}}"
+									],
+									"variable": [
+										{
+											"key": "db",
+											"value": "<string>",
+											"description": "(Required) Database name"
+										},
+										{
+											"key": "local_doc",
+											"value": "<string>",
+											"description": "(Required) Local document IDs begin with _local/."
+										}
+									]
+								},
+								"description": "This request creates or updates a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by the client's replicator, as a place to store replication checkpoint data.\n"
+							},
+							"response": [
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_local/{{local_doc}}",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_local",
+												"{{local_doc}}"
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												},
+												{
+													"key": "local_doc",
+													"value": "<string>",
+													"description": "(Required) Local document IDs begin with _local/."
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"culpa ut\",\n \"rev\": \"pariatur Lorem\",\n \"ok\": true\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a local document",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_local/{{local_doc}}?rev={{rev}} &batch={{batch}}",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_local",
+										"{{local_doc}}"
+									],
+									"query": [
+										{
+											"key": "rev",
+											"value": "{{rev}} ",
+											"description": "Revision identifier of the parent revision the new one should replace. (Not used when creating a new document.)"
+										},
+										{
+											"key": "batch",
+											"value": "{{batch}}",
+											"description": "Stores the document in batch mode. To use, set the value to ok."
+										}
+									]
+								},
+								"description": "This request deletes a local document. Local document IDs begin with _local/. Local documents are not replicated or indexed, don't support attachments, and don't save revision histories. In practice they are almost only used by Couchbase Lite's replicator, as a place to store replication checkpoint data.\n"
+							},
+							"response": [
+								{
+									"name": "Document successfully removed",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_local/{{local_doc}}?rev=<string>&batch=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_local",
+												"{{local_doc}}"
+											],
+											"query": [
+												{
+													"key": "rev",
+													"value": "<string>"
+												},
+												{
+													"key": "batch",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												},
+												{
+													"key": "local_doc",
+													"value": "<string>",
+													"description": "(Required) Local document IDs begin with _local/."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"culpa ut\",\n \"rev\": \"pariatur Lorem\",\n \"ok\": true\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": " changes",
+					"item": [
+						{
+							"name": "Changes",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_changes?limit={{limit}}&style={{style}} &active_only={{active_only}}&include_docs={{include_docs}}&filter={{filter}}&channels={{channels}}&doc_ids={{doc_ids}} &feed={{feed}}&since={{since}}&heartbeat={{heartbeat}}&timeout={{timeout}}",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_changes"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "{{limit}}",
+											"description": "Limits the number of result rows to the specified value. Using a value of 0 has the same effect as the value 1."
+										},
+										{
+											"key": "style",
+											"value": "{{style}} ",
+											"description": "Default is 'main_only'. Number of revisions to return in the changes array. main_only returns the current winning revision, all_docs returns all leaf revisions including conflicts and deleted former conflicts."
+										},
+										{
+											"key": "active_only",
+											"value": "{{active_only}}",
+											"description": "Default is false. When true, the changes response doesn't include either deleted documents, or notification for documents that the user no longer has access to."
+										},
+										{
+											"key": "include_docs",
+											"value": "{{include_docs}}",
+											"description": "Default is false. Indicates whether to include the associated document with each result. If there are conflicts, only the winning revision is returned."
+										},
+										{
+											"key": "filter",
+											"value": "{{filter}}",
+											"description": "Indicates that the reported documents should be filtered. The valid values are sync_gateway/bychannel and _doc_ids."
+										},
+										{
+											"key": "channels",
+											"value": "{{channels}}",
+											"description": "A comma-separated list of channel names. The response will be filtered to only documents in these channels. (This parameter must be used with the sync_gateway/bychannel filter parameter; see below.)"
+										},
+										{
+											"key": "doc_ids",
+											"value": "{{doc_ids}} ",
+											"description": "A list of document IDs as a valid JSON array. The response will be filtered to only documents with these IDs. This parameter must be used with the `filter=_doc_ids` and `feed=normal` parameters."
+										},
+										{
+											"key": "feed",
+											"value": "{{feed}}",
+											"description": "Default is 'normal'. Specifies type of change feed. Valid values are normal, continuous, longpoll, websocket."
+										},
+										{
+											"key": "since",
+											"value": "{{since}}",
+											"description": "Starts the results from the change immediately after the given sequence ID. Sequence IDs should be considered opaque; they come from the last_seq property of a prior response."
+										},
+										{
+											"key": "heartbeat",
+											"value": "{{heartbeat}}",
+											"description": "The `heartbeat` defines the interval (in milliseconds) at which an empty line (CRLF) is written to the response. It helps prevent Sync Gateway from deciding the socket is idle and closing it.\n\nThe `heartbeat` value overrides any `timeout` value, to keep the feed alive indefinitely.\n\nSetting `heartbeat=0` results in no heartbeat.\n\n**Default:** 0, which is no heartbeat\n\n**Constraints:**\n\n- Applies ONLY where `feed=longpoll` or `feed=continuous`.\n\n- Minimum: 25000 (25 seconds)\n\n- Maximum: None -- unless you define one in your configuration file using `MaxHeartbeat`\n\n"
+										},
+										{
+											"key": "timeout",
+											"value": "{{timeout}}",
+											"description": "The `timeout` value defines the maximum period (in milliseconds) to wait for a change, before sending a response. This wait applies even when there are no results.\n\nSetting `timeout=0` results in no timeout.\n\n**Default:** 300000 (5 minutes/300 seconds)\n\n**Constraints:**\n\n- Applies ONLY where `feed=longpoll` or `feed=continuous`.\n\n- Minimum: 0, no timeout\n\n- Maximum: 1500000 (15 minutes)\n\n"
+										}
+									]
+								},
+								"description": "This request retrieves a sorted list of changes made to documents in the database, in time order of application. Each document appears at most once, ordered by its most recent change, regardless of how many times it's been changed.\nThis request can be used to listen for update and modifications to the database for post processing or synchronization. A continuously connected changes feed is a reasonable approach for generating a real-time log for most applications.\n"
+							},
+							"response": [
+								{
+									"name": "Request completed successfully",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_changes?limit=<integer>&style=main_only&active_only=false&include_docs=false&filter=<string>&channels=<string>&doc_ids=<string>,<string>&feed=normal&since=<string>&heartbeat=0&timeout=300000",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_changes"
+											],
+											"query": [
+												{
+													"key": "limit",
+													"value": "<integer>"
+												},
+												{
+													"key": "style",
+													"value": "main_only"
+												},
+												{
+													"key": "active_only",
+													"value": "false"
+												},
+												{
+													"key": "include_docs",
+													"value": "false"
+												},
+												{
+													"key": "filter",
+													"value": "<string>"
+												},
+												{
+													"key": "channels",
+													"value": "<string>"
+												},
+												{
+													"key": "doc_ids",
+													"value": "<string>,<string>"
+												},
+												{
+													"key": "feed",
+													"value": "normal"
+												},
+												{
+													"key": "since",
+													"value": "<string>"
+												},
+												{
+													"key": "heartbeat",
+													"value": "0"
+												},
+												{
+													"key": "timeout",
+													"value": "300000"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"last_seq\": {},\n \"results\": [\n  {\n   \"changes\": [\n    {\n     \"rev\": \"com\"\n    },\n    {\n     \"rev\": \"m\"\n    }\n   ],\n   \"id\": \"labore aliqu\",\n   \"seq\": 75478417,\n   \"deleted\": false,\n   \"doc\": {}\n  },\n  {\n   \"changes\": [\n    {\n     \"rev\": \"aliquip\"\n    },\n    {\n     \"rev\": \"Duis sint cillum\"\n    }\n   ],\n   \"id\": \"qui esse Ut pariatur Duis\",\n   \"seq\": 39017734,\n   \"deleted\": false,\n   \"doc\": {}\n  }\n ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Changes",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"limit\": \"<integer>\",\n    \"style\": \"main_only\",\n    \"active_only\": false,\n    \"include_docs\": false,\n    \"filter\": \"<string>\",\n    \"channels\": \"<string>\",\n    \"doc_ids\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"feed\": \"normal\",\n    \"since\": \"<object>\",\n    \"heartbeat\": 0,\n    \"timeout\": 300000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_changes",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_changes"
+									],
+									"variable": [
+										{
+											"key": "db",
+											"value": "<string>",
+											"description": "(Required) Database name"
+										}
+									]
+								},
+								"description": "Same as the GET /_changes request except the parameters are in the JSON body.\n"
+							},
+							"response": [
+								{
+									"name": "Request completed successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"limit\": \"<integer>\",\n    \"style\": \"main_only\",\n    \"active_only\": false,\n    \"include_docs\": false,\n    \"filter\": \"<string>\",\n    \"channels\": \"<string>\",\n    \"doc_ids\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"feed\": \"normal\",\n    \"since\": \"<object>\",\n    \"heartbeat\": 0,\n    \"timeout\": 300000\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_changes",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_changes"
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"last_seq\": {},\n \"results\": [\n  {\n   \"changes\": [\n    {\n     \"rev\": \"ea\"\n    },\n    {\n     \"rev\": \"reprehenderit pariatur consequat tempor\"\n    }\n   ],\n   \"id\": \"Duis incididunt fugiat do\",\n   \"seq\": -69451986,\n   \"deleted\": false,\n   \"doc\": {}\n  },\n  {\n   \"changes\": [\n    {\n     \"rev\": \"in fugiat in\"\n    },\n    {\n     \"rev\": \"ex Excepteur\"\n    }\n   ],\n   \"id\": \"labore ex qui\",\n   \"seq\": -5468252,\n   \"deleted\": false,\n   \"doc\": {}\n  }\n ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Used by the replicator",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\"<object>\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_revs_diff",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_revs_diff"
+									],
+									"variable": [
+										{
+											"key": "db",
+											"value": "<string>",
+											"description": "(Required) Database name"
+										}
+									]
+								},
+								"description": "Given a set of document/revision IDs, returns the subset of those that do not correspond to revisions stored in the database."
+							},
+							"response": [
+								{
+									"name": "The request was successful",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "\"<object>\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_revs_diff",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_revs_diff"
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "docs",
+					"item": [
+						{
+							"name": "Get All docs",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_all_docs?access={{access}}&channels={{channels}}&include_docs={{include_docs}} &revs={{include_revs}} &update_seq={{update_seq}} &limit={{limit}}&keys={{keys}}&startkey={{startkey}}&endkey={{endkey}}",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_all_docs"
+									],
+									"query": [
+										{
+											"key": "access",
+											"value": "{{access}}",
+											"description": "Indicates whether to include in the response a list of what access this document grants (i.e. which users it allows to access which channels.) This option may only be used from the admin port."
+										},
+										{
+											"key": "channels",
+											"value": "{{channels}}",
+											"description": "Indicates whether to include in the response a channels property containing an array of channels this document is assigned to. (Channels not accessible by the user making the request will not be listed.)"
+										},
+										{
+											"key": "include_docs",
+											"value": "{{include_docs}} ",
+											"description": "Default is false. Indicates whether to include the associated document with each result. If there are conflicts, only the winning revision is returned."
+										},
+										{
+											"key": "revs",
+											"value": "{{include_revs}} ",
+											"description": "Default is false. Indicates whether to include a _revisions property for each document in the response, which contains a revision history of the document. The length of the returned revision tree can be specified with the `revs_limit` querystring parameter."
+										},
+										{
+											"key": "update_seq",
+											"value": "{{update_seq}} ",
+											"description": "Default is false. Indicates whether to include the update_seq (document sequence ID) property in the response."
+										},
+										{
+											"key": "limit",
+											"value": "{{limit}}",
+											"description": "Limits the number of result rows to the specified value. Using a value of 0 has the same effect as the value 1."
+										},
+										{
+											"key": "keys",
+											"value": "{{keys}}",
+											"description": "Specify a list of document IDs."
+										},
+										{
+											"key": "startkey",
+											"value": "{{startkey}}",
+											"description": "Returns records starting with the specified key."
+										},
+										{
+											"key": "endkey",
+											"value": "{{endkey}}",
+											"description": "If this parameter is provided, stop returning records when the specified key is reached."
+										}
+									]
+								},
+								"description": "This request returns a built-in view of all the documents in the database.\n"
+							},
+							"response": [
+								{
+									"name": "Query results",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_all_docs?access=false&channels=false&include_docs=false&revs=false&update_seq=false&limit=<integer>&keys=<string>,<string>&startkey=<string>&endkey=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_all_docs"
+											],
+											"query": [
+												{
+													"key": "access",
+													"value": "false"
+												},
+												{
+													"key": "channels",
+													"value": "false"
+												},
+												{
+													"key": "include_docs",
+													"value": "false"
+												},
+												{
+													"key": "revs",
+													"value": "false"
+												},
+												{
+													"key": "update_seq",
+													"value": "false"
+												},
+												{
+													"key": "limit",
+													"value": "<integer>"
+												},
+												{
+													"key": "keys",
+													"value": "<string>,<string>"
+												},
+												{
+													"key": "startkey",
+													"value": "<string>"
+												},
+												{
+													"key": "endkey",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"offset\": \"fugiat id magna\",\n \"rows\": [\n  {\n   \"id\": \"proident laborum\",\n   \"key\": {},\n   \"value\": {},\n   \"doc\": {}\n  },\n  {\n   \"id\": \"incididunt et aliqua\",\n   \"key\": {},\n   \"value\": {},\n   \"doc\": {}\n  }\n ],\n \"total_rows\": 92176794\n}"
+								}
+							]
+						},
+						{
+							"name": "Get All docs",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"keys\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_all_docs?access={{access}}&channels={{include_channels}} &include_docs={{include_docs}} &revs={{include_revs}} &update_seq={{update_seq}}",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_all_docs"
+									],
+									"query": [
+										{
+											"key": "access",
+											"value": "{{access}}",
+											"description": "Indicates whether to include in the response a list of what access this document grants (i.e. which users it allows to access which channels.) This option may only be used from the admin port."
+										},
+										{
+											"key": "channels",
+											"value": "{{include_channels}} ",
+											"description": "Indicates whether to include in the response a channels property containing an array of channels this document is assigned to. (Channels not accessible by the user making the request will not be listed.)"
+										},
+										{
+											"key": "include_docs",
+											"value": "{{include_docs}} ",
+											"description": "Default is false. Indicates whether to include the associated document with each result. If there are conflicts, only the winning revision is returned."
+										},
+										{
+											"key": "revs",
+											"value": "{{include_revs}} ",
+											"description": "Default is false. Indicates whether to include a _revisions property for each document in the response, which contains a revision history of the document. The length of the returned revision tree can be specified with the `revs_limit` querystring parameter."
+										},
+										{
+											"key": "update_seq",
+											"value": "{{update_seq}}",
+											"description": "Default is false. Indicates whether to include the update_seq (document sequence ID) property in the response."
+										}
+									]
+								},
+								"description": "This request retrieves specified documents from the database.\n"
+							},
+							"response": [
+								{
+									"name": "Query results",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"keys\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_all_docs?access=false&channels=false&include_docs=false&revs=false&update_seq=false",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_all_docs"
+											],
+											"query": [
+												{
+													"key": "access",
+													"value": "false"
+												},
+												{
+													"key": "channels",
+													"value": "false"
+												},
+												{
+													"key": "include_docs",
+													"value": "false"
+												},
+												{
+													"key": "revs",
+													"value": "false"
+												},
+												{
+													"key": "update_seq",
+													"value": "false"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"offset\": \"cul\",\n \"rows\": [\n  {\n   \"id\": \"minim labore reprehenderit ut\",\n   \"key\": {},\n   \"value\": {},\n   \"doc\": {}\n  },\n  {\n   \"id\": \"d\",\n   \"key\": {},\n   \"value\": {},\n   \"doc\": {}\n  }\n ],\n \"total_rows\": 30187116\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Bulk Docs",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"docs\": [\n        {\n            \"id\": \"<string>\"\n        },\n        {\n            \"id\": \"<string>\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_bulk_get?revs={{include_revs}} &revs_limit={{revs_limit}} &attachments={{include_attachments}}",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_bulk_get"
+									],
+									"query": [
+										{
+											"key": "revs",
+											"value": "{{include_revs}} ",
+											"description": "Default is false. Indicates whether to include a _revisions property for each document in the response, which contains a revision history of the document. The length of the returned revision tree can be specified with the `revs_limit` querystring parameter."
+										},
+										{
+											"key": "revs_limit",
+											"value": "{{revs_limit}} ",
+											"description": "The number of revisions to include in the response from the document history. This parameter is only honoured if the `revs=true` querystring parameter is also sent in the request. If `revs=true` is specified and `revs_limit` isn't, the full revision history is returned."
+										},
+										{
+											"key": "attachments",
+											"value": "{{include_attachments}}",
+											"description": "Default is false. Include attachment bodies in response."
+										}
+									]
+								},
+								"description": "This request returns any number of documents, as individual bodies in a MIME multipart response.\nEach enclosed body contains one requested document. The bodies appear in the same order as in the request, but can also be identified by their X-Doc-ID and X-Rev-ID headers.\nA body for a document with no attachments will have content type application/json and contain the document itself.\nA body for a document that has attachments will be written as a nested multipart/related body. Its first part will be the document's JSON, and the subsequent parts will be the attachments (each identified by a Content-Disposition header giving its attachment name.)\n"
+							},
+							"response": [
+								{
+									"name": "Request completed successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"docs\": [\n        {\n            \"id\": \"<string>\"\n        },\n        {\n            \"id\": \"<string>\"\n        }\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_bulk_get?revs=false&revs_limit=<integer>&attachments=false",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_bulk_get"
+											],
+											"query": [
+												{
+													"key": "revs",
+													"value": "false"
+												},
+												{
+													"key": "revs_limit",
+													"value": "<integer>"
+												},
+												{
+													"key": "attachments",
+													"value": "false"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "multipart/mixed (document found)"
+										}
+									],
+									"cookie": [],
+									"body": "--1cba224ff2aa106566e3ab65de9c861c24558ba368f8cd7f6fcde53b88f4\nContent-Type: application/json\n\n{\"_id\":\"doc123\",\"_rev\":\"1-c543d6514c609f65180f94af247aaffe\",\"hello\":\"world!\"}\n--1cba224ff2aa106566e3ab65de9c861c24558ba368f8cd7f6fcde53b88f4\n"
+								},
+								{
+									"name": "Request failed with a forbidden error. This usually happens because the user requesting that document doesn't have access to it. Access to documents is granted to users through channels.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"docs\": [\n        {\n            \"id\": \"<string>\"\n        },\n        {\n            \"id\": \"<string>\"\n        }\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_bulk_get?revs=false&revs_limit=<integer>&attachments=false",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_bulk_get"
+											],
+											"query": [
+												{
+													"key": "revs",
+													"value": "false"
+												},
+												{
+													"key": "revs_limit",
+													"value": "<integer>"
+												},
+												{
+													"key": "attachments",
+													"value": "false"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Moved Permanently",
+									"code": 301,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "multipart/mixed"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Create Bulk Docs",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"docs\": [\n        {\n            \"_id\": \"<string>\",\n            \"_rev\": \"<string>\",\n            \"_exp\": \"<string>\",\n            \"_revisions\": {\n                \"start\": \"<integer>\",\n                \"ids\": [\n                    \"<string>\",\n                    \"<string>\"\n                ]\n            },\n            \"_attachments\": {\n                \"attachment_name\": {\n                    \"content_type\": \"<string>\"\n                }\n            }\n        },\n        {\n            \"_id\": \"<string>\",\n            \"_rev\": \"<string>\",\n            \"_exp\": \"<string>\",\n            \"_revisions\": {\n                \"start\": \"<integer>\",\n                \"ids\": [\n                    \"<string>\",\n                    \"<string>\"\n                ]\n            },\n            \"_attachments\": {\n                \"attachment_name\": {\n                    \"content_type\": \"<string>\"\n                }\n            }\n        }\n    ],\n    \"new_edits\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_bulk_docs",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_bulk_docs"
+									],
+									"variable": [
+										{
+											"key": "db",
+											"value": "<string>",
+											"description": "(Required) Database name"
+										}
+									]
+								},
+								"description": "This request enables you to add, update, or delete multiple documents to a database in a single request. To add new documents, you can either specify the ID (`_id`) or let the software create an ID. To update existing documents, you must provide the document ID, revision identifier (`_rev`), and new document values. To delete existing documents you must provide the document ID, revision identifier, and the deletion flag (`_deleted`).\n\nThe JSON returned by the `_bulk_docs` operation consists of an array of JSON structures, one for each document in the original submission. The returned JSON structure should be examined to ensure that all of the documents submitted in the original request were successfully added to the database.\n"
+							},
+							"response": [
+								{
+									"name": "Documents have been created or updated. The response object is an array with the status for each document submitted in the original request.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"docs\": [\n        {\n            \"_id\": \"<string>\",\n            \"_rev\": \"<string>\",\n            \"_exp\": \"<string>\",\n            \"_revisions\": {\n                \"start\": \"<integer>\",\n                \"ids\": [\n                    \"<string>\",\n                    \"<string>\"\n                ]\n            },\n            \"_attachments\": {\n                \"attachment_name\": {\n                    \"content_type\": \"<string>\"\n                }\n            }\n        },\n        {\n            \"_id\": \"<string>\",\n            \"_rev\": \"<string>\",\n            \"_exp\": \"<string>\",\n            \"_revisions\": {\n                \"start\": \"<integer>\",\n                \"ids\": [\n                    \"<string>\",\n                    \"<string>\"\n                ]\n            },\n            \"_attachments\": {\n                \"attachment_name\": {\n                    \"content_type\": \"<string>\"\n                }\n            }\n        }\n    ],\n    \"new_edits\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_bulk_docs",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_bulk_docs"
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n {\n  \"id\": \"cupidatat in sit\",\n  \"rev\": \"cupidatat veniam sit\"\n },\n {\n  \"id\": \"elit\",\n  \"rev\": \"cupidatat Lorem o\"\n }\n]"
+								},
+								{
+									"name": "The operation failed with a forbidden error. Probably because the document already exists in the database but a revision number wasn't specified.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"docs\": [\n        {\n            \"_id\": \"<string>\",\n            \"_rev\": \"<string>\",\n            \"_exp\": \"<string>\",\n            \"_revisions\": {\n                \"start\": \"<integer>\",\n                \"ids\": [\n                    \"<string>\",\n                    \"<string>\"\n                ]\n            },\n            \"_attachments\": {\n                \"attachment_name\": {\n                    \"content_type\": \"<string>\"\n                }\n            }\n        },\n        {\n            \"_id\": \"<string>\",\n            \"_rev\": \"<string>\",\n            \"_exp\": \"<string>\",\n            \"_revisions\": {\n                \"start\": \"<integer>\",\n                \"ids\": [\n                    \"<string>\",\n                    \"<string>\"\n                ]\n            },\n            \"_attachments\": {\n                \"attachment_name\": {\n                    \"content_type\": \"<string>\"\n                }\n            }\n        }\n    ],\n    \"new_edits\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_bulk_docs",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_bulk_docs"
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error\": \"conflict\",\n \"id\": \"pariatur irure\",\n \"reason\": \"voluptate id adipisicing exercitation\",\n \"status\": 409\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": " session",
+					"item": [
+						{
+							"name": "Create a user session",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"<string>\",\n    \"password\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_session",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_session"
+									],
+									"variable": [
+										{
+											"key": "db",
+											"value": "<string>",
+											"description": "(Required) Database name"
+										}
+									]
+								},
+								"description": "If the credentials provided in the request body are valid, the session is created with an idle session timeout of 24 hours. An idle session timeout in the context of Sync Gateway is defined as the following: if 10% or more of the current expiration time has elapsed when a subsequent request with that session id is processed, the session's expiry time is automatically updated to 24 hours from that time.\n"
+							},
+							"response": [
+								{
+									"name": "Session successfully created. The Set-Cookie response header contains the session credentials.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"<string>\",\n    \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_session",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_session"
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"authentication_handlers\": [\n  \"minim quis\",\n  \"eiusmod exercitation\"\n ],\n \"ok\": true,\n \"userCtx\": {\n  \"channels\": {},\n  \"name\": \"ut Ut\"\n }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a user session",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"description": "The cookie of the logged-in session.",
+										"key": "cookie",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_session",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_session"
+									],
+									"variable": [
+										{
+											"key": "db",
+											"value": "<string>",
+											"description": "(Required) Database name"
+										}
+									]
+								},
+								"description": "This request deletes the session that currently authenticates the requests.\n"
+							},
+							"response": [
+								{
+									"name": "The session was successfuly removed.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											},
+											{
+												"description": "The cookie of the logged-in session.",
+												"key": "cookie",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_session",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_session"
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "db",
+					"item": [
+						{
+							"name": "Database info",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "db",
+											"value": "<string>",
+											"description": "(Required) Database name"
+										}
+									]
+								},
+								"description": "This request retrieves information about the database.\n"
+							},
+							"response": [
+								{
+									"name": "Request completed successfully.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												""
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"db_name\": \"in aliqua dolore\",\n \"db_uuid\": -16549896,\n \"disk_format_version\": -75572438,\n \"disk_size\": -6576797,\n \"instance_start_time\": \"labore reprehenderit\",\n \"state\": \"fugiat quis\",\n \"update_seq\": \"tempor laborum esse commodo\"\n}"
+								},
+								{
+									"name": "Not Found. Requested database not found.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												""
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized. Login required.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												""
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "OIDC",
+					"item": [
+						{
+							"name": "OpenID Connect Authentication.",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_oidc?offline={{offline}}&provider={{provider}}",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_oidc"
+									],
+									"query": [
+										{
+											"key": "offline",
+											"value": "{{offline}}",
+											"description": "When true, requests a refresh token from the OP. Sets access_type=offline and prompt=consent on the redirect to the OP. Secure clients should set offline=true and persist the returned refresh token to secure storage."
+										},
+										{
+											"key": "provider",
+											"value": "{{provider}}",
+											"description": "OpenId Connect provider to be used for authentication, from the list of providers defined in the Sync Gateway Config. If not specified, will attempt to authenticate using the default provider."
+										}
+									]
+								},
+								"description": "Called by clients to initiate the OIDC Authorization Code flow.\n"
+							},
+							"response": [
+								{
+									"name": "Server Error.  Sync Gateway is unable to connect and validate the OpenID Connect provider requested.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_oidc?offline=<boolean>&provider=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_oidc"
+											],
+											"query": [
+												{
+													"key": "offline",
+													"value": "<boolean>"
+												},
+												{
+													"key": "provider",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Bad request.  Reason is returned as \"OpenID Connect not configured for database default\".  If a provider was specified in the request, that provider was not defined in the Sync Gateway config.  If no provider was specified, OpenID Connect is not configure",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_oidc?offline=<boolean>&provider=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_oidc"
+											],
+											"query": [
+												{
+													"key": "offline",
+													"value": "<boolean>"
+												},
+												{
+													"key": "provider",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Redirect to the requested OpenID Connect provider for authentication. Redirect link is returned in the Location header.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_oidc?offline=<boolean>&provider=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_oidc"
+											],
+											"query": [
+												{
+													"key": "offline",
+													"value": "<boolean>"
+												},
+												{
+													"key": "provider",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Found",
+									"code": 302,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "OpenID Connect Authentication callback.",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_oidc_callback?code={{code}}&provider={{provider}}",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_oidc_callback"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "{{code}}",
+											"description": "(Required) OpenID Connect Authorization code."
+										},
+										{
+											"key": "provider",
+											"value": "{{provider}}",
+											"description": "OpenId Connect provider to be used for authentication, from the list of providers defined in the Sync Gateway Config. If not specified, will attempt to authenticate using the default provider."
+										}
+									]
+								},
+								"description": "Sync Gateway callback URL that clients are redirected to by the OpenID Connect provider.\n"
+							},
+							"response": [
+								{
+									"name": "Authentication failed.  Reason returned in the response body.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_oidc_callback?code=<string>&provider=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_oidc_callback"
+											],
+											"query": [
+												{
+													"key": "code",
+													"value": "<string>"
+												},
+												{
+													"key": "provider",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Bad request.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_oidc_callback?code=<string>&provider=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_oidc_callback"
+											],
+											"query": [
+												{
+													"key": "code",
+													"value": "<string>"
+												},
+												{
+													"key": "provider",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Successful OpenID Connect authentication.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_oidc_callback?code=<string>&provider=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_oidc_callback"
+											],
+											"query": [
+												{
+													"key": "code",
+													"value": "<string>"
+												},
+												{
+													"key": "provider",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id_token\": \"id laborum\",\n \"refresh_token\": \"reprehenderit irure in voluptate\",\n \"session_id\": \"elit aliqua\",\n \"name\": \"nisi irure commodo culpa amet\",\n \"access_token\": \"aliquip proident\",\n \"token_type\": \"in\",\n \"expires_in\": -59150581.93273817\n}"
+								}
+							]
+						},
+						{
+							"name": "OpenID Connect Authentication.",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_oidc_challenge?offline={{offline}}&provider={{provider}}",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_oidc_challenge"
+									],
+									"query": [
+										{
+											"key": "offline",
+											"value": "{{offline}}",
+											"description": "When true, requests a refresh token from the OP. Sets access_type=offline and prompt=consent on the redirect to the OP. Secure clients should set offline=true and persist the returned refresh token to secure storage."
+										},
+										{
+											"key": "provider",
+											"value": "{{provider}}",
+											"description": "OpenId Connect provider to be used for authentication, from the list of providers defined in the Sync Gateway Config. If not specified, will attempt to authenticate using the default provider."
+										}
+									]
+								},
+								"description": "Called by clients to initiate the OIDC Authorization Code flow.\n"
+							},
+							"response": [
+								{
+									"name": "Redirect to the requested OpenID Connect provider for authentication. Redirect link is returned in the Location header.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_oidc_challenge?offline=<boolean>&provider=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_oidc_challenge"
+											],
+											"query": [
+												{
+													"key": "offline",
+													"value": "<boolean>"
+												},
+												{
+													"key": "provider",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Found",
+									"code": 302,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Server Error.  Sync Gateway is unable to connect and validate the OpenID Connect provider requested.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_oidc_challenge?offline=<boolean>&provider=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_oidc_challenge"
+											],
+											"query": [
+												{
+													"key": "offline",
+													"value": "<boolean>"
+												},
+												{
+													"key": "provider",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Bad request.  Reason is returned as \"OpenID Connect not configured for database default\".  If a provider was specified in the request, that provider was not defined in the Sync Gateway config.  If no provider was specified, OpenID Connect is not configure",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_oidc_challenge?offline=<boolean>&provider=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_oidc_challenge"
+											],
+											"query": [
+												{
+													"key": "offline",
+													"value": "<boolean>"
+												},
+												{
+													"key": "provider",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "OpenID Connect refresh.",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_oidc_refresh?refresh_token={{refresh_token}} &provider={{provider}}",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_oidc_refresh"
+									],
+									"query": [
+										{
+											"key": "refresh_token",
+											"value": "{{refresh_token}} ",
+											"description": "(Required) OpenID Connect refresh token."
+										},
+										{
+											"key": "provider",
+											"value": "{{provider}}",
+											"description": "OpenId Connect provider to be used for authentication, from the list of providers defined in the Sync Gateway Config. If not specified, will attempt to authenticate using the default provider."
+										}
+									]
+								},
+								"description": "Used to obtain a new OpenID Connect ID token based on the provided refresh token.\n"
+							},
+							"response": [
+								{
+									"name": "Successful OpenID Connect authentication.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_oidc_refresh?refresh_token=<string>&provider=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_oidc_refresh"
+											],
+											"query": [
+												{
+													"key": "refresh_token",
+													"value": "<string>"
+												},
+												{
+													"key": "provider",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id_token\": \"ea sit do in\",\n \"session_id\": \"velit commodo\",\n \"name\": \"ex pariatur dolore ullamco in\",\n \"access_token\": \"mollit aliqua dolor minim nostrud\",\n \"token_type\": \"in\",\n \"expires_in\": 6666565.935851932\n}"
+								},
+								{
+									"name": "Authentication failed.  Unable to refresh token.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_oidc_refresh?refresh_token=<string>&provider=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_oidc_refresh"
+											],
+											"query": [
+												{
+													"key": "refresh_token",
+													"value": "<string>"
+												},
+												{
+													"key": "provider",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Bad request.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_oidc_refresh?refresh_token=<string>&provider=<string>",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_oidc_refresh"
+											],
+											"query": [
+												{
+													"key": "refresh_token",
+													"value": "<string>"
+												},
+												{
+													"key": "provider",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "User creation / authentication via Facebook",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"access_token\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_facebook",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_facebook"
+									],
+									"variable": [
+										{
+											"key": "db",
+											"value": "<string>",
+											"description": "(Required) Database name"
+										}
+									]
+								},
+								"description": "Sync Gateway allows users to authenticate using a Facebook account. Your application is responsible for generating a Facebook token; this generally needs to be done by running the Facebook login flow inside a web-view and capturing the generated token. This endpoint can be used to check the validity of the access token.\nTo allow Facebook Login with Sync Gateway, it must be explicitely enabled in the Sync Gateway configuration file by setting the [facebook.register](config-properties.html#facebook-register) property to `true`.\n"
+							},
+							"response": [
+								{
+									"name": "Facebook verification server status <Facebook status code>",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"access_token\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_facebook",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_facebook"
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Session successfully created. The Set-Cookie response header contains the session credentials.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"access_token\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_facebook",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_facebook"
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"authentication_handlers\": [\n  \"magna eu velit\",\n  \"dolor \"\n ],\n \"ok\": true,\n \"userCtx\": {\n  \"channels\": {},\n  \"name\": \"incididunt anim commodo Excepteur\"\n }\n}"
+								},
+								{
+									"name": "Invalid response from Facebook verifier",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"access_token\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_facebook",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_facebook"
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Bad Gateway",
+									"code": 502,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "User creation / authentication via Google",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id_token\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{publicUrl}}/{{db}}/_google",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"{{db}}",
+										"_google"
+									],
+									"variable": [
+										{
+											"key": "db",
+											"value": "<string>",
+											"description": "(Required) Database name"
+										}
+									]
+								},
+								"description": "Sync Gateway allows users to authenticate using a Google account. Your application is responsible for generating a Google token; this generally needs to be done by running the Google login flow inside a web-view and capturing the generated token. This endpoint can be used to check the validity of the access token.\nTo allow Google Login with Sync Gateway, it must be explicitly enabled in the Sync Gateway configuration file by setting the [google.register](config-properties.html#google-register) property to `true` and setting the [google.app_client_id](config-properties.html#google-app_client_id) property with a Google app client ID.\n"
+							},
+							"response": [
+								{
+									"name": "Returns the Google response's ErrorDescription",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id_token\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_google",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_google"
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Session successfully created. The Set-Cookie response header contains the session credentials.",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id_token\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_google",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_google"
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"authentication_handlers\": [\n  \"minim quis\",\n  \"eiusmod exercitation\"\n ],\n \"ok\": true,\n \"userCtx\": {\n  \"channels\": {},\n  \"name\": \"ut Ut\"\n }\n}"
+								},
+								{
+									"name": "Invalid response from Google token verifier",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Cookie",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id_token\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/{{db}}/_google",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"{{db}}",
+												"_google"
+											],
+											"variable": [
+												{
+													"key": "db",
+													"value": "<string>",
+													"description": "(Required) Database name"
+												}
+											]
+										}
+									},
+									"status": "Bad Gateway",
+									"code": 502,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Server",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{publicUrl}}/",
+					"host": [
+						"{{publicUrl}}"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "Returns meta-information about the server.\n"
+			},
+			"response": [
+				{
+					"name": "Meta-information about the server.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: apikey",
+								"key": "Cookie",
+								"value": "<API Key>"
+							}
+						],
+						"url": {
+							"raw": "{{publicUrl}}/",
+							"host": [
+								"{{publicUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"couchdb\": \"tempor aute anim commodo\",\n \"vendor/name\": \"p\",\n \"vendor/version\": \"incididunt ex non eu\",\n \"version\": \"dolor adipisicing\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "Cookie",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "<API Key>",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "publicUrl",
+			"value": "http://localhost:4984/",
+			"type": "string"
+		}
+	]
+}
