@@ -40,7 +40,19 @@ The collection supports v3.0 of Sync Gateway REST interface.
 
 # Demonstration using Travel Sample Postman Collections 
 
-We have put together a custom version of the Postman collections corresponding to Travel Sample Application. These are located in the "travel-sample" folder of the repo. A few of the requests in the collections also include some simple tests to verify if the request was succesful or not.
+We have put together a custom version of the Postman collections corresponding to Travel Sample Application. These are located in the "travel-sample" folder of the repo. 
+
+Some notable differences from the main collections -
+
+**Tests**
+Most of the requests in the collections include some simple tests to verify if the request was succesful or not.
+
+**Request Chaining**
+Collections also support request chaining - i.e. the output of a request can be used as input to a subsequent request. This is accomplished by dynamically updating the environment variables with the results of request execution without the need to manually edit the requests. 
+
+So for instance,
+
+When you create a document, a new document revision is created and the revisionID of the newly created revision is returned in the response in the “_rev” field. The test associated with the request extracts the “_rev” value and sets the “rev” environment variable
 
 ## Pre-requisites
 
